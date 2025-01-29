@@ -16,9 +16,14 @@ const Hero = () => {
       }}
       className="relative flex flex-col gap-4 items-center justify-center px-4"
     >
-      <div className="text-3xl md:text-7xl font-bold uppercase dark:text-white text-center">
+      <div className="text-3xl md:text-6xl font-bold uppercase dark:text-white text-center">
+  <span className='block mb-4'>
+
   <Highlight>
-   Crafting the Future </Highlight>, <br /> One Revolutionary Idea at a Time
+   Crafting the Future </Highlight>
+  </span>
+    
+    One Revolutionary Idea at a Time
 </div>
 
       <div className="font-extralight text-base md:text-4xl dark:text-neutral-200 py-4">
