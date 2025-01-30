@@ -7,6 +7,7 @@ import { Button } from "@/components/ui/button";
 import { LucideArrowRight } from "lucide-react";
 import { CACHE_ONE_YEAR } from "next/dist/lib/constants";
 import { LucideDownload, LucideMail } from "lucide-react";
+import EmailWithCopy from "./EmailClipboard";
 
 import { Download, Mail, Github, Linkedin } from "lucide-react";
 
@@ -472,12 +473,7 @@ const BodySection = () => {
 
     {/* Contact Info */}
     <div className="mt-6 text-lg text-gray-600 dark:text-gray-300 space-y-4">
-        <p className="flex items-center justify-center gap-2">
-            📩 <strong>Email:</strong> 
-            <a href="mailto:jeetsharma2112@gmail.com" className="text-blue-500 underline">
-                jeetsharma2112@gmail.com
-            </a>
-        </p>
+        <EmailWithCopy />
         <p className="flex items-center justify-center gap-2">
             🌐 <strong>GitHub:</strong>
             <a href="https://github.com/JeetDSharma" target="_blank" className="text-blue-500 underline">
