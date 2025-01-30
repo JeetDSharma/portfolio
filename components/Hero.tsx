@@ -4,6 +4,12 @@ import { motion } from 'framer-motion'
 import { AuroraBackground } from './ui/aurora-backgrounds'
 import { Highlight, HeroHighlight } from './ui/hero-highlight';
 const Hero = () => {
+  const scrollToBody = () => {
+    const bodySection = document.getElementById("body-section");
+    if (bodySection) {
+      bodySection.scrollIntoView({ behavior: "smooth" });
+    }
+  };
   return (
     <AuroraBackground className='max-h-[80vh]'>
     <motion.div
@@ -29,7 +35,9 @@ const Hero = () => {
       <div className="font-extralight text-base md:text-4xl dark:text-neutral-200 py-4">
         This is Jeet Sharma
       </div>
-      <button className="bg-black dark:bg-white rounded-full w-fit text-white dark:text-black px-4 py-2">
+      <button className="bg-black dark:bg-white rounded-full w-fit text-white dark:text-black px-4 py-2" 
+      onClick={scrollToBody}
+      >
         Let's Dive In
       </button>
     </motion.div>

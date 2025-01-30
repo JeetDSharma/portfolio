@@ -137,7 +137,7 @@ const projects = [
 
 const BodySection = () => {
   return (
-    <section className="max-w-5xl mx-auto px-6 py-20 space-y-16">
+    <section className="max-w-5xl mx-auto px-6 py-20 space-y-16" id="body-section">
       
       {/* About Me */}
       <motion.div
@@ -456,6 +456,7 @@ const BodySection = () => {
         whileInView={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.8, ease: "easeOut" }}
         className="text-center"
+        id="contact-section"
       >
         <h2 className="text-3xl md:text-5xl font-bold dark:text-white">
           <Highlight>Let's Connect</Highlight>
@@ -464,9 +465,9 @@ const BodySection = () => {
           📩 <strong>Email:</strong> jeetsharma2112@gmail.com | 🌐 <strong>Github:</strong> 
           <a href="https://github.com/JeetDSharma" target="_blank" className="underline"> Jeet Sharma</a>
         </p>
-        <Button className="mt-6 px-6 py-3 text-lg">
+        {/* <Button className="mt-6 px-6 py-3 text-lg">
           Get in Touch <LucideArrowRight className="ml-2 w-5 h-5" />
-        </Button>
+        </Button> */}
       </motion.div>
 
     </section>
