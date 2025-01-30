@@ -514,10 +514,10 @@ const BodySection = () => {
         <a href="https://github.com/JeetDSharma" target="_blank" rel="noopener noreferrer" className="text-gray-600 dark:text-gray-300 hover:text-blue-500 transition">
             <Github className="w-7 h-7" />
         </a>
-        <a href={emailLink} target="_blank" rel="noopener noreferrer" className="text-gray-600 dark:text-gray-300 hover:text-blue-500 transition">
+        <a href="https://www.linkedin.com/in/jeet-sharma/" target="_blank" rel="noopener noreferrer" className="text-gray-600 dark:text-gray-300 hover:text-blue-500 transition">
             <Linkedin className="w-7 h-7" />
         </a>
-        <a href="mailto:jeetsharma2112@gmail.com" className="text-gray-600 dark:text-gray-300 hover:text-blue-500 transition">
+        <a href={emailLink} className="text-gray-600 dark:text-gray-300 hover:text-blue-500 transition">
             <Mail className="w-7 h-7" />
         </a>
     </div>
