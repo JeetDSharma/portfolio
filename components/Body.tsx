@@ -154,7 +154,7 @@ const BodySection = () => {
         document.body.removeChild(link);
       };
   return (
-    <section className="max-w-5xl mx-auto px-6 py-20 space-y-16" id="body-section">
+    <section className="max-w-5xl mx-auto px-6 py-20 space-y-16 overflow-hidden" id="body-section">
       
       {/* About Me */}
       <motion.div
@@ -386,7 +386,7 @@ const BodySection = () => {
     <div className="mt-10 flex flex-col relative space-y-16 max-w-4xl mx-auto">
         {experiences.map((exp, index) => {
             // const showYear = index === 0 || exp.year !== experiences[index - 1].year; // Display year only if it's different from the previous one
-            const showYear = true; // Always show year
+            const showYear = false; // Always show year
             const isYearLeft = index % 2 === 1; // Alternate year position
 
             return (
@@ -398,7 +398,7 @@ const BodySection = () => {
                             animate={{ opacity: 1, x: 0 }}
                             transition={{ duration: 0.6 }}
                             className={`absolute top-1/2 -translate-y-1/2 text-xl font-bold text-gray-700 dark:text-gray-300 
-                                        ${isYearLeft ? "-left-24" : "-right-24 text-right"}`}
+                                        ${isYearLeft ? "-left-24  md:-left-24" : "-right-24 md:-right-24 text-right"}`}
                         >
                             {exp.year}
                         </motion.div>
