@@ -136,6 +136,15 @@ const projects = [
 
 
 const BodySection = () => {
+    const downloadResume = () => {
+        const resumeUrl = "/resume.pdf"; // Ensure this file is in the `/public` folder
+        const link = document.createElement("a");
+        link.href = resumeUrl;
+        link.download = "Jeet_Sharma_Resume.pdf";
+        document.body.appendChild(link);
+        link.click();
+        document.body.removeChild(link);
+      };
   return (
     <section className="max-w-5xl mx-auto px-6 py-20 space-y-16" id="body-section">
       
@@ -465,6 +474,9 @@ const BodySection = () => {
           📩 <strong>Email:</strong> jeetsharma2112@gmail.com | 🌐 <strong>Github:</strong> 
           <a href="https://github.com/JeetDSharma" target="_blank" className="underline"> Jeet Sharma</a>
         </p>
+        <Button className="mt-6 px-6 py-3 text-lg" onClick={downloadResume}>
+          Download Resume 
+        </Button>
         {/* <Button className="mt-6 px-6 py-3 text-lg">
           Get in Touch <LucideArrowRight className="ml-2 w-5 h-5" />
         </Button> */}
