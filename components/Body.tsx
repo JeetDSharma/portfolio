@@ -93,6 +93,48 @@ const education = [
   },
 ];
 
+const projects = [
+    {
+        title: "RouteLLM",
+        description: "Engineered an LLM routing system that optimally directs prompts to models based on cost-performance trade-offs, reducing reliance on expensive models like GPT-4o while maintaining high output quality.",
+        techStack: ["Python", "PyTorch", "TensorFlow", "Hugging Face", "DistilBERT", "CodeBERT"],
+        links: {
+            github: null,
+            demo: null
+        }
+    },
+    {
+        title: "AI-Powered Recipe App",
+        description: "Built a full-stack AI-driven recipe generation platform enabling users to create personalized meals based on available ingredients, dietary preferences, and allergies, leading to a 40% reduction in recipe search time.",
+        techStack: ["Next.js", "Tailwind CSS", "FastAPI", "PostgreSQL", "GPT-4o", "JWT", "RESTful APIs"],
+        links: {
+            github: "https://github.com/ibizabroker/520-project",
+            demo: null
+        }
+    },
+    {
+        title: "MediLog: Blockchain-Based Pharmaceutical Supply Chain System",
+        description: "Designed and deployed an extensive end-to-end pharmaceutical supply chain solution leveraging blockchain technology, ensuring tamper-proof tracking of medical drugs and presented the solution to the Indian Medical Association.",
+        techStack: ["Ethereum", "Solidity", "MERN Stack"],
+        links: {
+            github: null,
+            demo: null,
+            patentLink: "https://register.dpma.de/DPMAregister/pat/register?AKZ=2020231028233&CURSOR=0"
+        }
+    },
+    {
+        title: "Covid-19 Detection using Chest X-RAY",
+        description: "Developed a web app for Covid-19 detection from Chest X-ray images, achieving 90%+ accuracy in classification. Improved model performance by 30% using data augmentation and hyperparameter tuning.",
+        techStack: ["PyTorch", "Flask", "SQLite", "OpenCV"],
+        links: {
+            github: null,
+            demo: null,
+            paperLink: "https://www.ijrar.org/papers/IJRAR22B1808.pdf"
+        }
+    }
+];
+
+
 const BodySection = () => {
   return (
     <section className="max-w-5xl mx-auto px-6 py-20 space-y-16">
@@ -152,32 +194,80 @@ const BodySection = () => {
     </div>
 </motion.div>
 
+{/* Project Section */}
+<motion.div
+    initial="hidden"
+    whileInView="visible"
+    transition={{ duration: 0.8, ease: "easeOut" }}
+    className="text-center"
+>
+    <h2 className="text-3xl md:text-5xl font-bold dark:text-white">
+        <Highlight>Projects</Highlight>
+    </h2>
+
+    {/* Project Cards Grid */}
+    <div className="mt-10 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-6xl mx-auto px-6">
+        {projects.map((project, index) => (
+            <motion.div 
+                key={index}
+                initial={{ opacity: 0, y: 50 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.6, delay: index * 0.1 }}
+                viewport={{ once: true }}
+                whileHover={{ scale: 1.05, boxShadow: "0px 0px 12px rgba(255, 167, 0, 0.3)" }}
+                className="relative bg-white/70 dark:bg-gray-900/80 backdrop-blur-lg p-6 rounded-xl shadow-lg border border-gray-200 dark:border-gray-700 hover:shadow-xl flex flex-col justify-between"
+            >
+                {/* Project Title */}
+                <h3 className="text-lg md:text-xl font-semibold dark:text-white">{project.title}</h3>
+
+                {/* Project Description */}
+                <p className="text-sm text-gray-600 dark:text-gray-300 mt-2">{project.description}</p>
+
+                {/* Tech Stack */}
+                <div className="mt-3 flex flex-wrap gap-2">
+                    {project.techStack.map((tech, i) => (
+                        <span 
+                            key={i} 
+                            className="px-3 py-1 bg-gray-200 dark:bg-gray-700 text-gray-800 dark:text-gray-200 text-xs font-medium rounded-md"
+                        >
+                            {tech}
+                        </span>
+                    ))}
+                </div>
+
+                {/* Links Section */}
+                <div className="mt-4 flex justify-between">
+                    {project.links.github && (
+                        <a href={project.links.github} target="_blank" rel="noopener noreferrer" 
+                            className="text-blue-500 hover:underline flex items-center">
+                            GitHub Repo
+                        </a>
+                    )}
+                    {project.links.demo && (
+                        <a href={project.links.demo} target="_blank" rel="noopener noreferrer" 
+                            className="text-green-500 hover:underline flex items-center">
+                            Live Demo
+                        </a>
+                    )}
+                    {project.links.paperLink && (
+                        <a href={project.links.paperLink} target="_blank" rel="noopener noreferrer" 
+                            className="text-yellow-500 hover:underline flex items-center">
+                            Research Paper
+                        </a>
+                    )}
+                    {project.links.patentLink && (
+                        <a href={project.links.patentLink} target="_blank" rel="noopener noreferrer" 
+                            className="text-purple-500 hover:underline flex items-center">
+                            Patent
+                        </a>
+                    )}
+                </div>
+            </motion.div>
+        ))}
+    </div>
+</motion.div>
 
             
-
-      {/* Education Timeline
-      <motion.div
-        initial="hidden"
-        whileInView="visible"
-        variants={timelineVariants}
-        transition={{ duration: 0.8, ease: "easeOut" }}
-        className="text-center"
-      >
-        <h2 className="text-3xl md:text-5xl font-bold dark:text-white">
-          <Highlight>Education</Highlight>
-        </h2>
-        <div className="mt-6 flex flex-col relative border-l-4 border-gray-300 dark:border-gray-600 pl-6 space-y-6">
-          {education.map((edu, index) => (
-            <motion.div key={index} className="relative" variants={timelineVariants}>
-              <div className="absolute w-4 h-4 bg-gray-500 dark:bg-gray-300 rounded-full -left-[10px] top-2" />
-              <h3 className="text-xl font-semibold dark:text-white">{edu.title}</h3>
-              <p className="text-gray-600 dark:text-gray-300">{edu.institution}</p>
-              <p className="text-sm text-gray-500 dark:text-gray-400">{edu.duration}</p>
-              <p className="text-sm font-medium text-gray-700 dark:text-gray-400">{edu.gpa}</p>
-            </motion.div>
-          ))}
-        </div>
-      </motion.div> */}
 {/* Education Timeline */}
 <motion.div
     initial="hidden"
