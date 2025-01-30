@@ -494,7 +494,7 @@ const BodySection = () => {
         </p>
         <p className="flex items-center justify-center gap-2">
             💼 <strong>LinkedIn:</strong>
-            <a href="https://linkedin.com/JeetDSharma" target="_blank" className="text-blue-500 underline">
+            <a href="https://www.linkedin.com/in/jeet-sharma" target="_blank" className="text-blue-500 underline">
                 linkedin.com/in/jeetsharma
             </a>
         </p>
