@@ -138,7 +138,7 @@ const projects = [
 ];
 
 const emailLink = `mailto:jeetsharma2112@gmail.com
-?subject=Interested%20in%20Hiring%20You!
+?subject=Interested%20in%20Connecting%20%with20You!
 &body=Hi%20Jeet,%0D%0A%0D%0AI%20came%20across%20your%20portfolio%20and%20would%20love%20to%20discuss%20potential%20opportunities.%0D%0A%0D%0ALooking%20forward%20to%20your%20response.%0D%0A%0D%0AThanks!`;
 
 
