@@ -6,6 +6,9 @@ import { Highlight } from "@/components/ui/hero-highlight";
 import { Button } from "@/components/ui/button";
 import { LucideArrowRight } from "lucide-react";
 import { CACHE_ONE_YEAR } from "next/dist/lib/constants";
+import { LucideDownload, LucideMail } from "lucide-react";
+
+import { Download, Mail, Github, Linkedin } from "lucide-react";
 
 const timelineVariants = {
   hidden: { opacity: 0, y: 50 },
@@ -133,6 +136,11 @@ const projects = [
         }
     }
 ];
+
+const emailLink = `mailto:jeetsharma2112@gmail.com
+?subject=Interested%20in%20Hiring%20You!
+&body=Hi%20Jeet,%0D%0A%0D%0AI%20came%20across%20your%20portfolio%20and%20would%20love%20to%20discuss%20potential%20opportunities.%0D%0A%0D%0ALooking%20forward%20to%20your%20response.%0D%0A%0D%0AThanks!`;
+
 
 
 const BodySection = () => {
@@ -458,29 +466,71 @@ const BodySection = () => {
 </motion.div>
 
 
+{/* /* Contact & Portfolio */ }
+<motion.div
+    initial={{ opacity: 0, y: 40 }}
+    whileInView={{ opacity: 1, y: 0 }}
+    transition={{ duration: 0.8, ease: "easeOut" }}
+    className="text-center max-w-3xl mx-auto py-16"
+    id="contact-section"
+>
+    <h2 className="text-3xl md:text-5xl font-bold dark:text-white">
+        <Highlight>Let's Connect</Highlight>
+    </h2>
 
-      {/* Contact & Portfolio */}
-      <motion.div
-        initial={{ opacity: 0, y: 40 }}
-        whileInView={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.8, ease: "easeOut" }}
-        className="text-center"
-        id="contact-section"
-      >
-        <h2 className="text-3xl md:text-5xl font-bold dark:text-white">
-          <Highlight>Let's Connect</Highlight>
-        </h2>
-        <p className="mt-4 text-lg text-gray-600 dark:text-gray-300">
-          📩 <strong>Email:</strong> jeetsharma2112@gmail.com | 🌐 <strong>Github:</strong> 
-          <a href="https://github.com/JeetDSharma" target="_blank" className="underline"> Jeet Sharma</a>
+    {/* Contact Info */}
+    <div className="mt-6 text-lg text-gray-600 dark:text-gray-300 space-y-4">
+        <p className="flex items-center justify-center gap-2">
+            📩 <strong>Email:</strong> 
+            <a href="mailto:jeetsharma2112@gmail.com" className="text-blue-500 underline">
+                jeetsharma2112@gmail.com
+            </a>
         </p>
-        <Button className="mt-6 px-6 py-3 text-lg" onClick={downloadResume}>
-          Download Resume 
+        <p className="flex items-center justify-center gap-2">
+            🌐 <strong>GitHub:</strong>
+            <a href="https://github.com/JeetDSharma" target="_blank" className="text-blue-500 underline">
+                Jeet Sharma
+            </a>
+        </p>
+        <p className="flex items-center justify-center gap-2">
+            💼 <strong>LinkedIn:</strong>
+            <a href="https://linkedin.com/in/jeetsharma" target="_blank" className="text-blue-500 underline">
+                linkedin.com/in/jeetsharma
+            </a>
+        </p>
+    </div>
+
+    {/* Buttons */}
+    <div className="mt-8 flex flex-wrap justify-center gap-6">
+        {/* Download Resume Button */}
+        <Button className="px-6 py-3 text-lg flex items-center gap-2" onClick={downloadResume}>
+            <Download className="w-5 h-5" />
+            Download Resume
         </Button>
-        {/* <Button className="mt-6 px-6 py-3 text-lg">
-          Get in Touch <LucideArrowRight className="ml-2 w-5 h-5" />
-        </Button> */}
-      </motion.div>
+
+        {/* Get in Touch Button */}
+        <a href={emailLink} className="inline-block">
+            <Button className="px-6 py-3 text-lg flex items-center gap-2">
+                <Mail className="w-5 h-5" />
+                Get in Touch
+            </Button>
+        </a>
+    </div>
+
+    {/* Social Media Icons */}
+    <div className="mt-8 flex justify-center space-x-6">
+        <a href="https://github.com/JeetDSharma" target="_blank" rel="noopener noreferrer" className="text-gray-600 dark:text-gray-300 hover:text-blue-500 transition">
+            <Github className="w-7 h-7" />
+        </a>
+        <a href="https://linkedin.com/in/jeetsharma" target="_blank" rel="noopener noreferrer" className="text-gray-600 dark:text-gray-300 hover:text-blue-500 transition">
+            <Linkedin className="w-7 h-7" />
+        </a>
+        <a href="mailto:jeetsharma2112@gmail.com" className="text-gray-600 dark:text-gray-300 hover:text-blue-500 transition">
+            <Mail className="w-7 h-7" />
+        </a>
+    </div>
+</motion.div>
+
 
     </section>
   );
