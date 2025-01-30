@@ -15,7 +15,6 @@ const Navbar = () => {
     }
   };
   const downloadResume = () => {
-    const downloadResume = () => {
       const resumeUrl = "/resume.pdf"; // Ensure this file is in the `/public` folder
       const link = document.createElement("a");
       link.href = resumeUrl;
@@ -23,7 +22,6 @@ const Navbar = () => {
       document.body.appendChild(link);
       link.click();
       document.body.removeChild(link);
-    };
   }
   const emailLink = `mailto:jeetsharma2112@gmail.com
     ?subject=Interested%20in%20Hiring%20You!
