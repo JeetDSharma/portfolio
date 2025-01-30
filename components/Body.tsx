@@ -107,10 +107,10 @@ const BodySection = () => {
         {Skills.map((skill, index) => (
             <motion.div 
                 key={index} 
-                variants={{
-                    hidden: { opacity: 0, y: 20 },
-                    visible: { opacity: 1, y: 0, transition: { delay: index * 0.1 } },
-                }}
+                initial={{ opacity: 0, x: index % 2 === 0 ? -250 : 250 }} 
+                whileInView={{ opacity: 1, x: 0 }}
+                transition={{ duration: 0.6, delay: index * 0.15 }}
+                viewport={{ once: false }}
                 className="text-center"
             >
                 <h3 className="text-xl font-semibold dark:text-white">{skill.title}</h3>
@@ -119,7 +119,7 @@ const BodySection = () => {
                         <motion.span 
                             key={i} 
                             whileHover={{ scale: 1.1 }}
-                            className="px-4 py-2 bg-gray-100 dark:bg-gray-800 rounded-md text-gray-700 dark:text-gray-300 shadow-sm transition-transform hover:scale-105"
+                            className="px-4 py-2 bg-gray-100 dark:bg-gray-800 rounded-md text-gray-700 dark:text-gray-300 shadow-sm  hover:scale-105 hover:bg-gray-200 dark:hover:bg-gray-700"
                         >
                             {s}
                         </motion.span>
@@ -129,6 +129,7 @@ const BodySection = () => {
         ))}
     </div>
 </motion.div>
+
 
             
 
