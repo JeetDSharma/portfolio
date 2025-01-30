@@ -287,182 +287,174 @@ const BodySection = () => {
             
 {/* Education Timeline */}
 <motion.div
-    initial="hidden"
-    whileInView="visible"
-    variants={timelineVariants}
-    transition={{ duration: 0.8, ease: "easeOut" }}
-    className="text-center"
+  initial="hidden"
+  whileInView="visible"
+  variants={timelineVariants}
+  transition={{ duration: 0.8, ease: "easeOut" }}
+  className="text-center"
 >
-    <h2 className="text-3xl md:text-5xl font-bold dark:text-white">
-        <Highlight>Education</Highlight>
-    </h2>
+  <h2 className="text-3xl md:text-5xl font-bold dark:text-white">
+    <Highlight>Education</Highlight>
+  </h2>
 
-    <div className="mt-10 flex flex-col relative space-y-16 max-w-4xl mx-auto">
-        {education.map((edu, index) => {
-            // const showYear = index === 0 || edu.year !== education[index - 1].year; // Display year only if it's different from the previous one
-            const showYear = false;
-            const isYearLeft = index % 2 === 0; // Alternate year position
+  <div className="mt-10 flex flex-col relative space-y-16 max-w-4xl mx-auto">
+    {education.map((edu, index) => {
+      return (
+        <div
+          key={index}
+          className="relative flex w-full justify-center items-center"
+        >
+          {/* Timeline Bar */}
+          <div className="absolute left-1/2 -translate-x-1/2 w-1 bg-gray-300 dark:bg-gray-600 h-full"></div>
+          <div className="absolute left-1/2 -translate-x-1/2 w-7 h-7 bg-green-500 dark:bg-green-400 rounded-full border-4 border-white dark:border-gray-900 shadow-lg flex items-center justify-center text-white font-bold">
+            🎓
+          </div>
 
-            return (
-                <div key={index} className="relative flex w-full">
-                    {/* Alternating Year Labels */}
-                    {showYear && (
-                        <motion.div
-                            initial={{ opacity: 0, x: isYearLeft ? -100 : 100 }} // Left for even, Right for odd
-                            animate={{ opacity: 1, x: 0 }}
-                            transition={{ duration: 0.6 }}
-                            className={`absolute top-1/2 -translate-y-1/2 text-xl font-bold text-gray-700 dark:text-gray-300 
-                                        ${isYearLeft ? "-left-24" : "-right-24 text-right"}`}
-                        >
-                            {edu.year}
-                        </motion.div>
-                    )}
+          {/* Education Card */}
+          <motion.div
+            initial={{ opacity: 0, x: index % 2 === 0 ? -150 : 150 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            transition={{ duration: 0.6, delay: index * 0.15 }}
+            viewport={{ once: false }}
+            whileHover={{
+              scale: 1.05,
+              boxShadow: "0px 0px 12px rgba(0, 132, 255, 0.3)",
+            }}
+            className={`relative w-full max-w-sm bg-white/70 dark:bg-gray-900/80 backdrop-blur-lg p-6 rounded-xl shadow-lg border border-gray-200 dark:border-gray-700 hover:shadow-xl md:max-w-[45%] ${
+              index % 2 === 0 ? "md:ml-auto" : "md:mr-auto"
+            }`}
+          >
+            {/* Degree and Institution */}
+            <div className="flex items-center space-x-3 mb-4">
+              <div className="w-10 h-10 bg-green-500 dark:bg-green-400 text-white rounded-full flex items-center justify-center text-lg font-semibold">
+                🎓
+              </div>
+              <h3 className="text-lg md:text-xl font-semibold dark:text-white">
+                {edu.degree}
+              </h3>
+            </div>
 
-                    {/* Timeline Bar & Dot */}
-                    <div className="absolute left-1/2 -translate-x-1/2 w-1 bg-gray-300 dark:bg-gray-600 h-full"></div>
-                    <div className="absolute left-1/2 -translate-x-1/2 w-7 h-7 bg-green-500 dark:bg-green-400 rounded-full border-4 border-white dark:border-gray-900 shadow-lg flex items-center justify-center text-white font-bold">
-                        🎓
-                    </div>
+            {/* Institution and Duration */}
+            <p className="text-sm font-medium text-gray-500 dark:text-gray-400">
+              {edu.institution}
+            </p>
+            <p className="text-sm font-medium text-gray-500 dark:text-gray-400 mb-2">
+              {edu.duration}
+            </p>
 
-                    {/* Education Card */}
-                    <motion.div 
-                        initial={{ opacity: 0, x: index % 2 === 0 ? -150 : 150 }}
-                        whileInView={{ opacity: 1, x: 0 }}
-                        transition={{ duration: 0.6, delay: index * 0.15 }}
-                        viewport={{ once: false }}
-                        whileHover={{ scale: 1.05, boxShadow: "0px 0px 12px rgba(0, 200, 0, 0.3)" }}
-                        className={`relative max-w-[45%] bg-white/70 dark:bg-gray-900/80 backdrop-blur-lg p-6 rounded-xl shadow-lg border border-gray-200 dark:border-gray-700 hover:shadow-xl ${index % 2 === 0 ? 'ml-auto' : 'mr-auto'}`}
-                    >
-                        {/* University & Degree */}
-                        <div className="flex items-center space-x-3 mb-4">
-                            <div className="w-10 h-10 bg-green-500 dark:bg-green-400 text-white rounded-full flex items-center justify-center text-lg font-semibold">
-                                🎓
-                            </div>
-                            <h3 className="text-lg md:text-xl font-semibold dark:text-white">{edu.degree}</h3>
-                        </div>
+            {/* GPA */}
+            <p className="text-sm font-medium text-gray-700 dark:text-gray-400">
+              {edu.gpa}
+            </p>
 
-                        {/* Institution & Duration */}
-                        <p className="text-sm font-medium text-gray-500 dark:text-gray-400">{edu.institution}</p>
-                        <p className="text-sm font-medium text-gray-500 dark:text-gray-400 mb-2">{edu.duration}</p>
-                        
-                        {/* GPA */}
-                        <p className="text-sm font-medium text-gray-700 dark:text-gray-400">{edu.gpa}</p>
-
-                        {/* Relevant Courses */}
-                        <div className="border-t border-gray-300 dark:border-gray-700 mt-2 pt-2">
-                            <h4 className="text-sm font-semibold text-gray-700 dark:text-gray-300 uppercase tracking-wide">
-                                Relevant Coursework:
-                            </h4>
-                            <div className="flex flex-wrap gap-2 mt-1">
-                                {edu.courses.map((course, i) => (
-                                    <span 
-                                        key={i} 
-                                        className="px-3 py-1 bg-gray-200 dark:bg-gray-700 text-gray-800 dark:text-gray-200 text-xs font-medium rounded-md"
-                                    >
-                                        {course}
-                                    </span>
-                                ))}
-                            </div>
-                        </div>
-                    </motion.div>
-                </div>
-            );
-        })}
-    </div>
+            {/* Relevant Coursework */}
+            <div className="border-t border-gray-300 dark:border-gray-700 mt-2 pt-2">
+              <h4 className="text-sm font-semibold text-gray-700 dark:text-gray-300 uppercase tracking-wide">
+                Relevant Coursework:
+              </h4>
+              <div className="flex flex-wrap gap-2 mt-1">
+                {edu.courses.map((course, i) => (
+                  <span
+                    key={i}
+                    className="px-3 py-1 bg-gray-200 dark:bg-gray-700 text-gray-800 dark:text-gray-200 text-xs font-medium rounded-md"
+                  >
+                    {course}
+                  </span>
+                ))}
+              </div>
+            </div>
+          </motion.div>
+        </div>
+      );
+    })}
+  </div>
 </motion.div>
 
-{/* Experience Timeline */}
+{/* Professional Experience Timeline */}
 <motion.div
-    initial="hidden"
-    whileInView="visible"
-    variants={timelineVariants}
-    transition={{ duration: 0.8, ease: "easeOut" }}
-    className="text-center"
+  initial="hidden"
+  whileInView="visible"
+  variants={timelineVariants}
+  transition={{ duration: 0.8, ease: "easeOut" }}
+  className="text-center"
 >
-    <h2 className="text-3xl md:text-5xl font-bold dark:text-white">
-        <Highlight>Professional Experience</Highlight>
-    </h2>
+  <h2 className="text-3xl md:text-5xl font-bold dark:text-white">
+    <Highlight>Professional Experience</Highlight>
+  </h2>
 
-    <div className="mt-10 flex flex-col relative space-y-16 max-w-4xl mx-auto">
-        {experiences.map((exp, index) => {
-            // const showYear = index === 0 || exp.year !== experiences[index - 1].year; // Display year only if it's different from the previous one
-            const showYear = false; // Always show year
-            const isYearLeft = index % 2 === 1; // Alternate year position
+  <div className="mt-10 flex flex-col relative space-y-16 max-w-4xl mx-auto">
+    {experiences.map((exp, index) => (
+      <div
+        key={index}
+        className="relative flex w-full justify-center items-center"
+      >
+        {/* Timeline Bar */}
+        <div className="absolute left-1/2 -translate-x-1/2 w-1 bg-gray-300 dark:bg-gray-600 h-full"></div>
+        <div className="absolute left-1/2 -translate-x-1/2 w-7 h-7 bg-blue-500 dark:bg-blue-400 rounded-full border-4 border-white dark:border-gray-900 shadow-lg flex items-center justify-center text-white font-bold">
+          {index + 1}
+        </div>
 
-            return (
-                <div key={index} className="relative flex w-full">
-                    {/* Alternating Year Labels */}
-                    {showYear && (
-                        <motion.div
-                            initial={{ opacity: 0, x: isYearLeft ? -100 : 100 }} // Alternate from left & right
-                            animate={{ opacity: 1, x: 0 }}
-                            transition={{ duration: 0.6 }}
-                            className={`absolute top-1/2 -translate-y-1/2 text-xl font-bold text-gray-700 dark:text-gray-300 
-                                        ${isYearLeft ? "-left-24  md:-left-24" : "-right-24 md:-right-24 text-right"}`}
-                        >
-                            {exp.year}
-                        </motion.div>
-                    )}
+        {/* Experience Card */}
+        <motion.div
+          initial={{ opacity: 0, x: index % 2 === 0 ? -150 : 150 }}
+          whileInView={{ opacity: 1, x: 0 }}
+          transition={{ duration: 0.6, delay: index * 0.15 }}
+          viewport={{ once: false }}
+          whileHover={{
+            scale: 1.05,
+            boxShadow: "0px 0px 12px rgba(0, 132, 255, 0.3)",
+          }}
+          className={`relative w-full max-w-sm bg-white/70 dark:bg-gray-900/80 backdrop-blur-lg p-6 rounded-xl shadow-lg border border-gray-200 dark:border-gray-700 hover:shadow-xl md:max-w-[45%] ${
+            index % 2 === 0 ? "md:ml-auto" : "md:mr-auto"
+          }`}
+        >
+          {/* Job Title & Company */}
+          <div className="flex items-center space-x-3 mb-4">
+            <div className="w-10 h-10 bg-blue-500 dark:bg-blue-400 text-white rounded-full flex items-center justify-center text-lg font-semibold">
+              {index + 1}
+            </div>
+            <h3 className="text-lg md:text-xl font-semibold dark:text-white">
+              {exp.title}
+            </h3>
+          </div>
 
-                    {/* Timeline Bar & Dot */}
-                    <div className="absolute left-1/2 -translate-x-1/2 w-1 bg-gray-300 dark:bg-gray-600 h-full"></div>
-                    <div className="absolute left-1/2 -translate-x-1/2 w-7 h-7 bg-blue-500 dark:bg-blue-400 rounded-full border-4 border-white dark:border-gray-900 shadow-lg flex items-center justify-center text-white font-bold">
-                        {index + 1}
-                    </div>
+          {/* Duration */}
+          <p className="text-sm font-medium text-gray-500 dark:text-gray-400 mb-2">
+            {exp.duration}
+          </p>
 
-                    {/* Experience Card */}
-                    <motion.div 
-                        initial={{ opacity: 0, x: index % 2 === 0 ? -150 : 150 }}
-                        whileInView={{ opacity: 1, x: 0 }}
-                        transition={{ duration: 0.6, delay: index * 0.15 }}
-                        viewport={{ once: false }}
-                        whileHover={{ scale: 1.05, boxShadow: "0px 0px 12px rgba(0, 132, 255, 0.3)" }}
-                        className={`relative max-w-[45%] bg-white/70 dark:bg-gray-900/80 backdrop-blur-lg p-6 rounded-xl shadow-lg border border-gray-200 dark:border-gray-700 hover:shadow-xl ${index % 2 === 0 ? 'ml-auto' : 'mr-auto'}`}
-                    >
-                        {/* Job Title & Company */}
-                        <div className="flex items-center space-x-3 mb-4">
-                            <div className="w-10 h-10 bg-blue-500 dark:bg-blue-400 text-white rounded-full flex items-center justify-center text-lg font-semibold">
-                                {index + 1}
-                            </div>
-                            <h3 className="text-lg md:text-xl font-semibold dark:text-white">{exp.title}</h3>
-                        </div>
+          {/* Responsibilities */}
+          <div className="border-t border-gray-300 dark:border-gray-700 mt-2 pt-2">
+            <h4 className="text-sm font-semibold text-gray-700 dark:text-gray-300 uppercase tracking-wide">
+              Responsibilities:
+            </h4>
+            <ul className="mt-2 text-gray-600 dark:text-gray-300 list-disc list-inside text-left space-y-1">
+              {exp.description.map((desc, i) => (
+                <li key={i}>{desc}</li>
+              ))}
+            </ul>
+          </div>
 
-                        {/* Experience Duration (Inside Card) */}
-                        <p className="text-sm font-medium text-gray-500 dark:text-gray-400 mb-2">{exp.duration}</p>
-
-                        {/* Work Responsibilities */}
-                        <div className="border-t border-gray-300 dark:border-gray-700 mt-2 pt-2">
-                            <h4 className="text-sm font-semibold text-gray-700 dark:text-gray-300 uppercase tracking-wide">
-                                Responsibilities:
-                            </h4>
-                            <ul className="mt-2 text-gray-600 dark:text-gray-300 list-disc list-inside text-left space-y-1">
-                                {exp.description.map((desc, i) => (
-                                    <li key={i}>{desc}</li>
-                                ))}
-                            </ul>
-                        </div>
-
-                        {/* Tech Stack */}
-                        <div className="border-t border-gray-300 dark:border-gray-700 mt-3 pt-2">
-                            <h4 className="text-sm font-semibold text-gray-700 dark:text-gray-300 uppercase tracking-wide">
-                                Tech Stack:
-                            </h4>
-                            <div className="flex flex-wrap gap-2 mt-1">
-                                {exp.techStack.map((tech, i) => (
-                                    <span 
-                                        key={i} 
-                                        className="px-3 py-1 bg-gray-200 dark:bg-gray-700 text-gray-800 dark:text-gray-200 text-xs font-medium rounded-md"
-                                    >
-                                        {tech}
-                                    </span>
-                                ))}
-                            </div>
-                        </div>
-                    </motion.div>
-                </div>
-            );
-        })}
-    </div>
+          {/* Tech Stack */}
+          <div className="border-t border-gray-300 dark:border-gray-700 mt-3 pt-2">
+            <h4 className="text-sm font-semibold text-gray-700 dark:text-gray-300 uppercase tracking-wide">
+              Tech Stack:
+            </h4>
+            <div className="flex flex-wrap gap-2 mt-1">
+              {exp.techStack.map((tech, i) => (
+                <span
+                  key={i}
+                  className="px-3 py-1 bg-gray-200 dark:bg-gray-700 text-gray-800 dark:text-gray-200 text-xs font-medium rounded-md"
+                >
+                  {tech}
+                </span>
+              ))}
+            </div>
+          </div>
+        </motion.div>
+      </div>
+    ))}
+  </div>
 </motion.div>
 
 
