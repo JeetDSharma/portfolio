@@ -37,6 +37,25 @@ const experiences = [
   },
 ];
 
+const Skills = [
+    {
+        title: "Languages",
+        skills: ["Python", "JavaScript", "Java", "C++", "SQL"],
+    },
+    {
+        title: "Frameworks",
+        skills: ["Next.js", "React.js", "Flask", "Express", "Node.js"],
+    },
+    {
+        title: "Tools",
+        skills: ["Git", "Docker", "Postman", "Wireshark", "Jupyter"],
+    },
+    {
+        title: "Cloud",
+        skills: ["AWS", "GCP", "Azure", "Heroku", "Vercel"],
+    },
+    ];
+
 const education = [
   {
     title: "M.S. in Computer Science",
@@ -72,6 +91,46 @@ const BodySection = () => {
           I have worked on projects related to <strong>blockchain tracing, AI-driven solutions, and enterprise security</strong>.
         </p>
       </motion.div>
+
+      {/* Skills */}
+      <motion.div
+    initial="hidden"
+    whileInView="visible"
+    variants={timelineVariants}
+    transition={{ duration: 0.8, ease: "easeOut" }}
+    className="text-center"
+>
+    <h2 className="text-3xl md:text-5xl font-bold dark:text-white">
+        <Highlight>Skills</Highlight>
+    </h2>
+    <div className="mt-6 flex flex-col space-y-6">
+        {Skills.map((skill, index) => (
+            <motion.div 
+                key={index} 
+                variants={{
+                    hidden: { opacity: 0, y: 20 },
+                    visible: { opacity: 1, y: 0, transition: { delay: index * 0.1 } },
+                }}
+                className="text-center"
+            >
+                <h3 className="text-xl font-semibold dark:text-white">{skill.title}</h3>
+                <div className="flex flex-wrap justify-center gap-4">
+                    {skill.skills.map((s, i) => (
+                        <motion.span 
+                            key={i} 
+                            whileHover={{ scale: 1.1 }}
+                            className="px-4 py-2 bg-gray-100 dark:bg-gray-800 rounded-md text-gray-700 dark:text-gray-300 shadow-sm transition-transform hover:scale-105"
+                        >
+                            {s}
+                        </motion.span>
+                    ))}
+                </div>
+            </motion.div>
+        ))}
+    </div>
+</motion.div>
+
+            
 
       {/* Education Timeline */}
       <motion.div
@@ -123,6 +182,8 @@ const BodySection = () => {
           ))}
         </div>
       </motion.div>
+
+
 
       {/* Contact & Portfolio */}
       <motion.div
