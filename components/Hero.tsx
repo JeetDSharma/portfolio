@@ -1,8 +1,9 @@
 "use client";
-import React from 'react'
-import { motion } from 'framer-motion'
-import { AuroraBackground } from './ui/aurora-backgrounds'
-import { Highlight, HeroHighlight } from './ui/hero-highlight';
+import React from "react";
+import { motion } from "framer-motion";
+import { AuroraBackground } from "./ui/aurora-backgrounds";
+import { Highlight } from "./ui/hero-highlight";
+
 const Hero = () => {
   const scrollToBody = () => {
     const bodySection = document.getElementById("body-section");
@@ -10,39 +11,39 @@ const Hero = () => {
       bodySection.scrollIntoView({ behavior: "smooth" });
     }
   };
+
   return (
-    <AuroraBackground className='max-h-[80vh]'>
-    <motion.div
-      initial={{ opacity: 0.0, y: 40 }}
-      whileInView={{ opacity: 1, y: 0 }}
-      transition={{
-        delay: 0.3,
-        duration: 0.8,
-        ease: "easeInOut",
-      }}
-      className="relative flex flex-col gap-4 items-center justify-center px-4"
-    >
-      <div className="text-3xl md:text-6xl font-bold uppercase dark:text-white text-center">
-  <span className='block mb-4'>
-
-  <Highlight>
-   Crafting the Future </Highlight>
-  </span>
-    
-    One Revolutionary Idea at a Time
-</div>
-
-      <div className="font-extralight text-base md:text-4xl dark:text-neutral-200 py-4">
-        This is Jeet Sharma
-      </div>
-      <button className="bg-black dark:bg-white rounded-full w-fit text-white dark:text-black px-4 py-2" 
-      onClick={scrollToBody}
+    <AuroraBackground className="min-h-screen pt-16 md:pt-20">
+      {/* Using `pt-16` (~4rem or 64px) for mobile, `pt-20` (~5rem or 80px) for larger screens */}
+      <motion.div
+        initial={{ opacity: 0.0, y: 40 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        transition={{
+          delay: 0.3,
+          duration: 0.8,
+          ease: "easeInOut",
+        }}
+        className="relative flex flex-col gap-4 items-center justify-center px-4"
       >
-        Let's Dive In
-      </button>
-    </motion.div>
-  </AuroraBackground>
-  )
-}
+        <div className="text-3xl md:text-6xl font-bold uppercase dark:text-white text-center">
+          <span className="block mb-4">
+            <Highlight>Crafting the Future</Highlight>
+          </span>
+          One Revolutionary Idea at a Time
+        </div>
 
-export default Hero
+        <div className="font-extralight text-base md:text-4xl dark:text-neutral-200 py-4">
+          This is Jeet Sharma
+        </div>
+        <button
+          className="bg-black dark:bg-white rounded-full w-fit text-white dark:text-black px-4 py-2"
+          onClick={scrollToBody}
+        >
+          Let's Dive In
+        </button>
+      </motion.div>
+    </AuroraBackground>
+  );
+};
+
+export default Hero;
