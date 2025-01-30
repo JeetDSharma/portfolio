@@ -321,7 +321,7 @@ const BodySection = () => {
                         initial={{ opacity: 0, x: index % 2 === 0 ? -150 : 150 }}
                         whileInView={{ opacity: 1, x: 0 }}
                         transition={{ duration: 0.6, delay: index * 0.15 }}
-                        viewport={{ once: true }}
+                        viewport={{ once: false }}
                         whileHover={{ scale: 1.05, boxShadow: "0px 0px 12px rgba(0, 200, 0, 0.3)" }}
                         className={`relative max-w-[45%] bg-white/70 dark:bg-gray-900/80 backdrop-blur-lg p-6 rounded-xl shadow-lg border border-gray-200 dark:border-gray-700 hover:shadow-xl ${index % 2 === 0 ? 'ml-auto' : 'mr-auto'}`}
                     >
@@ -407,7 +407,7 @@ const BodySection = () => {
                         initial={{ opacity: 0, x: index % 2 === 0 ? -150 : 150 }}
                         whileInView={{ opacity: 1, x: 0 }}
                         transition={{ duration: 0.6, delay: index * 0.15 }}
-                        viewport={{ once: true }}
+                        viewport={{ once: false }}
                         whileHover={{ scale: 1.05, boxShadow: "0px 0px 12px rgba(0, 132, 255, 0.3)" }}
                         className={`relative max-w-[45%] bg-white/70 dark:bg-gray-900/80 backdrop-blur-lg p-6 rounded-xl shadow-lg border border-gray-200 dark:border-gray-700 hover:shadow-xl ${index % 2 === 0 ? 'ml-auto' : 'mr-auto'}`}
                     >
