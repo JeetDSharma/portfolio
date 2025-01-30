@@ -461,8 +461,8 @@ const BodySection = () => {
           <Highlight>Let's Connect</Highlight>
         </h2>
         <p className="mt-4 text-lg text-gray-600 dark:text-gray-300">
-          📩 <strong>Email:</strong> jeetsharma2112@gmail.com | 🌐 <strong>Portfolio:</strong> 
-          <a href="https://jeet-sharma.vercel.app/" target="_blank" className="underline"> Jeet Sharma</a>
+          📩 <strong>Email:</strong> jeetsharma2112@gmail.com | 🌐 <strong>Github:</strong> 
+          <a href="https://github.com/JeetDSharma" target="_blank" className="underline"> Jeet Sharma</a>
         </p>
         <Button className="mt-6 px-6 py-3 text-lg">
           Get in Touch <LucideArrowRight className="ml-2 w-5 h-5" />
