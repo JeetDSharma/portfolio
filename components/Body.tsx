@@ -112,7 +112,7 @@ const projects = [
         description: "Built a full-stack AI-driven recipe generation platform enabling users to create personalized meals based on available ingredients, dietary preferences, and allergies, leading to a 40% reduction in recipe search time.",
         techStack: ["Next.js", "Tailwind CSS", "FastAPI", "PostgreSQL", "GPT-4o", "JWT", "RESTful APIs"],
         links: {
-            github: "https://github.com/ibizabroker/520-project",
+            github: "https://github.com/JeetDSharma/AI-Powered-Recipe-Social-App",
             demo: null
         }
     },
