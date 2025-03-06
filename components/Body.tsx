@@ -104,7 +104,8 @@ const projects = [
         techStack: ["Python", "PyTorch", "TensorFlow", "Hugging Face", "DistilBERT", "CodeBERT"],
         links: {
             github: null,
-            demo: "https://drive.google.com/file/d/1sT_glWXGqHPYoWQDw0jpKA6_r_wKf13G/view?usp=drive_link"
+            demo: null,
+            paperLink: "https://drive.google.com/file/d/1sT_glWXGqHPYoWQDw0jpKA6_r_wKf13G/view?usp=drive_link"
         }
     },
     {
