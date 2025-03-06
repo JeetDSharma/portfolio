@@ -52,8 +52,10 @@ const Navbar = () => {
         <button className="hover:scale-105 transition-all duration-300" onClick={scrollToBody}>
           About Me
         </button>
-        <button className="hover:scale-105 transition-all duration-300" onClick={downloadResume}>
+        <button className="hover:scale-105 transition-all duration-300">
+          <a  href="/resume.pdf" target="_blank" rel="noreferrer">
           Resume
+          </a>
         </button>
         <button
           className="relative inline-flex h-12 overflow-hidden rounded-full p-[1px] focus:outline-none focus:ring-2 focus:ring-slate-400 focus:ring-offset-2 focus:ring-offset-slate-50"
