@@ -99,12 +99,12 @@ const education = [
 
 const projects = [
     {
-        title: "RouteLLM",
+        title: "LLM-Router",
         description: "Engineered an LLM routing system that optimally directs prompts to models based on cost-performance trade-offs, reducing reliance on expensive models like GPT-4o while maintaining high output quality.",
         techStack: ["Python", "PyTorch", "TensorFlow", "Hugging Face", "DistilBERT", "CodeBERT"],
         links: {
             github: null,
-            demo: null
+            demo: "https://drive.google.com/file/d/1sT_glWXGqHPYoWQDw0jpKA6_r_wKf13G/view?usp=drive_link"
         }
     },
     {
