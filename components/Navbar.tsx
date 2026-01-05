@@ -28,7 +28,7 @@ const Navbar = () => {
   return (
     <nav className="flex justify-between items-center px-6 py-4 shadow-md fixed w-full top-0 z-50 bg-background border-b border-border text-foreground">
       {/* Logo */}
-      <div className="text-2xl font-bold">Jeet's Portfolio</div>
+      <div className="text-xl font-bold tracking-tight">Jeet Sharma</div>
 
       {/* Hamburger Menu (Mobile) */}
       <div className="md:hidden">

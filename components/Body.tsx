@@ -23,11 +23,6 @@ const experiences = [
       { metric: "<1s", label: "Latency" },
       { metric: "7+", label: "Integrations" },
     ],
-    description: [
-      "Integrated vector-based semantic search (Pinecone) achieving 95%+ accuracy in RAG-based responses.",
-      "Architected event-driven backend enabling sub-second latency across 7+ real-time integrations (WhatsApp, SMS, Gmail, Twilio).",
-      "Built robust validation and error-handling layers ensuring reliable data flow across asynchronous workflows.",
-    ],
     techStack: [
       "Node.js",
       "TypeScript",
@@ -45,12 +40,6 @@ const experiences = [
       { metric: "$20M+", label: "Revenue Impact" },
       { metric: "20+", label: "REST APIs" },
       { metric: "0→1", label: "Platform Built" },
-    ],
-    description: [
-      "Founding engineer architecting AI-driven forensics platform from zero to production serving enterprise clients.",
-      "Designed scalable data pipelines and 20+ REST APIs supporting high-volume investigative workflows.",
-      "Built enterprise-grade UIs optimized for large datasets and complex forensic analysis tasks.",
-      "Led engineering team establishing Git workflows, code reviews, and release practices maintaining delivery velocity.",
     ],
     techStack: [
       "Next.js",
@@ -71,11 +60,6 @@ const experiences = [
       { metric: "2B+", label: "Records" },
       { metric: "70%", label: "Performance ↑" },
       { metric: "<1s", label: "Stream Latency" },
-    ],
-    description: [
-      "Architected high-performance distributed graph database handling 2B+ records with sharded architecture.",
-      "Optimized PostgreSQL queries improving performance by 70% through indexing and connection pooling.",
-      "Designed real-time streaming pipeline achieving sub-second latency using WebSockets.",
     ],
     techStack: ["Python", "Node.js", "MongoDB", "LevelDB", "Docker", "Linux"],
   },
@@ -132,25 +116,12 @@ const education = [
     institution: "University of Massachusetts Amherst",
     duration: "Sep 2024 – May 2026",
     gpa: "GPA: 3.86/4.0",
-    courses: [
-      "Neural Networks",
-      "Applied Statistics",
-      "Software Engineering",
-      "Scalable Data Systems",
-    ],
     year: "2024",
   },
   {
     degree: "Bachelors of Engineering in Computer Engineering",
     institution: "University of Mumbai",
     duration: "Aug 2019 – May 2023",
-    gpa: "GPA: 3.87/4.0",
-    courses: [
-      "Data Structures",
-      "Algorithms",
-      "Operating Systems",
-      "Database Management",
-    ],
     year: "2019",
   },
 ];
@@ -169,6 +140,7 @@ const projects = [
       "Docker",
       "AWS",
     ],
+    isEnterprise: true,
     links: {
       github: null,
       demo: "https://myfrt.com/",
@@ -331,12 +303,19 @@ const BodySection = () => {
               viewport={{ once: true }}
               className="bg-white dark:bg-gray-950 border border-gray-200 dark:border-gray-800 hover:border-gray-900 dark:hover:border-gray-100 transition-colors duration-300 p-8"
             >
-              {/* Patent Badge */}
-              {project.hasPatent && (
-                <div className="mb-6 pb-6 border-b border-gray-200 dark:border-gray-800">
-                  <span className="text-[9px] font-mono uppercase tracking-widest bg-gray-900 dark:bg-gray-100 text-white dark:text-black px-2 py-1">
-                    PATENT
-                  </span>
+              {/* Badges */}
+              {(project.hasPatent || project.isEnterprise) && (
+                <div className="mb-6 pb-6 border-b border-gray-200 dark:border-gray-800 flex gap-2">
+                  {project.isEnterprise && (
+                    <span className="text-[9px] font-mono uppercase tracking-widest bg-gray-900 dark:bg-gray-100 text-white dark:text-black px-2 py-1">
+                      ENTERPRISE
+                    </span>
+                  )}
+                  {project.hasPatent && (
+                    <span className="text-[9px] font-mono uppercase tracking-widest bg-gray-900 dark:bg-gray-100 text-white dark:text-black px-2 py-1">
+                      PATENT
+                    </span>
+                  )}
                 </div>
               )}
 
@@ -446,7 +425,7 @@ const BodySection = () => {
                   }`}
                 >
                   {/* Degree and Institution */}
-                  <div className="mb-3">
+                  <div>
                     <h3 className="text-xl font-semibold text-gray-900 dark:text-white mb-1 tracking-tight">
                       {edu.degree}
                     </h3>
@@ -457,23 +436,11 @@ const BodySection = () => {
                       <p className="text-sm font-mono text-gray-500 dark:text-gray-400 tracking-wide">
                         {edu.duration}
                       </p>
-                      <p className="text-sm font-mono text-gray-900 dark:text-gray-100">
-                        {edu.gpa}
-                      </p>
-                    </div>
-                  </div>
-
-                  {/* Relevant Coursework */}
-                  <div className="mt-6 pt-4 border-t border-gray-200 dark:border-gray-800">
-                    <div className="flex flex-wrap gap-2">
-                      {edu.courses.map((course, i) => (
-                        <span
-                          key={i}
-                          className="px-2 py-1 bg-gray-100 dark:bg-gray-900 text-gray-900 dark:text-gray-100 text-xs font-mono border border-gray-200 dark:border-gray-800"
-                        >
-                          {course}
-                        </span>
-                      ))}
+                      {edu.gpa && (
+                        <p className="text-sm font-mono text-gray-900 dark:text-gray-100">
+                          {edu.gpa}
+                        </p>
+                      )}
                     </div>
                   </div>
                 </motion.div>
