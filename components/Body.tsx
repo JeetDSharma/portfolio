@@ -112,14 +112,14 @@ const Skills = [
 
 const education = [
   {
-    degree: "Masters of Science in Computer Science",
+    degree: "Master of Science in Computer Science",
     institution: "University of Massachusetts Amherst",
     duration: "Sep 2024 – May 2026",
     gpa: "GPA: 3.86/4.0",
     year: "2024",
   },
   {
-    degree: "Bachelors of Engineering in Computer Engineering",
+    degree: "Bachelor of Engineering in Computer Engineering",
     institution: "University of Mumbai",
     duration: "Aug 2019 – May 2023",
     year: "2019",
