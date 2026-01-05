@@ -18,10 +18,12 @@ const experiences = [
     title: "Full Stack Development Intern @ Karpuragaurai Technologies",
     duration: "May 2025 – Aug 2025",
     year: "2025",
+    achievement:
+      "Built event-driven RAG system with semantic search across 7 real-time communication channels",
     impact: [
-      { metric: "95%+", label: "Accuracy" },
-      { metric: "<1s", label: "Latency" },
-      { metric: "7+", label: "Integrations" },
+      { metric: "95%+", label: "RAG Accuracy" },
+      { metric: "<1s", label: "Response Time" },
+      { metric: "7+", label: "Live Channels" },
     ],
     techStack: [
       "Node.js",
@@ -36,10 +38,12 @@ const experiences = [
     title: "Founding Full Stack Engineer @ Lab Systems Pvt. Ltd.",
     duration: "May 2023 – Aug 2024",
     year: "2023",
+    achievement:
+      "Architected AI-driven forensics platform from zero to production serving enterprise clients",
     impact: [
       { metric: "$20M+", label: "Revenue Impact" },
-      { metric: "20+", label: "REST APIs" },
-      { metric: "0→1", label: "Platform Built" },
+      { metric: "20+", label: "APIs Designed" },
+      { metric: "0→1", label: "Founding Engineer" },
     ],
     techStack: [
       "Next.js",
@@ -56,9 +60,11 @@ const experiences = [
     title: "Full Stack Software Engineer Intern @ Lab Systems Pvt. Ltd.",
     duration: "Aug 2022 – Apr 2023",
     year: "2022",
+    achievement:
+      "Built distributed graph database with sharded architecture and real-time streaming pipeline",
     impact: [
-      { metric: "2B+", label: "Records" },
-      { metric: "70%", label: "Performance ↑" },
+      { metric: "2B+", label: "Records Processed" },
+      { metric: "70%", label: "Query Speed ↑" },
       { metric: "<1s", label: "Stream Latency" },
     ],
     techStack: ["Python", "Node.js", "MongoDB", "LevelDB", "Docker", "Linux"],
@@ -491,7 +497,7 @@ const BodySection = () => {
 
                 <div className="p-8 pt-12">
                   {/* Job Title & Company */}
-                  <div className="mb-8">
+                  <div className="mb-6">
                     <h3 className="text-xl font-bold text-gray-900 dark:text-white mb-2 tracking-tight">
                       {exp.title}
                     </h3>
@@ -499,6 +505,11 @@ const BodySection = () => {
                       {exp.duration}
                     </p>
                   </div>
+
+                  {/* Achievement Context */}
+                  <p className="text-sm text-gray-700 dark:text-gray-300 mb-6 leading-relaxed">
+                    {exp.achievement}
+                  </p>
 
                   {/* Visual Impact Metrics */}
                   <div className="grid grid-cols-3 gap-4 mb-8">
