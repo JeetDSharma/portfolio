@@ -18,6 +18,11 @@ const experiences = [
     title: "Full Stack Development Intern @ Karpuragaurai Technologies",
     duration: "May 2025 – Aug 2025",
     year: "2025",
+    impact: [
+      { metric: "95%+", label: "Accuracy" },
+      { metric: "<1s", label: "Latency" },
+      { metric: "7+", label: "Integrations" },
+    ],
     description: [
       "Integrated vector-based semantic search (Pinecone) achieving 95%+ accuracy in RAG-based responses.",
       "Architected event-driven backend enabling sub-second latency across 7+ real-time integrations (WhatsApp, SMS, Gmail, Twilio).",
@@ -31,12 +36,16 @@ const experiences = [
       "WebSockets",
       "Docker",
     ],
-    highlight: "95%+ Accuracy",
   },
   {
     title: "Founding Full Stack Engineer @ Lab Systems Pvt. Ltd.",
     duration: "May 2023 – Aug 2024",
     year: "2023",
+    impact: [
+      { metric: "$20M+", label: "Revenue Impact" },
+      { metric: "20+", label: "REST APIs" },
+      { metric: "0→1", label: "Platform Built" },
+    ],
     description: [
       "Founding engineer architecting AI-driven forensics platform from zero to production serving enterprise clients.",
       "Designed scalable data pipelines and 20+ REST APIs supporting high-volume investigative workflows.",
@@ -53,72 +62,64 @@ const experiences = [
       "AWS",
       "Cloudflare",
     ],
-    highlight: "Founding Engineer",
   },
   {
     title: "Full Stack Software Engineer Intern @ Lab Systems Pvt. Ltd.",
     duration: "Aug 2022 – Apr 2023",
     year: "2022",
+    impact: [
+      { metric: "2B+", label: "Records" },
+      { metric: "70%", label: "Performance ↑" },
+      { metric: "<1s", label: "Stream Latency" },
+    ],
     description: [
-      "Developed cryptocurrency forensics solutions reducing manual processing time by 70%.",
-      "Designed hybrid MongoDB-LevelDB storage enabling fast lookups across 2B+ transaction records.",
-      "Contributed to investigations involving global clients with $20M+ financial exposure.",
+      "Architected high-performance distributed graph database handling 2B+ records with sharded architecture.",
+      "Optimized PostgreSQL queries improving performance by 70% through indexing and connection pooling.",
+      "Designed real-time streaming pipeline achieving sub-second latency using WebSockets.",
     ],
     techStack: ["Python", "Node.js", "MongoDB", "LevelDB", "Docker", "Linux"],
-    highlight: "70% Faster",
   },
 ];
 
 const Skills = [
   {
-    title: "Languages & Databases",
-    skills: [
-      "Python",
-      "JavaScript",
-      "TypeScript",
-      "C++",
-      "C",
-      "SQL",
-      "NoSQL",
-      "GraphQL",
-      "Bash",
-    ],
+    title: "Application Layer",
+    skills: ["React.js", "Next.js", "TypeScript", "TailwindCSS"],
   },
   {
-    title: "Frameworks & Libraries",
+    title: "Business Logic",
     skills: [
-      "React.js",
-      "Next.js",
-      "Express.js",
-      "Flask",
       "Node.js",
-      "Pandas",
-      "Polars",
-      "PyTorch",
-      "TailwindCSS",
+      "Express.js",
+      "Python",
+      "Flask",
+      "C++",
+      "REST APIs",
+      "GraphQL",
     ],
   },
   {
-    title: "Systems & Infrastructure",
+    title: "Data Layer",
     skills: [
-      "Docker",
-      "AWS",
-      "Cloudflare",
-      "Linux",
-      "CI/CD",
-      "Redis",
-      "Elasticsearch",
-      "Neo4j",
+      "PostgreSQL",
       "MongoDB",
+      "Redis",
+      "Neo4j",
+      "Elasticsearch",
+      "Pinecone",
+      "LevelDB",
     ],
   },
   {
-    title: "Core Expertise",
+    title: "Infrastructure",
+    skills: ["Docker", "AWS", "Linux", "CI/CD", "Cloudflare", "WebSockets"],
+  },
+  {
+    title: "Architecture Patterns",
     skills: [
-      "Backend Engineering",
       "Distributed Systems",
       "Event-Driven Architecture",
-      "REST APIs",
+      "Microservices",
       "Data Pipelines",
       "System Design",
     ],
@@ -127,7 +128,7 @@ const Skills = [
 
 const education = [
   {
-    degree: "M.S. in Computer Science",
+    degree: "Masters of Science in Computer Science",
     institution: "University of Massachusetts Amherst",
     duration: "Sep 2024 – May 2026",
     gpa: "GPA: 3.86/4.0",
@@ -140,7 +141,7 @@ const education = [
     year: "2024",
   },
   {
-    degree: "B.E. in Computer Engineering",
+    degree: "Bachelors of Engineering in Computer Engineering",
     institution: "University of Mumbai",
     duration: "Aug 2019 – May 2023",
     gpa: "GPA: 3.87/4.0",
@@ -156,22 +157,49 @@ const education = [
 
 const projects = [
   {
-    title: "LLM-Router: Intelligent Model Selection",
+    title: "myFrt: Digital Forensics Platform",
     description:
-      "Fine-tuned DistilBERT and CodeBERT classifiers to dynamically route LLM requests, reducing inference costs by ~70% while preserving output quality. Implemented guardrails and fallback mechanisms for predictable system behavior.",
+      "Production-grade digital forensics tool for processing and analyzing digital evidence. Enterprise platform handling large-scale forensic investigations with advanced data extraction and analysis capabilities.",
     techStack: [
+      "Next.js",
       "Python",
-      "PyTorch",
-      "TensorFlow",
-      "Hugging Face",
-      "DistilBERT",
-      "CodeBERT",
+      "C++",
+      "MongoDB",
+      "Elasticsearch",
+      "Docker",
+      "AWS",
     ],
     links: {
       github: null,
+      demo: "https://myfrt.com/",
+      paperLink: null,
+      patentLink: null,
+    },
+  },
+  {
+    title: "MediLog: Blockchain-Based Pharmaceutical Supply Chain System",
+    description:
+      "Designed and deployed an extensive end-to-end pharmaceutical supply chain solution leveraging blockchain technology, ensuring tamper-proof tracking of medical drugs and presented the solution to the Indian Medical Association.",
+    techStack: ["Ethereum", "Solidity", "MERN Stack"],
+    hasPatent: true,
+    links: {
+      github: null,
       demo: null,
-      paperLink:
-        "https://drive.google.com/file/d/1sT_glWXGqHPYoWQDw0jpKA6_r_wKf13G/view?usp=drive_link",
+      paperLink: null,
+      patentLink:
+        "https://register.dpma.de/DPMAregister/pat/register?AKZ=2020231028233&CURSOR=0",
+    },
+  },
+  {
+    title: "LLM-Router: Intelligent Model Selection",
+    description:
+      "Fine-tuned DistilBERT and CodeBERT classifiers to dynamically route LLM requests, reducing inference costs by ~70% while preserving output quality. Implemented guardrails and fallback mechanisms for predictable system behavior.",
+    techStack: ["Python", "PyTorch", "HuggingFace", "FastAPI", "Docker"],
+    links: {
+      github: "https://github.com/JeetDSharma/LLM-Router",
+      demo: null,
+      paperLink: null,
+      patentLink: null,
     },
   },
   {
@@ -190,18 +218,6 @@ const projects = [
     links: {
       github: "https://github.com/JeetDSharma/AI-Powered-Recipe-Social-App",
       demo: null,
-    },
-  },
-  {
-    title: "MediLog: Blockchain-Based Pharmaceutical Supply Chain System",
-    description:
-      "Designed and deployed an extensive end-to-end pharmaceutical supply chain solution leveraging blockchain technology, ensuring tamper-proof tracking of medical drugs and presented the solution to the Indian Medical Association.",
-    techStack: ["Ethereum", "Solidity", "MERN Stack"],
-    links: {
-      github: null,
-      demo: null,
-      patentLink:
-        "https://register.dpma.de/DPMAregister/pat/register?AKZ=2020231028233&CURSOR=0",
     },
   },
   {
@@ -236,50 +252,14 @@ const BodySection = () => {
       >
         <h2 className="text-3xl md:text-5xl font-bold text-gray-900 dark:text-white mb-8">
           <span className="border-b-4 border-gray-900 dark:border-gray-100 pb-2">
-            About Me
+            About
           </span>
         </h2>
-        <p className="mt-4 text-lg md:text-xl text-gray-600 dark:text-gray-300 max-w-3xl mx-auto leading-relaxed">
-          <strong className="text-gray-800 dark:text-white">
-            Founding software engineer
-          </strong>{" "}
-          specializing in{" "}
-          <strong className="text-blue-600 dark:text-blue-400">
-            backend systems, distributed architecture, and production AI
-          </strong>
-          . Proven track record architecting{" "}
-          <strong className="text-gray-800 dark:text-white">
-            zero-to-production platforms
-          </strong>{" "}
-          serving enterprise clients, with expertise in{" "}
-          <strong className="text-blue-600 dark:text-blue-400">
-            scalable data pipelines handling billions of records
-          </strong>{" "}
-          and
-          <strong className="text-gray-800 dark:text-white">
-            event-driven systems achieving sub-second latency
-          </strong>
-          .
-        </p>
-        <p className="mt-4 text-lg md:text-xl text-gray-600 dark:text-gray-300 max-w-3xl mx-auto leading-relaxed">
-          Currently pursuing{" "}
-          <strong className="text-gray-800 dark:text-white">
-            MS in Computer Science at UMass Amherst
-          </strong>{" "}
-          (GPA: 3.86) with focus on scalable data systems and applied machine
-          learning.
-          <strong className="text-blue-600 dark:text-blue-400">
-            Reduced costs by 70%
-          </strong>{" "}
-          through intelligent system design,
-          <strong className="text-blue-600 dark:text-blue-400">
-            improved processing speeds by 70%
-          </strong>
-          , and delivered systems supporting{" "}
-          <strong className="text-gray-800 dark:text-white">
-            $20M+ in enterprise operations
-          </strong>
-          .
+        <p className="text-base md:text-lg text-gray-600 dark:text-gray-400 max-w-2xl mx-auto leading-relaxed">
+          Founding engineer building production-grade distributed systems and AI
+          platforms.
+          <br />
+          From zero to enterprise scale.
         </p>
       </motion.div>
 
@@ -293,23 +273,29 @@ const BodySection = () => {
       >
         <h2 className="text-3xl md:text-5xl font-bold text-gray-900 dark:text-white mb-12 text-center">
           <span className="border-b-4 border-gray-900 dark:border-gray-100 pb-2">
-            Technical Stack
+            System Architecture
           </span>
         </h2>
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+        <div className="max-w-3xl mx-auto space-y-1">
           {Skills.map((skill, index) => (
             <div
               key={index}
-              className="bg-white dark:bg-gray-950 p-6 border border-gray-200 dark:border-gray-800 hover:border-gray-900 dark:hover:border-gray-100 transition-colors duration-300"
+              className="bg-white dark:bg-gray-950 border-l-4 border-gray-900 dark:border-gray-100 p-6 hover:bg-gray-50 dark:hover:bg-gray-900 transition-colors duration-300"
             >
-              <h3 className="text-sm font-mono uppercase tracking-wider text-gray-900 dark:text-gray-100 mb-4 border-b border-gray-200 dark:border-gray-800 pb-2">
-                {skill.title}
-              </h3>
+              <div className="flex items-center justify-between mb-3">
+                <h3 className="text-xs font-mono uppercase tracking-widest text-gray-900 dark:text-gray-100">
+                  {skill.title}
+                </h3>
+                <div className="h-px flex-1 mx-4 bg-gray-200 dark:bg-gray-800"></div>
+                <span className="text-[9px] font-mono text-gray-400 dark:text-gray-600">
+                  LAYER {index + 1}
+                </span>
+              </div>
               <div className="flex flex-wrap gap-2">
                 {skill.skills.map((s, i) => (
                   <span
                     key={i}
-                    className="px-2 py-1 text-xs font-mono text-gray-700 dark:text-gray-300 bg-gray-50 dark:bg-gray-900 border border-gray-200 dark:border-gray-800"
+                    className="px-2 py-1 text-[10px] font-mono text-gray-600 dark:text-gray-400 bg-gray-100 dark:bg-gray-900 border border-gray-200 dark:border-gray-800"
                   >
                     {s}
                   </span>
@@ -334,8 +320,8 @@ const BodySection = () => {
           </span>
         </h2>
 
-        {/* Project Cards Grid */}
-        <div className="space-y-8">
+        {/* Project Cards */}
+        <div className="space-y-6">
           {projects.map((project, index) => (
             <motion.div
               key={index}
@@ -343,10 +329,19 @@ const BodySection = () => {
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5, delay: index * 0.1 }}
               viewport={{ once: true }}
-              className="bg-white dark:bg-gray-950 border border-gray-200 dark:border-gray-800 p-8 hover:border-gray-900 dark:hover:border-gray-100 transition-colors duration-300"
+              className="bg-white dark:bg-gray-950 border border-gray-200 dark:border-gray-800 hover:border-gray-900 dark:hover:border-gray-100 transition-colors duration-300 p-8"
             >
+              {/* Patent Badge */}
+              {project.hasPatent && (
+                <div className="mb-6 pb-6 border-b border-gray-200 dark:border-gray-800">
+                  <span className="text-[9px] font-mono uppercase tracking-widest bg-gray-900 dark:bg-gray-100 text-white dark:text-black px-2 py-1">
+                    PATENT
+                  </span>
+                </div>
+              )}
+
               {/* Project Title */}
-              <h3 className="text-xl font-semibold text-gray-900 dark:text-white mb-3 tracking-tight">
+              <h3 className="text-xl font-bold text-gray-900 dark:text-white mb-3 tracking-tight">
                 {project.title}
               </h3>
 
@@ -356,18 +351,18 @@ const BodySection = () => {
               </p>
 
               {/* Tech Stack */}
-              <div className="flex flex-wrap gap-2 mb-6 pb-6 border-b border-gray-200 dark:border-gray-800">
+              <div className="flex flex-wrap gap-2 mb-6">
                 {project.techStack.map((tech, i) => (
                   <span
                     key={i}
-                    className="px-2 py-1 text-xs font-mono text-gray-700 dark:text-gray-300 bg-gray-50 dark:bg-gray-900 border border-gray-200 dark:border-gray-800"
+                    className="px-2 py-1 text-[10px] font-mono text-gray-600 dark:text-gray-400 bg-gray-50 dark:bg-gray-900 border border-gray-200 dark:border-gray-800"
                   >
                     {tech}
                   </span>
                 ))}
               </div>
 
-              {/* Links Section */}
+              {/* Links */}
               <div className="flex flex-wrap gap-4 text-xs font-mono uppercase tracking-wider">
                 {project.links.github && (
                   <a
@@ -529,8 +524,8 @@ const BodySection = () => {
 
                 <div className="p-8 pt-12">
                   {/* Job Title & Company */}
-                  <div className="mb-6">
-                    <h3 className="text-2xl font-bold text-gray-900 dark:text-white mb-2 tracking-tight">
+                  <div className="mb-8">
+                    <h3 className="text-xl font-bold text-gray-900 dark:text-white mb-2 tracking-tight">
                       {exp.title}
                     </h3>
                     <p className="text-xs font-mono uppercase tracking-widest text-gray-500 dark:text-gray-400">
@@ -538,14 +533,19 @@ const BodySection = () => {
                     </p>
                   </div>
 
-                  {/* Impact Highlights */}
-                  <div className="mb-6 space-y-3">
-                    {exp.description.map((desc, i) => (
-                      <div key={i} className="flex items-start gap-4 group">
-                        <div className="w-1 h-1 bg-gray-900 dark:bg-gray-100 mt-2 flex-shrink-0 group-hover:w-4 transition-all duration-200"></div>
-                        <p className="text-sm text-gray-700 dark:text-gray-300 leading-relaxed">
-                          {desc}
-                        </p>
+                  {/* Visual Impact Metrics */}
+                  <div className="grid grid-cols-3 gap-4 mb-8">
+                    {exp.impact.map((item, i) => (
+                      <div
+                        key={i}
+                        className="text-center p-6 bg-gray-50 dark:bg-gray-900 border border-gray-200 dark:border-gray-800 hover:border-gray-900 dark:hover:border-gray-100 transition-colors"
+                      >
+                        <div className="text-4xl font-bold text-gray-900 dark:text-white mb-2 font-mono">
+                          {item.metric}
+                        </div>
+                        <div className="text-[9px] font-mono uppercase tracking-widest text-gray-500 dark:text-gray-400">
+                          {item.label}
+                        </div>
                       </div>
                     ))}
                   </div>
