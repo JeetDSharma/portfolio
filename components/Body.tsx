@@ -5,10 +5,7 @@ import { motion } from "framer-motion";
 import { Highlight } from "@/components/ui/hero-highlight";
 import { Button } from "@/components/ui/button";
 import { LucideArrowRight } from "lucide-react";
-import { CACHE_ONE_YEAR } from "next/dist/lib/constants";
-import { LucideDownload, LucideMail } from "lucide-react";
 import EmailWithCopy from "./EmailClipboard";
-
 import { Download, Mail, Github, Linkedin } from "lucide-react";
 
 const timelineVariants = {
@@ -18,74 +15,135 @@ const timelineVariants = {
 
 const experiences = [
   {
-    title: "Software Developer @ Lab Systems Pvt. Ltd.",
-    duration: "Aug 2023 – Aug 2024",
+    title: "Full Stack Development Intern @ Karpuragaurai Technologies",
+    duration: "May 2025 – Aug 2025",
+    year: "2025",
+    description: [
+      "Integrated vector-based semantic search (Pinecone) achieving 95%+ accuracy in RAG-based responses.",
+      "Architected event-driven backend enabling sub-second latency across 7+ real-time integrations (WhatsApp, SMS, Gmail, Twilio).",
+      "Built robust validation and error-handling layers ensuring reliable data flow across asynchronous workflows.",
+    ],
+    techStack: [
+      "Node.js",
+      "TypeScript",
+      "Next.js",
+      "Pinecone",
+      "WebSockets",
+      "Docker",
+    ],
+    highlight: "95%+ Accuracy",
+  },
+  {
+    title: "Founding Full Stack Engineer @ Lab Systems Pvt. Ltd.",
+    duration: "May 2023 – Aug 2024",
     year: "2023",
     description: [
-      "Developed cryptocurrency forensic tools, improving processing speed by 30%.",
-      "Led a team of 5, optimizing workflows and improving collaboration efficiency by 20%.",
-      "Worked with Blockchain, Next.js, Python, SQL, Flask API, and Networking.",
+      "Founding engineer architecting AI-driven forensics platform from zero to production serving enterprise clients.",
+      "Designed scalable data pipelines and 20+ REST APIs supporting high-volume investigative workflows.",
+      "Built enterprise-grade UIs optimized for large datasets and complex forensic analysis tasks.",
+      "Led engineering team establishing Git workflows, code reviews, and release practices maintaining delivery velocity.",
     ],
-    techStack: ["Python", "MongoDB", "Elasticearch", "Cloudflare", ],
+    techStack: [
+      "Next.js",
+      "Python",
+      "C++",
+      "Flask",
+      "SQL/NoSQL",
+      "Docker",
+      "AWS",
+      "Cloudflare",
+    ],
+    highlight: "Founding Engineer",
   },
   {
-    title: "Blockchain Research Intern @ Lab Systems Pvt. Ltd.",
-    duration: "Aug 2022 – July 2023",
+    title: "Full Stack Software Engineer Intern @ Lab Systems Pvt. Ltd.",
+    duration: "Aug 2022 – Apr 2023",
     year: "2022",
     description: [
-      "Traced $20M+ worth of cryptocurrencies using OSINT & blockchain analytics.",
-      "Deployed & maintained 10+ blockchain nodes for forensic research.",
-      "Gained deep expertise in Blockchain Forensics & Crypto Investigation.",
+      "Developed cryptocurrency forensics solutions reducing manual processing time by 70%.",
+      "Designed hybrid MongoDB-LevelDB storage enabling fast lookups across 2B+ transaction records.",
+      "Contributed to investigations involving global clients with $20M+ financial exposure.",
     ],
-    techStack: ["Blockchain", "OSINT", "Forensics"]
-
-  },
-  {
-    title: "Cloud Intern @ AWS (SLRTCE)",
-    duration: "Jun 2022 – Jul 2022",
-    year: "2022",
-    description: ["Built secure cloud-based applications using AWS EC2, S3, and RDS."],
-    techStack: ["AWS", "EC2", "S3", "RDS"],
+    techStack: ["Python", "Node.js", "MongoDB", "LevelDB", "Docker", "Linux"],
+    highlight: "70% Faster",
   },
 ];
 
 const Skills = [
-    {
-        title: "Languages",
-        skills: ["Python", "JavaScript", "Java", "C++", "SQL"],
-    },
-    {
-        title: "Frameworks",
-        skills: ["Next.js", "React.js", "Flask", "Express", "Node.js"],
-    },
-    {
-        title: "Tools",
-        skills: ["Git", "Docker", "Postman", "Wireshark", "Jupyter"],
-    },
-    {
-        title: "Cloud",
-        skills: ["AWS", "GCP", "Azure", "Heroku", "Vercel"],
-    },
-    ];
+  {
+    title: "Languages & Databases",
+    skills: [
+      "Python",
+      "JavaScript",
+      "TypeScript",
+      "C++",
+      "C",
+      "SQL",
+      "NoSQL",
+      "GraphQL",
+      "Bash",
+    ],
+  },
+  {
+    title: "Frameworks & Libraries",
+    skills: [
+      "React.js",
+      "Next.js",
+      "Express.js",
+      "Flask",
+      "Node.js",
+      "Pandas",
+      "Polars",
+      "PyTorch",
+      "TailwindCSS",
+    ],
+  },
+  {
+    title: "Systems & Infrastructure",
+    skills: [
+      "Docker",
+      "AWS",
+      "Cloudflare",
+      "Linux",
+      "CI/CD",
+      "Redis",
+      "Elasticsearch",
+      "Neo4j",
+      "MongoDB",
+    ],
+  },
+  {
+    title: "Core Expertise",
+    skills: [
+      "Backend Engineering",
+      "Distributed Systems",
+      "Event-Driven Architecture",
+      "REST APIs",
+      "Data Pipelines",
+      "System Design",
+    ],
+  },
+];
 
 const education = [
   {
     degree: "M.S. in Computer Science",
     institution: "University of Massachusetts Amherst",
-    duration: "Expected May 2026",
-    gpa: "GPA: 3.9/4.0",
+    duration: "Sep 2024 – May 2026",
+    gpa: "GPA: 3.86/4.0",
     courses: [
-        "Neural Networks",
-        "Applied Statistics",
-        "Software Engineering", 
+      "Neural Networks",
+      "Applied Statistics",
+      "Software Engineering",
+      "Scalable Data Systems",
     ],
     year: "2024",
   },
   {
     degree: "B.E. in Computer Engineering",
     institution: "University of Mumbai",
-    duration: "May 2023",
-    gpa: "GPA: 3.86/4.0",
+    duration: "Aug 2019 – May 2023",
+    gpa: "GPA: 3.87/4.0",
     courses: [
       "Data Structures",
       "Algorithms",
@@ -93,71 +151,82 @@ const education = [
       "Database Management",
     ],
     year: "2019",
-
   },
 ];
 
 const projects = [
-    {
-        title: "LLM-Router",
-        description: "Engineered an LLM routing system that optimally directs prompts to models based on cost-performance trade-offs, reducing reliance on expensive models like GPT-4o while maintaining high output quality.",
-        techStack: ["Python", "PyTorch", "TensorFlow", "Hugging Face", "DistilBERT", "CodeBERT"],
-        links: {
-            github: null,
-            demo: null,
-            paperLink: "https://drive.google.com/file/d/1sT_glWXGqHPYoWQDw0jpKA6_r_wKf13G/view?usp=drive_link"
-        }
+  {
+    title: "LLM-Router: Intelligent Model Selection",
+    description:
+      "Fine-tuned DistilBERT and CodeBERT classifiers to dynamically route LLM requests, reducing inference costs by ~70% while preserving output quality. Implemented guardrails and fallback mechanisms for predictable system behavior.",
+    techStack: [
+      "Python",
+      "PyTorch",
+      "TensorFlow",
+      "Hugging Face",
+      "DistilBERT",
+      "CodeBERT",
+    ],
+    links: {
+      github: null,
+      demo: null,
+      paperLink:
+        "https://drive.google.com/file/d/1sT_glWXGqHPYoWQDw0jpKA6_r_wKf13G/view?usp=drive_link",
     },
-    {
-        title: "AI-Powered Recipe App",
-        description: "Built a full-stack AI-driven recipe generation platform enabling users to create personalized meals based on available ingredients, dietary preferences, and allergies, leading to a 40% reduction in recipe search time.",
-        techStack: ["Next.js", "Tailwind CSS", "FastAPI", "PostgreSQL", "GPT-4o", "JWT", "RESTful APIs"],
-        links: {
-            github: "https://github.com/JeetDSharma/AI-Powered-Recipe-Social-App",
-            demo: null
-        }
+  },
+  {
+    title: "AI-Powered Recipe App",
+    description:
+      "Built a full-stack AI-driven recipe generation platform enabling users to create personalized meals based on available ingredients, dietary preferences, and allergies, leading to a 40% reduction in recipe search time.",
+    techStack: [
+      "Next.js",
+      "Tailwind CSS",
+      "FastAPI",
+      "PostgreSQL",
+      "GPT-4o",
+      "JWT",
+      "RESTful APIs",
+    ],
+    links: {
+      github: "https://github.com/JeetDSharma/AI-Powered-Recipe-Social-App",
+      demo: null,
     },
-    {
-        title: "MediLog: Blockchain-Based Pharmaceutical Supply Chain System",
-        description: "Designed and deployed an extensive end-to-end pharmaceutical supply chain solution leveraging blockchain technology, ensuring tamper-proof tracking of medical drugs and presented the solution to the Indian Medical Association.",
-        techStack: ["Ethereum", "Solidity", "MERN Stack"],
-        links: {
-            github: null,
-            demo: null,
-            patentLink: "https://register.dpma.de/DPMAregister/pat/register?AKZ=2020231028233&CURSOR=0"
-        }
+  },
+  {
+    title: "MediLog: Blockchain-Based Pharmaceutical Supply Chain System",
+    description:
+      "Designed and deployed an extensive end-to-end pharmaceutical supply chain solution leveraging blockchain technology, ensuring tamper-proof tracking of medical drugs and presented the solution to the Indian Medical Association.",
+    techStack: ["Ethereum", "Solidity", "MERN Stack"],
+    links: {
+      github: null,
+      demo: null,
+      patentLink:
+        "https://register.dpma.de/DPMAregister/pat/register?AKZ=2020231028233&CURSOR=0",
     },
-    {
-        title: "Covid-19 Detection using Chest X-RAY",
-        description: "Developed a web app for Covid-19 detection from Chest X-ray images, achieving 90%+ accuracy in classification. Improved model performance by 30% using data augmentation and hyperparameter tuning.",
-        techStack: ["PyTorch", "Flask", "SQLite", "OpenCV"],
-        links: {
-            github: null,
-            demo: null,
-            paperLink: "https://www.ijrar.org/papers/IJRAR22B1808.pdf"
-        }
-    }
+  },
+  {
+    title: "Covid-19 Detection using Chest X-RAY",
+    description:
+      "Developed a web app for Covid-19 detection from Chest X-ray images, achieving 90%+ accuracy in classification. Improved model performance by 30% using data augmentation and hyperparameter tuning.",
+    techStack: ["PyTorch", "Flask", "SQLite", "OpenCV"],
+    links: {
+      github: null,
+      demo: null,
+      paperLink: "https://www.ijrar.org/papers/IJRAR22B1808.pdf",
+    },
+  },
 ];
 
 const emailLink = `mailto:jeetsharma2112@gmail.com
 ?subject=Interested%20in%20Connecting%20with%20You!
 &body=Hi%20Jeet,%0D%0A%0D%0AI%20came%20across%20your%20portfolio%20and%20would%20love%20to%20discuss%20potential%20opportunities.%0D%0A%0D%0ALooking%20forward%20to%20your%20response.%0D%0A%0D%0AThanks!`;
 
-
-
 const BodySection = () => {
-    const downloadResume = () => {
-        const resumeUrl = "/resume.pdf"; // Ensure this file is in the `/public` folder
-        const link = document.createElement("a");
-        link.href = resumeUrl;
-        link.download = "Jeet_Sharma_Resume.pdf";
-        document.body.appendChild(link);
-        link.click();
-        document.body.removeChild(link);
-      };
   return (
-    <section className="max-w-5xl mx-auto px-6 py-20 space-y-16 overflow-hidden" id="body-section">
-      
+    <section
+      className="max-w-5xl mx-auto px-6 py-20 space-y-16 overflow-hidden"
+      id="body-section"
+    >
       {/* About Me */}
       <motion.div
         initial={{ opacity: 0, y: 40 }}
@@ -165,362 +234,427 @@ const BodySection = () => {
         transition={{ duration: 0.8, ease: "easeOut" }}
         className="text-center"
       >
-        <h2 className="text-3xl md:text-5xl font-bold dark:text-white">
-          <Highlight>About Me</Highlight>
+        <h2 className="text-3xl md:text-5xl font-bold text-gray-900 dark:text-white mb-8">
+          <span className="border-b-4 border-gray-900 dark:border-gray-100 pb-2">
+            About Me
+          </span>
         </h2>
-        <p className="mt-4 text-lg md:text-xl text-gray-600 dark:text-gray-300 max-w-3xl mx-auto">
-          I'm a <strong>Software Developer, Blockchain Researcher, and Digital Forensics Expert</strong> with a strong background in 
-          <strong> Next.js, AI, and Cloud Computing</strong>. Passionate about solving <strong>real-world forensic and cybersecurity challenges</strong>, 
-          I have worked on projects related to <strong>blockchain tracing, AI-driven solutions, and enterprise security</strong>.
+        <p className="mt-4 text-lg md:text-xl text-gray-600 dark:text-gray-300 max-w-3xl mx-auto leading-relaxed">
+          <strong className="text-gray-800 dark:text-white">
+            Founding software engineer
+          </strong>{" "}
+          specializing in{" "}
+          <strong className="text-blue-600 dark:text-blue-400">
+            backend systems, distributed architecture, and production AI
+          </strong>
+          . Proven track record architecting{" "}
+          <strong className="text-gray-800 dark:text-white">
+            zero-to-production platforms
+          </strong>{" "}
+          serving enterprise clients, with expertise in{" "}
+          <strong className="text-blue-600 dark:text-blue-400">
+            scalable data pipelines handling billions of records
+          </strong>{" "}
+          and
+          <strong className="text-gray-800 dark:text-white">
+            event-driven systems achieving sub-second latency
+          </strong>
+          .
+        </p>
+        <p className="mt-4 text-lg md:text-xl text-gray-600 dark:text-gray-300 max-w-3xl mx-auto leading-relaxed">
+          Currently pursuing{" "}
+          <strong className="text-gray-800 dark:text-white">
+            MS in Computer Science at UMass Amherst
+          </strong>{" "}
+          (GPA: 3.86) with focus on scalable data systems and applied machine
+          learning.
+          <strong className="text-blue-600 dark:text-blue-400">
+            Reduced costs by 70%
+          </strong>{" "}
+          through intelligent system design,
+          <strong className="text-blue-600 dark:text-blue-400">
+            improved processing speeds by 70%
+          </strong>
+          , and delivered systems supporting{" "}
+          <strong className="text-gray-800 dark:text-white">
+            $20M+ in enterprise operations
+          </strong>
+          .
         </p>
       </motion.div>
 
       {/* Skills */}
       <motion.div
-    initial="hidden"
-    whileInView="visible"
-    variants={timelineVariants}
-    transition={{ duration: 0.8, ease: "easeOut" }}
-    className="text-center"
->
-    <h2 className="text-3xl md:text-5xl font-bold dark:text-white">
-        <Highlight>Skills</Highlight>
-    </h2>
-    <div className="mt-6 flex flex-col space-y-6">
-        {Skills.map((skill, index) => (
-            <motion.div 
-                key={index} 
-                initial={{ opacity: 0, x: index % 2 === 0 ? -250 : 250 }} 
-                whileInView={{ opacity: 1, x: 0 }}
-                transition={{ duration: 0.6, delay: index * 0.15 }}
-                viewport={{ once: false }}
-                className="text-center"
+        initial={{ opacity: 0, y: 20 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.5 }}
+        viewport={{ once: true }}
+        className="max-w-4xl mx-auto"
+      >
+        <h2 className="text-3xl md:text-5xl font-bold text-gray-900 dark:text-white mb-12 text-center">
+          <span className="border-b-4 border-gray-900 dark:border-gray-100 pb-2">
+            Technical Stack
+          </span>
+        </h2>
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+          {Skills.map((skill, index) => (
+            <div
+              key={index}
+              className="bg-white dark:bg-gray-950 p-6 border border-gray-200 dark:border-gray-800 hover:border-gray-900 dark:hover:border-gray-100 transition-colors duration-300"
             >
-                <h3 className="text-xl font-semibold dark:text-white">{skill.title}</h3>
-                <div className="flex flex-wrap justify-center gap-4">
-                    {skill.skills.map((s, i) => (
-                        <motion.span 
-                            key={i} 
-                            whileHover={{ scale: 1.1 }}
-                            className="px-4 py-2 bg-gray-100 dark:bg-gray-800 rounded-md text-gray-700 dark:text-gray-300 shadow-sm  hover:scale-105 hover:bg-gray-200 dark:hover:bg-gray-700"
-                        >
-                            {s}
-                        </motion.span>
-                    ))}
-                </div>
-            </motion.div>
-        ))}
-    </div>
-</motion.div>
-
-{/* Project Section */}
-<motion.div
-    initial="hidden"
-    whileInView="visible"
-    transition={{ duration: 0.8, ease: "easeOut" }}
-    className="text-center"
->
-    <h2 className="text-3xl md:text-5xl font-bold dark:text-white">
-        <Highlight>Projects</Highlight>
-    </h2>
-
-    {/* Project Cards Grid */}
-    <div className="mt-10 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-6xl mx-auto px-6">
-        {projects.map((project, index) => (
-            <motion.div 
-                key={index}
-                initial={{ opacity: 0, y: 50 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.6, delay: index * 0.1 }}
-                viewport={{ once: true }}
-                whileHover={{ scale: 1.05, boxShadow: "0px 0px 12px rgba(255, 167, 0, 0.3)" }}
-                className="relative bg-white/70 dark:bg-gray-900/80 backdrop-blur-lg p-6 rounded-xl shadow-lg border border-gray-200 dark:border-gray-700 hover:shadow-xl flex flex-col justify-between"
-            >
-                {/* Project Title */}
-                <h3 className="text-lg md:text-xl font-semibold dark:text-white">{project.title}</h3>
-
-                {/* Project Description */}
-                <p className="text-sm text-gray-600 dark:text-gray-300 mt-2">{project.description}</p>
-
-                {/* Tech Stack */}
-                <div className="mt-3 flex flex-wrap gap-2">
-                    {project.techStack.map((tech, i) => (
-                        <span 
-                            key={i} 
-                            className="px-3 py-1 bg-gray-200 dark:bg-gray-700 text-gray-800 dark:text-gray-200 text-xs font-medium rounded-md"
-                        >
-                            {tech}
-                        </span>
-                    ))}
-                </div>
-
-                {/* Links Section */}
-                <div className="mt-4 flex justify-between">
-                    {project.links.github && (
-                        <a href={project.links.github} target="_blank" rel="noopener noreferrer" 
-                            className="text-blue-500 hover:underline flex items-center">
-                            GitHub Repo
-                        </a>
-                    )}
-                    {project.links.demo && (
-                        <a href={project.links.demo} target="_blank" rel="noopener noreferrer" 
-                            className="text-green-500 hover:underline flex items-center">
-                            Live Demo
-                        </a>
-                    )}
-                    {project.links.paperLink && (
-                        <a href={project.links.paperLink} target="_blank" rel="noopener noreferrer" 
-                            className="text-yellow-500 hover:underline flex items-center">
-                            Research Paper
-                        </a>
-                    )}
-                    {project.links.patentLink && (
-                        <a href={project.links.patentLink} target="_blank" rel="noopener noreferrer" 
-                            className="text-purple-500 hover:underline flex items-center">
-                            Patent
-                        </a>
-                    )}
-                </div>
-            </motion.div>
-        ))}
-    </div>
-</motion.div>
-
-            
-{/* Education Timeline */}
-<motion.div
-  initial="hidden"
-  whileInView="visible"
-  variants={timelineVariants}
-  transition={{ duration: 0.8, ease: "easeOut" }}
-  className="text-center"
->
-  <h2 className="text-3xl md:text-5xl font-bold dark:text-white">
-    <Highlight>Education</Highlight>
-  </h2>
-
-  <div className="mt-10 flex flex-col relative space-y-16 max-w-4xl mx-auto">
-    {education.map((edu, index) => {
-      return (
-        <div
-          key={index}
-          className="relative flex w-full justify-center items-center"
-        >
-          {/* Timeline Bar */}
-          <div className="absolute left-1/2 -translate-x-1/2 w-1 bg-gray-300 dark:bg-gray-600 h-full"></div>
-          <div className="absolute left-1/2 -translate-x-1/2 w-7 h-7 bg-green-500 dark:bg-green-400 rounded-full border-4 border-white dark:border-gray-900 shadow-lg flex items-center justify-center text-white font-bold">
-            🎓
-          </div>
-
-          {/* Education Card */}
-          <motion.div
-            initial={{ opacity: 0, x: index % 2 === 0 ? -150 : 150 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.6, delay: index * 0.15 }}
-            viewport={{ once: false }}
-            whileHover={{
-              scale: 1.05,
-              boxShadow: "0px 0px 12px rgba(0, 132, 255, 0.3)",
-            }}
-            className={`relative w-full max-w-sm bg-white/70 dark:bg-gray-900/80 backdrop-blur-lg p-6 rounded-xl shadow-lg border border-gray-200 dark:border-gray-700 hover:shadow-xl md:max-w-[45%] ${
-              index % 2 === 0 ? "md:ml-auto" : "md:mr-auto"
-            }`}
-          >
-            {/* Degree and Institution */}
-            <div className="flex items-center space-x-3 mb-4">
-              <div className="w-10 h-10 bg-green-500 dark:bg-green-400 text-white rounded-full flex items-center justify-center text-lg font-semibold">
-                🎓
-              </div>
-              <h3 className="text-lg md:text-xl font-semibold dark:text-white">
-                {edu.degree}
+              <h3 className="text-sm font-mono uppercase tracking-wider text-gray-900 dark:text-gray-100 mb-4 border-b border-gray-200 dark:border-gray-800 pb-2">
+                {skill.title}
               </h3>
-            </div>
-
-            {/* Institution and Duration */}
-            <p className="text-sm font-medium text-gray-500 dark:text-gray-400">
-              {edu.institution}
-            </p>
-            <p className="text-sm font-medium text-gray-500 dark:text-gray-400 mb-2">
-              {edu.duration}
-            </p>
-
-            {/* GPA */}
-            <p className="text-sm font-medium text-gray-700 dark:text-gray-400">
-              {edu.gpa}
-            </p>
-
-            {/* Relevant Coursework */}
-            <div className="border-t border-gray-300 dark:border-gray-700 mt-2 pt-2">
-              <h4 className="text-sm font-semibold text-gray-700 dark:text-gray-300 uppercase tracking-wide">
-                Relevant Coursework:
-              </h4>
-              <div className="flex flex-wrap gap-2 mt-1">
-                {edu.courses.map((course, i) => (
+              <div className="flex flex-wrap gap-2">
+                {skill.skills.map((s, i) => (
                   <span
                     key={i}
-                    className="px-3 py-1 bg-gray-200 dark:bg-gray-700 text-gray-800 dark:text-gray-200 text-xs font-medium rounded-md"
+                    className="px-2 py-1 text-xs font-mono text-gray-700 dark:text-gray-300 bg-gray-50 dark:bg-gray-900 border border-gray-200 dark:border-gray-800"
                   >
-                    {course}
+                    {s}
                   </span>
                 ))}
               </div>
             </div>
-          </motion.div>
+          ))}
         </div>
-      );
-    })}
-  </div>
-</motion.div>
+      </motion.div>
 
-{/* Professional Experience Timeline */}
-<motion.div
-  initial="hidden"
-  whileInView="visible"
-  variants={timelineVariants}
-  transition={{ duration: 0.8, ease: "easeOut" }}
-  className="text-center"
->
-  <h2 className="text-3xl md:text-5xl font-bold dark:text-white">
-    <Highlight>Professional Experience</Highlight>
-  </h2>
-
-  <div className="mt-10 flex flex-col relative space-y-16 max-w-4xl mx-auto">
-    {experiences.map((exp, index) => (
-      <div
-        key={index}
-        className="relative flex w-full justify-center items-center"
+      {/* Project Section */}
+      <motion.div
+        initial={{ opacity: 0, y: 20 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.5 }}
+        viewport={{ once: true }}
+        className="max-w-4xl mx-auto"
       >
-        {/* Timeline Bar */}
-        <div className="absolute left-1/2 -translate-x-1/2 w-1 bg-gray-300 dark:bg-gray-600 h-full"></div>
-        <div className="absolute left-1/2 -translate-x-1/2 w-7 h-7 bg-blue-500 dark:bg-blue-400 rounded-full border-4 border-white dark:border-gray-900 shadow-lg flex items-center justify-center text-white font-bold">
-          {index + 1}
+        <h2 className="text-3xl md:text-5xl font-bold text-gray-900 dark:text-white mb-12 text-center">
+          <span className="border-b-4 border-gray-900 dark:border-gray-100 pb-2">
+            Selected Work
+          </span>
+        </h2>
+
+        {/* Project Cards Grid */}
+        <div className="space-y-8">
+          {projects.map((project, index) => (
+            <motion.div
+              key={index}
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.5, delay: index * 0.1 }}
+              viewport={{ once: true }}
+              className="bg-white dark:bg-gray-950 border border-gray-200 dark:border-gray-800 p-8 hover:border-gray-900 dark:hover:border-gray-100 transition-colors duration-300"
+            >
+              {/* Project Title */}
+              <h3 className="text-xl font-semibold text-gray-900 dark:text-white mb-3 tracking-tight">
+                {project.title}
+              </h3>
+
+              {/* Project Description */}
+              <p className="text-sm text-gray-600 dark:text-gray-400 leading-relaxed mb-6">
+                {project.description}
+              </p>
+
+              {/* Tech Stack */}
+              <div className="flex flex-wrap gap-2 mb-6 pb-6 border-b border-gray-200 dark:border-gray-800">
+                {project.techStack.map((tech, i) => (
+                  <span
+                    key={i}
+                    className="px-2 py-1 text-xs font-mono text-gray-700 dark:text-gray-300 bg-gray-50 dark:bg-gray-900 border border-gray-200 dark:border-gray-800"
+                  >
+                    {tech}
+                  </span>
+                ))}
+              </div>
+
+              {/* Links Section */}
+              <div className="flex flex-wrap gap-4 text-xs font-mono uppercase tracking-wider">
+                {project.links.github && (
+                  <a
+                    href={project.links.github}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="text-gray-900 dark:text-gray-100 hover:text-blue-600 dark:hover:text-blue-400 transition-colors"
+                  >
+                    View Code →
+                  </a>
+                )}
+                {project.links.demo && (
+                  <a
+                    href={project.links.demo}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="text-gray-900 dark:text-gray-100 hover:text-blue-600 dark:hover:text-blue-400 transition-colors"
+                  >
+                    Live Demo →
+                  </a>
+                )}
+                {project.links.paperLink && (
+                  <a
+                    href={project.links.paperLink}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="text-gray-900 dark:text-gray-100 hover:text-blue-600 dark:hover:text-blue-400 transition-colors"
+                  >
+                    Read Paper →
+                  </a>
+                )}
+                {project.links.patentLink && (
+                  <a
+                    href={project.links.patentLink}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="text-gray-900 dark:text-gray-100 hover:text-blue-600 dark:hover:text-blue-400 transition-colors"
+                  >
+                    View Patent →
+                  </a>
+                )}
+              </div>
+            </motion.div>
+          ))}
         </div>
+      </motion.div>
 
-        {/* Experience Card */}
-        <motion.div
-          initial={{ opacity: 0, x: index % 2 === 0 ? -150 : 150 }}
-          whileInView={{ opacity: 1, x: 0 }}
-          transition={{ duration: 0.6, delay: index * 0.15 }}
-          viewport={{ once: false }}
-          whileHover={{
-            scale: 1.05,
-            boxShadow: "0px 0px 12px rgba(0, 132, 255, 0.3)",
-          }}
-          className={`relative w-full max-w-sm bg-white/70 dark:bg-gray-900/80 backdrop-blur-lg p-6 rounded-xl shadow-lg border border-gray-200 dark:border-gray-700 hover:shadow-xl md:max-w-[45%] ${
-            index % 2 === 0 ? "md:ml-auto" : "md:mr-auto"
-          }`}
-        >
-          {/* Job Title & Company */}
-          <div className="flex items-center space-x-3 mb-4">
-            <div className="w-10 h-10 bg-blue-500 dark:bg-blue-400 text-white rounded-full flex items-center justify-center text-lg font-semibold">
-              {index + 1}
-            </div>
-            <h3 className="text-lg md:text-xl font-semibold dark:text-white">
-              {exp.title}
-            </h3>
-          </div>
+      {/* Education Timeline */}
+      <motion.div
+        initial="hidden"
+        whileInView="visible"
+        variants={timelineVariants}
+        transition={{ duration: 0.8, ease: "easeOut" }}
+        className="text-center"
+      >
+        <h2 className="text-3xl md:text-5xl font-bold text-gray-900 dark:text-white mb-12 text-center">
+          <span className="border-b-4 border-gray-900 dark:border-gray-100 pb-2">
+            Education
+          </span>
+        </h2>
 
-          {/* Duration */}
-          <p className="text-sm font-medium text-gray-500 dark:text-gray-400 mb-2">
-            {exp.duration}
-          </p>
+        <div className="mt-10 flex flex-col relative space-y-16 max-w-4xl mx-auto">
+          {education.map((edu, index) => {
+            return (
+              <div
+                key={index}
+                className="relative flex w-full justify-center items-center"
+              >
+                {/* Timeline Bar */}
+                <div className="absolute left-1/2 -translate-x-1/2 w-px bg-gradient-to-b from-gray-200 via-gray-300 to-gray-200 dark:from-gray-700 dark:via-gray-600 dark:to-gray-700 h-full"></div>
+                <div className="absolute left-1/2 -translate-x-1/2 w-3 h-3 bg-gray-900 dark:bg-gray-100 rounded-sm rotate-45"></div>
 
-          {/* Responsibilities */}
-          <div className="border-t border-gray-300 dark:border-gray-700 mt-2 pt-2">
-            <h4 className="text-sm font-semibold text-gray-700 dark:text-gray-300 uppercase tracking-wide">
-              Responsibilities:
-            </h4>
-            <ul className="mt-2 text-gray-600 dark:text-gray-300 list-disc list-inside text-left space-y-1">
-              {exp.description.map((desc, i) => (
-                <li key={i}>{desc}</li>
-              ))}
-            </ul>
-          </div>
-
-          {/* Tech Stack */}
-          <div className="border-t border-gray-300 dark:border-gray-700 mt-3 pt-2">
-            <h4 className="text-sm font-semibold text-gray-700 dark:text-gray-300 uppercase tracking-wide">
-              Tech Stack:
-            </h4>
-            <div className="flex flex-wrap gap-2 mt-1">
-              {exp.techStack.map((tech, i) => (
-                <span
-                  key={i}
-                  className="px-3 py-1 bg-gray-200 dark:bg-gray-700 text-gray-800 dark:text-gray-200 text-xs font-medium rounded-md"
+                {/* Education Card */}
+                <motion.div
+                  initial={{ opacity: 0, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.5, delay: index * 0.1 }}
+                  viewport={{ once: true }}
+                  className={`relative w-full max-w-2xl bg-white dark:bg-gray-950 p-8 border-l-4 border-gray-900 dark:border-gray-100 shadow-sm hover:shadow-md transition-all duration-300 ${
+                    index % 2 === 0 ? "md:ml-auto" : "md:mr-auto"
+                  }`}
                 >
-                  {tech}
-                </span>
-              ))}
+                  {/* Degree and Institution */}
+                  <div className="mb-3">
+                    <h3 className="text-xl font-semibold text-gray-900 dark:text-white mb-1 tracking-tight">
+                      {edu.degree}
+                    </h3>
+                    <p className="text-sm text-gray-600 dark:text-gray-400">
+                      {edu.institution}
+                    </p>
+                    <div className="flex items-center gap-4 mt-2">
+                      <p className="text-sm font-mono text-gray-500 dark:text-gray-400 tracking-wide">
+                        {edu.duration}
+                      </p>
+                      <p className="text-sm font-mono text-gray-900 dark:text-gray-100">
+                        {edu.gpa}
+                      </p>
+                    </div>
+                  </div>
+
+                  {/* Relevant Coursework */}
+                  <div className="mt-6 pt-4 border-t border-gray-200 dark:border-gray-800">
+                    <div className="flex flex-wrap gap-2">
+                      {edu.courses.map((course, i) => (
+                        <span
+                          key={i}
+                          className="px-2 py-1 bg-gray-100 dark:bg-gray-900 text-gray-900 dark:text-gray-100 text-xs font-mono border border-gray-200 dark:border-gray-800"
+                        >
+                          {course}
+                        </span>
+                      ))}
+                    </div>
+                  </div>
+                </motion.div>
+              </div>
+            );
+          })}
+        </div>
+      </motion.div>
+
+      {/* Professional Experience Timeline */}
+      <motion.div
+        initial="hidden"
+        whileInView="visible"
+        variants={timelineVariants}
+        transition={{ duration: 0.8, ease: "easeOut" }}
+        className="text-center"
+      >
+        <h2 className="text-3xl md:text-5xl font-bold text-gray-900 dark:text-white mb-12 text-center">
+          <span className="border-b-4 border-gray-900 dark:border-gray-100 pb-2">
+            Professional Experience
+          </span>
+        </h2>
+
+        <div className="mt-10 flex flex-col relative space-y-16 max-w-4xl mx-auto">
+          {experiences.map((exp, index) => (
+            <div
+              key={index}
+              className="relative flex w-full justify-center items-center"
+            >
+              {/* Timeline Bar */}
+              <div className="absolute left-1/2 -translate-x-1/2 w-px bg-gradient-to-b from-gray-200 via-gray-300 to-gray-200 dark:from-gray-700 dark:via-gray-600 dark:to-gray-700 h-full"></div>
+              <div className="absolute left-1/2 -translate-x-1/2 w-3 h-3 bg-gray-900 dark:bg-gray-100 rounded-sm rotate-45"></div>
+
+              {/* Experience Card */}
+              <motion.div
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.5, delay: index * 0.1 }}
+                viewport={{ once: true }}
+                className={`relative w-full max-w-2xl bg-white dark:bg-gray-950 border border-gray-200 dark:border-gray-800 hover:border-gray-900 dark:hover:border-gray-100 transition-colors duration-300 ${
+                  index % 2 === 0 ? "md:ml-auto" : "md:mr-auto"
+                }`}
+              >
+                {/* Year Badge */}
+                <div className="absolute -left-px -top-px bg-gray-900 dark:bg-gray-100 text-white dark:text-black px-4 py-1 text-[10px] font-mono uppercase tracking-widest">
+                  {exp.year}
+                </div>
+
+                <div className="p-8 pt-12">
+                  {/* Job Title & Company */}
+                  <div className="mb-6">
+                    <h3 className="text-2xl font-bold text-gray-900 dark:text-white mb-2 tracking-tight">
+                      {exp.title}
+                    </h3>
+                    <p className="text-xs font-mono uppercase tracking-widest text-gray-500 dark:text-gray-400">
+                      {exp.duration}
+                    </p>
+                  </div>
+
+                  {/* Impact Highlights */}
+                  <div className="mb-6 space-y-3">
+                    {exp.description.map((desc, i) => (
+                      <div key={i} className="flex items-start gap-4 group">
+                        <div className="w-1 h-1 bg-gray-900 dark:bg-gray-100 mt-2 flex-shrink-0 group-hover:w-4 transition-all duration-200"></div>
+                        <p className="text-sm text-gray-700 dark:text-gray-300 leading-relaxed">
+                          {desc}
+                        </p>
+                      </div>
+                    ))}
+                  </div>
+
+                  {/* Tech Stack */}
+                  <div className="pt-6 border-t border-gray-100 dark:border-gray-900">
+                    <div className="flex flex-wrap gap-2">
+                      {exp.techStack.map((tech, i) => (
+                        <span
+                          key={i}
+                          className="px-2 py-1 text-[10px] font-mono uppercase tracking-wider text-gray-600 dark:text-gray-400 bg-gray-50 dark:bg-gray-900 border border-gray-200 dark:border-gray-800"
+                        >
+                          {tech}
+                        </span>
+                      ))}
+                    </div>
+                  </div>
+                </div>
+              </motion.div>
+            </div>
+          ))}
+        </div>
+      </motion.div>
+
+      {/* /* Contact & Portfolio */}
+      <motion.div
+        initial={{ opacity: 0, y: 40 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.8, ease: "easeOut" }}
+        className="text-center max-w-3xl mx-auto py-16"
+        id="contact-section"
+      >
+        <h2 className="text-3xl md:text-5xl font-bold text-gray-900 dark:text-white mb-8">
+          <span className="border-b-4 border-gray-900 dark:border-gray-100 pb-2">
+            Let's Connect
+          </span>
+        </h2>
+
+        {/* Contact Info */}
+        <div className="mt-8 max-w-2xl mx-auto">
+          <div className="bg-white dark:bg-gray-950 border border-gray-200 dark:border-gray-800 p-8">
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+              <div className="space-y-3">
+                <p className="text-xs font-mono uppercase tracking-wider text-gray-500 dark:text-gray-400">
+                  Email
+                </p>
+                <a
+                  href="mailto:jeetsharma2112@gmail.com"
+                  className="text-sm font-mono text-gray-900 dark:text-gray-100 hover:text-blue-600 dark:hover:text-blue-400 transition-colors"
+                >
+                  jeetsharma2112@gmail.com
+                </a>
+              </div>
+              <div className="space-y-3">
+                <p className="text-xs font-mono uppercase tracking-wider text-gray-500 dark:text-gray-400">
+                  Phone
+                </p>
+                <p className="text-sm font-mono text-gray-900 dark:text-gray-100">
+                  +1 (413) 466 5844
+                </p>
+              </div>
+              <div className="space-y-3">
+                <p className="text-xs font-mono uppercase tracking-wider text-gray-500 dark:text-gray-400">
+                  GitHub
+                </p>
+                <a
+                  href="https://github.com/JeetDSharma"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-sm font-mono text-gray-900 dark:text-gray-100 hover:text-blue-600 dark:hover:text-blue-400 transition-colors"
+                >
+                  github.com/JeetDSharma
+                </a>
+              </div>
+              <div className="space-y-3">
+                <p className="text-xs font-mono uppercase tracking-wider text-gray-500 dark:text-gray-400">
+                  LinkedIn
+                </p>
+                <a
+                  href="https://www.linkedin.com/in/jeet-sharma"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-sm font-mono text-gray-900 dark:text-gray-100 hover:text-blue-600 dark:hover:text-blue-400 transition-colors"
+                >
+                  linkedin.com/in/jeet-sharma
+                </a>
+              </div>
+            </div>
+
+            <div className="mt-8 pt-6 border-t border-gray-200 dark:border-gray-800 flex gap-4">
+              <a
+                href="/resume.pdf"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex-1"
+              >
+                <button className="w-full px-6 py-3 bg-gray-900 dark:bg-gray-100 text-white dark:text-black text-sm font-mono uppercase tracking-wider hover:bg-gray-800 dark:hover:bg-gray-200 transition-colors">
+                  View Resume
+                </button>
+              </a>
+              <a href={emailLink} className="flex-1">
+                <button className="w-full px-6 py-3 border border-gray-900 dark:border-gray-100 text-gray-900 dark:text-gray-100 text-sm font-mono uppercase tracking-wider hover:bg-gray-900 hover:text-white dark:hover:bg-gray-100 dark:hover:text-black transition-colors">
+                  Get in Touch
+                </button>
+              </a>
             </div>
           </div>
-        </motion.div>
-      </div>
-    ))}
-  </div>
-</motion.div>
-
-
-{/* /* Contact & Portfolio */ }
-<motion.div
-    initial={{ opacity: 0, y: 40 }}
-    whileInView={{ opacity: 1, y: 0 }}
-    transition={{ duration: 0.8, ease: "easeOut" }}
-    className="text-center max-w-3xl mx-auto py-16"
-    id="contact-section"
->
-    <h2 className="text-3xl md:text-5xl font-bold dark:text-white">
-        <Highlight>Let's Connect</Highlight>
-    </h2>
-
-    {/* Contact Info */}
-    <div className="mt-6 text-lg text-gray-600 dark:text-gray-300 space-y-4">
-        <EmailWithCopy />
-        <p className="flex items-center justify-center gap-2">
-            🌐 <strong>GitHub:</strong>
-            <a href="https://github.com/JeetDSharma" target="_blank" className="text-blue-500 underline">
-                Jeet Sharma
-            </a>
-        </p>
-        <p className="flex items-center justify-center gap-2">
-            💼 <strong>LinkedIn:</strong>
-            <a href="https://www.linkedin.com/in/jeet-sharma" target="_blank" className="text-blue-500 underline">
-                linkedin.com/in/jeetsharma
-            </a>
-        </p>
-    </div>
-
-    {/* Buttons */}
-    <div className="mt-8 flex flex-wrap justify-center gap-6">
-        {/* Download Resume Button */}
-        <Button className="px-6 py-3 text-lg flex items-center gap-2" onClick={downloadResume}>
-            <Download className="w-5 h-5" />
-            Download Resume
-        </Button>
-
-        {/* Get in Touch Button */}
-        <a href={emailLink} className="inline-block">
-            <Button className="px-6 py-3 text-lg flex items-center gap-2">
-                <Mail className="w-5 h-5" />
-                Get in Touch
-            </Button>
-        </a>
-    </div>
-
-    {/* Social Media Icons */}
-    <div className="mt-8 flex justify-center space-x-6">
-        <a href="https://github.com/JeetDSharma" target="_blank" rel="noopener noreferrer" className="text-gray-600 dark:text-gray-300 hover:text-blue-500 transition">
-            <Github className="w-7 h-7" />
-        </a>
-        <a href="https://www.linkedin.com/in/jeet-sharma/" target="_blank" rel="noopener noreferrer" className="text-gray-600 dark:text-gray-300 hover:text-blue-500 transition">
-            <Linkedin className="w-7 h-7" />
-        </a>
-        <a href={emailLink} className="text-gray-600 dark:text-gray-300 hover:text-blue-500 transition">
-            <Mail className="w-7 h-7" />
-        </a>
-    </div>
-</motion.div>
-
-
+        </div>
+      </motion.div>
     </section>
   );
 };

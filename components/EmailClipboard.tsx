@@ -22,11 +22,10 @@ const EmailWithCopy = () => {
         >
           jeetsharma2112@gmail.com
         </a>
-
         {/* Copy to Clipboard Button */}
         <button
           onClick={copyToClipboard}
-          className="ml-2 p-2 bg-gray-200 dark:bg-gray-700 text-white rounded-md hover:bg-gray-300 dark:hover:bg-gray-600 transition"
+          className="ml-2 p-2 bg-gray-200 dark:bg-gray-700 text-gray-700 dark:text-gray-200 rounded-md hover:bg-gray-300 dark:hover:bg-gray-600 transition"
           title="Copy to clipboard"
         >
           <Copy className="w-5 h-5" />

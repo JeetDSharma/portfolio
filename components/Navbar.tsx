@@ -25,18 +25,8 @@ const Navbar = () => {
     }
   };
 
-  const downloadResume = () => {
-    const resumeUrl = "/resume.pdf";
-    const link = document.createElement("a");
-    link.href = resumeUrl;
-    link.download = "Jeet_Sharma_Resume.pdf";
-    document.body.appendChild(link);
-    link.click();
-    document.body.removeChild(link);
-  };
-
   return (
-    <nav className="flex justify-between items-center px-6 py-3 shadow-md fixed w-full top-0 z-50 bg-background border-b border-border text-foreground">
+    <nav className="flex justify-between items-center px-6 py-4 shadow-md fixed w-full top-0 z-50 bg-background border-b border-border text-foreground">
       {/* Logo */}
       <div className="text-2xl font-bold">Jeet's Portfolio</div>
 
@@ -49,20 +39,26 @@ const Navbar = () => {
 
       {/* Nav Links (Desktop) */}
       <div className="hidden md:flex space-x-6">
-        <button className="hover:scale-105 transition-all duration-300" onClick={scrollToBody}>
+        <button
+          className="hover:scale-105 transition-all duration-300"
+          onClick={scrollToBody}
+        >
           About Me
         </button>
-        <button className="hover:scale-105 transition-all duration-300">
-          <a  href="/resume.pdf" target="_blank" rel="noreferrer">
+        <a
+          href="/resume.pdf"
+          target="_blank"
+          rel="noreferrer"
+          className="hover:scale-105 transition-all duration-300 flex items-center"
+        >
           Resume
-          </a>
-        </button>
+        </a>
         <button
           className="relative inline-flex h-12 overflow-hidden rounded-full p-[1px] focus:outline-none focus:ring-2 focus:ring-slate-400 focus:ring-offset-2 focus:ring-offset-slate-50"
           onClick={scrollToContact}
         >
           <span className="absolute inset-[-1000%] animate-[spin_2s_linear_infinite] bg-[conic-gradient(from_90deg_at_50%_50%,#E2CBFF_0%,#393BB2_50%,#E2CBFF_100%)]" />
-          <span className="inline-flex h-full w-full cursor-pointer items-center justify-center rounded-full bg-slate-950 px-3 py-1 text-sm font-medium text-white backdrop-blur-3xl">
+          <span className="inline-flex h-full w-full cursor-pointer items-center justify-center rounded-full bg-background dark:bg-slate-950 px-3 py-1 text-sm font-medium text-foreground dark:text-white backdrop-blur-3xl">
             Contact Me
           </span>
         </button>
@@ -71,9 +67,20 @@ const Navbar = () => {
       {/* Mobile Nav Menu */}
       {menuOpen && (
         <div className="md:hidden absolute top-16 left-0 w-full bg-background border-b border-border shadow-md flex flex-col items-center space-y-6 py-6">
-          <button className="text-lg" onClick={scrollToBody}>About Me</button>
-          <button className="text-lg" onClick={downloadResume}>Resume</button>
-          <button className="text-lg" onClick={scrollToContact}>Contact Me</button>
+          <button className="text-lg" onClick={scrollToBody}>
+            About Me
+          </button>
+          <a
+            href="/resume.pdf"
+            target="_blank"
+            rel="noreferrer"
+            className="text-lg"
+          >
+            Resume
+          </a>
+          <button className="text-lg" onClick={scrollToContact}>
+            Contact Me
+          </button>
         </div>
       )}
     </nav>

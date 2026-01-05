@@ -25,18 +25,22 @@ const Hero = () => {
         }}
         className="relative flex flex-col gap-4 items-center justify-center px-4"
       >
-        <div className="text-3xl md:text-6xl font-bold uppercase dark:text-white text-center">
-          <span className="block mb-4">
-            <Highlight>Crafting the Future</Highlight>
-          </span>
-          One Revolutionary Idea at a Time
+        <div className="text-4xl md:text-7xl font-bold dark:text-white text-center tracking-tight">
+          <span className="block mb-2">Jeet Sharma</span>
         </div>
 
-        <div className="font-extralight text-base md:text-4xl dark:text-neutral-200 py-4">
-          This is Jeet Sharma
+        <div className="text-base md:text-2xl font-mono text-gray-700 dark:text-gray-300 py-4 tracking-wide">
+          Backend Engineer • Distributed Systems • Production AI
         </div>
+
+        <p className="text-sm md:text-base text-gray-600 dark:text-gray-400 max-w-2xl text-center mt-2 mb-6 leading-relaxed">
+          Building scalable infrastructure and data-intensive platforms from
+          zero to production. Currently @ UMass Amherst pursuing MS in Computer
+          Science.
+        </p>
+
         <button
-          className="bg-black dark:bg-white rounded-full w-fit text-white dark:text-black px-4 py-2"
+          className="bg-gray-900 dark:bg-gray-100 text-white dark:text-black px-6 py-3 text-sm font-mono uppercase tracking-wider hover:bg-gray-800 dark:hover:bg-gray-200 transition-colors"
           onClick={scrollToBody}
         >
           Let's Dive In
