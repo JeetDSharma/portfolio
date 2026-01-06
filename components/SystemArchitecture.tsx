@@ -121,7 +121,7 @@ const SystemArchitecture = () => {
     return Array.from(connected);
   };
 
-  const connectedNodes = getConnectedNodes(selectedComponent);
+  const connectedNodes = getConnectedNodes(hoveredComponent);
   const hoveredDetails = components.find((c) => c.id === hoveredComponent);
 
   return (
