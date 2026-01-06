@@ -691,6 +691,56 @@ const BodySection = () => {
         viewport={{ once: true }}
         className="mt-16 pt-8 border-t border-gray-200 dark:border-gray-800"
       >
+        {/* Build Info Badge */}
+        <div className="mb-6 p-3 bg-gradient-to-r from-gray-50 to-gray-100 dark:from-gray-900 dark:to-gray-950 border border-gray-200 dark:border-gray-800 rounded">
+          <div className="flex flex-wrap items-center gap-x-4 gap-y-2 text-[10px] font-mono">
+            <div className="flex items-center gap-2">
+              <div className="w-1.5 h-1.5 bg-green-500 rounded-full animate-pulse"></div>
+              <span className="font-semibold text-gray-700 dark:text-gray-300">
+                PRODUCTION
+              </span>
+            </div>
+            <div className="h-3 w-px bg-gray-300 dark:bg-gray-700 hidden sm:block"></div>
+            <div className="text-gray-500 dark:text-gray-400">
+              <span className="text-gray-400 dark:text-gray-500">Built</span>{" "}
+              <span className="text-gray-900 dark:text-white">
+                {new Date().toLocaleDateString("en-US", {
+                  month: "short",
+                  day: "numeric",
+                  year: "numeric",
+                })}
+              </span>
+            </div>
+            <div className="h-3 w-px bg-gray-300 dark:bg-gray-700 hidden sm:block"></div>
+            <div className="text-gray-500 dark:text-gray-400">
+              <span className="text-gray-400 dark:text-gray-500">Commit</span>{" "}
+              <a
+                href={`https://github.com/JeetDSharma/portfolio/commit/${
+                  process.env.NEXT_PUBLIC_VERCEL_GIT_COMMIT_SHA || ""
+                }`}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-gray-900 dark:text-white hover:text-blue-600 dark:hover:text-blue-400 transition-colors font-mono"
+              >
+                {process.env.NEXT_PUBLIC_VERCEL_GIT_COMMIT_SHA?.slice(0, 7) ||
+                  "dev"}
+              </a>
+            </div>
+            <div className="h-3 w-px bg-gray-300 dark:bg-gray-700 hidden sm:block"></div>
+            <div className="text-gray-500 dark:text-gray-400">
+              <span className="text-gray-400 dark:text-gray-500">Deploy</span>{" "}
+              <span className="text-gray-900 dark:text-white">Vercel Edge</span>
+            </div>
+            <div className="h-3 w-px bg-gray-300 dark:bg-gray-700 hidden sm:block"></div>
+            <div className="text-gray-500 dark:text-gray-400">
+              <span className="text-gray-400 dark:text-gray-500">Region</span>{" "}
+              <span className="text-gray-900 dark:text-white">
+                {process.env.NEXT_PUBLIC_VERCEL_REGION || "Global"}
+              </span>
+            </div>
+          </div>
+        </div>
+
         <div className="flex flex-col md:flex-row items-center justify-between gap-4 text-xs font-mono">
           <div className="flex items-center gap-6 text-gray-500 dark:text-gray-400">
             <span>© 2026 Jeet Sharma</span>
