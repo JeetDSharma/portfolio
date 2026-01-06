@@ -18,7 +18,7 @@ const Navbar = () => {
   };
 
   const scrollToContact = () => {
-    const contactSection = document.getElementById("contact-section");
+    const contactSection = document.getElementById("contact");
     if (contactSection) {
       contactSection.scrollIntoView({ behavior: "smooth" });
       setMenuOpen(false); // Close menu on mobile
