@@ -169,7 +169,7 @@ const CommandPalette: React.FC<CommandPaletteProps> = ({ isOpen, onClose }) => {
                           Event-Driven RAG System
                         </div>
                         <div className="text-xs text-gray-500 dark:text-gray-400">
-                          Node.js, TypeScript, Pinecone, WebSockets
+                          Node.js, TypeScript, pgvector, WebSockets
                         </div>
                       </div>
                     </Command.Item>
