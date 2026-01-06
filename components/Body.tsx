@@ -7,6 +7,7 @@ import { Button } from "@/components/ui/button";
 import { LucideArrowRight } from "lucide-react";
 import EmailWithCopy from "./EmailClipboard";
 import { Download, Mail, Github, Linkedin } from "lucide-react";
+import GitHubActivity from "./GitHubActivity";
 
 const timelineVariants = {
   hidden: { opacity: 0, y: 50 },
@@ -546,6 +547,17 @@ const BodySection = () => {
             </div>
           ))}
         </div>
+      </motion.div>
+
+      {/* GitHub Activity */}
+      <motion.div
+        initial={{ opacity: 0, y: 20 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.5 }}
+        viewport={{ once: true }}
+        className="max-w-4xl mx-auto"
+      >
+        <GitHubActivity />
       </motion.div>
 
       {/* /* Contact & Portfolio */}
