@@ -130,6 +130,7 @@ const education = [
     institution: "University of Mumbai",
     duration: "Aug 2019 – May 2023",
     year: "2019",
+    gpa: "GPA: 3.87/4.0",
   },
 ];
 
@@ -660,6 +661,8 @@ const BodySection = () => {
             <span className="hidden md:inline">Built with Next.js 14</span>
           </div>
           <div className="flex items-center gap-6">
+            {/* Performance score from Lighthouse audit: Jan 2026 (Desktop)
+                Re-test if major dependencies change */}
             <div className="flex items-center gap-2 text-gray-600 dark:text-gray-400">
               <span className="w-2 h-2 bg-green-500 rounded-full animate-pulse"></span>
               <span>Performance: 98/100</span>
