@@ -60,22 +60,31 @@ const ArchitectureModal: React.FC<ArchitectureModalProps> = ({
           >
             <div className="relative w-full h-full bg-white dark:bg-gray-950 border border-gray-200 dark:border-gray-800 shadow-2xl overflow-hidden flex flex-col">
               {/* Header */}
-              <div className="flex items-center justify-between p-6 border-b border-gray-200 dark:border-gray-800 bg-gray-50 dark:bg-gray-900">
-                <div>
-                  <h2 className="text-2xl font-bold text-gray-900 dark:text-white tracking-tight">
-                    myFrt System Architecture
-                  </h2>
-                  <p className="text-sm text-gray-600 dark:text-gray-400 mt-1">
-                    Enterprise digital forensics platform
-                  </p>
+              <div className="p-6 border-b border-gray-200 dark:border-gray-800 bg-gray-50 dark:bg-gray-900">
+                <div className="flex items-start justify-between">
+                  <div>
+                    <h2 className="text-2xl font-bold text-gray-900 dark:text-white tracking-tight">
+                      myFrt System Architecture
+                    </h2>
+                    <p className="text-sm text-gray-600 dark:text-gray-400 mt-1">
+                      Enterprise digital forensics platform
+                    </p>
+                  </div>
+                  <button
+                    onClick={onClose}
+                    className="p-2 hover:bg-gray-200 dark:hover:bg-gray-800 rounded transition-colors"
+                    aria-label="Close modal"
+                  >
+                    <X className="w-6 h-6 text-gray-600 dark:text-gray-400" />
+                  </button>
                 </div>
-                <button
-                  onClick={onClose}
-                  className="p-2 hover:bg-gray-200 dark:hover:bg-gray-800 rounded transition-colors"
-                  aria-label="Close modal"
-                >
-                  <X className="w-6 h-6 text-gray-600 dark:text-gray-400" />
-                </button>
+                {/* Instructions - Always Visible */}
+                <div className="mt-4 flex items-center gap-2 text-xs text-gray-600 dark:text-gray-400">
+                  <span className="font-mono">💡</span>
+                  <span className="font-medium">
+                    Hover any component to view technical details and stack
+                  </span>
+                </div>
               </div>
 
               {/* Content */}

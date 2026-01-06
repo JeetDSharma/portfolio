@@ -161,23 +161,13 @@ const SystemArchitecture = () => {
           >
             {/* Component Box */}
             <motion.div
-              whileHover={{ scale: 1.1 }}
-              className={`relative w-40 h-20 flex items-center justify-center border-2 transition-all duration-300 ${
+              whileHover={{ scale: 1.05 }}
+              className={`relative w-40 h-20 flex items-center justify-center border-2 transition-all duration-200 ${
                 isHovered
-                  ? "border-gray-900 dark:border-gray-100 bg-gray-100 dark:bg-gray-800 shadow-xl"
+                  ? "border-gray-900 dark:border-gray-100 bg-gray-50 dark:bg-gray-900 shadow-lg"
                   : "border-gray-300 dark:border-gray-700 bg-white dark:bg-gray-950 shadow-md"
               }`}
             >
-              {/* Pulse animation ring */}
-              {isHovered && (
-                <motion.div
-                  className="absolute inset-0 border-2 border-gray-900 dark:border-gray-100"
-                  initial={{ opacity: 0.6, scale: 1 }}
-                  animate={{ opacity: 0, scale: 1.3 }}
-                  transition={{ duration: 1, repeat: Infinity }}
-                />
-              )}
-
               <div className="text-center px-2">
                 <div className="text-[11px] font-bold text-gray-900 dark:text-white tracking-tight leading-tight whitespace-pre-line">
                   {component.shortName}
@@ -208,13 +198,9 @@ const SystemArchitecture = () => {
         );
       })}
 
-      {/* Legend */}
-      <div className="absolute bottom-4 left-1/2 transform -translate-x-1/2 text-xs font-mono text-gray-500 dark:text-gray-400 text-center">
-        <div className="mb-1">← Client | API | Processing | Data →</div>
-        <div className="flex items-center gap-2 justify-center">
-          <span className="text-base">ℹ</span>
-          <span>Hover any component for technical details</span>
-        </div>
+      {/* Layer Labels */}
+      <div className="absolute bottom-4 left-1/2 transform -translate-x-1/2 text-xs font-mono text-gray-500 dark:text-gray-400">
+        ← Client | API | Processing | Data →
       </div>
     </div>
   );
