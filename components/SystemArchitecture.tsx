@@ -106,7 +106,22 @@ const connections = [
 
 const SystemArchitecture = () => {
   const [hoveredComponent, setHoveredComponent] = useState<string | null>(null);
+  const [selectedComponent, setSelectedComponent] = useState<string | null>(
+    null
+  );
 
+  // Calculate connected nodes for selected component
+  const getConnectedNodes = (nodeId: string | null): string[] => {
+    if (!nodeId) return [];
+    const connected = new Set<string>([nodeId]);
+    connections.forEach((conn) => {
+      if (conn.from === nodeId) connected.add(conn.to);
+      if (conn.to === nodeId) connected.add(conn.from);
+    });
+    return Array.from(connected);
+  };
+
+  const connectedNodes = getConnectedNodes(selectedComponent);
   const hoveredDetails = components.find((c) => c.id === hoveredComponent);
 
   return (
@@ -136,7 +151,7 @@ const SystemArchitecture = () => {
             const to = components.find((c) => c.id === conn.to);
             if (!from || !to) return null;
 
-            const isActive =
+            const isHighlighted =
               hoveredComponent === conn.from || hoveredComponent === conn.to;
 
             return (
@@ -146,8 +161,8 @@ const SystemArchitecture = () => {
                 y1={from.y + 40}
                 x2={to.x}
                 y2={to.y + 40}
-                stroke={isActive ? "#6b7280" : "#d1d5db"}
-                strokeWidth={isActive ? 3 : 2}
+                stroke={isHighlighted ? "#4b5563" : "#d1d5db"}
+                strokeWidth={isHighlighted ? 3 : 2}
                 markerEnd="url(#arrowhead)"
                 className="dark:stroke-gray-700"
                 initial={{ pathLength: 0 }}
@@ -161,13 +176,18 @@ const SystemArchitecture = () => {
         {/* Component boxes */}
         {components.map((component) => {
           const isHovered = hoveredComponent === component.id;
+          const isConnected = connectedNodes.includes(component.id);
+          const isDimmed = hoveredComponent && !isConnected;
 
           return (
             <motion.div
               key={component.id}
               initial={{ opacity: 0, scale: 0.8 }}
-              animate={{ opacity: 1, scale: 1 }}
-              transition={{ duration: 0.5 }}
+              animate={{
+                opacity: isDimmed ? 0.3 : 1,
+                scale: 1,
+              }}
+              transition={{ duration: 0.2 }}
               style={{
                 position: "absolute",
                 left: `${component.x}px`,
