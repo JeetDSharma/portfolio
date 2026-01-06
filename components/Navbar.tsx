@@ -38,7 +38,7 @@ const Navbar = () => {
       </div>
 
       {/* Nav Links (Desktop) */}
-      <div className="hidden md:flex space-x-6">
+      <div className="hidden md:flex space-x-6 items-center">
         <button
           className="hover:scale-105 transition-all duration-300"
           onClick={scrollToBody}
@@ -53,6 +53,26 @@ const Navbar = () => {
         >
           Resume
         </a>
+
+        {/* Command Palette Hint */}
+        <button
+          onClick={() => {
+            const event = new KeyboardEvent("keydown", {
+              key: "k",
+              metaKey: true,
+              bubbles: true,
+            });
+            window.dispatchEvent(event);
+          }}
+          className="flex items-center gap-2 px-3 py-1.5 text-sm text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-gray-100 border border-gray-200 dark:border-gray-800 rounded-lg hover:border-gray-300 dark:hover:border-gray-700 transition-all duration-300"
+          title="Open Command Palette"
+        >
+          <span>Search</span>
+          <kbd className="hidden lg:inline-flex items-center gap-1 px-2 py-0.5 text-xs font-mono bg-gray-100 dark:bg-gray-900 border border-gray-200 dark:border-gray-800 rounded">
+            ⌘K
+          </kbd>
+        </button>
+
         <button
           className="relative inline-flex h-12 overflow-hidden rounded-full p-[1px] focus:outline-none focus:ring-2 focus:ring-slate-400 focus:ring-offset-2 focus:ring-offset-slate-50"
           onClick={scrollToContact}

@@ -1,6 +1,6 @@
 "use client";
 
-import React from "react";
+import React, { useEffect } from "react";
 import { motion } from "framer-motion";
 import { Highlight } from "@/components/ui/hero-highlight";
 import { Button } from "@/components/ui/button";
@@ -9,6 +9,7 @@ import EmailWithCopy from "./EmailClipboard";
 import { Download, Mail, Github, Linkedin } from "lucide-react";
 import GitHubActivity from "./GitHubActivity";
 import ArchitectureModal from "./ArchitectureModal";
+import CommandPalette from "./CommandPalette";
 
 const timelineVariants = {
   hidden: { opacity: 0, y: 50 },
@@ -221,6 +222,19 @@ const emailLink = `mailto:jeetsharma2112@gmail.com
 const BodySection = () => {
   const [isArchitectureModalOpen, setIsArchitectureModalOpen] =
     React.useState(false);
+  const [isCommandPaletteOpen, setIsCommandPaletteOpen] = React.useState(false);
+
+  // Command Palette keyboard shortcut (⌘K / Ctrl+K)
+  useEffect(() => {
+    const handleKeyDown = (e: KeyboardEvent) => {
+      if ((e.metaKey || e.ctrlKey) && e.key === "k") {
+        e.preventDefault();
+        setIsCommandPaletteOpen((prev) => !prev);
+      }
+    };
+    window.addEventListener("keydown", handleKeyDown);
+    return () => window.removeEventListener("keydown", handleKeyDown);
+  }, []);
 
   return (
     <section
@@ -229,6 +243,7 @@ const BodySection = () => {
     >
       {/* About Me */}
       <motion.div
+        id="about"
         initial={{ opacity: 0, y: 40 }}
         whileInView={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.8, ease: "easeOut" }}
@@ -292,6 +307,7 @@ const BodySection = () => {
 
       {/* Project Section */}
       <motion.div
+        id="projects"
         initial={{ opacity: 0, y: 20 }}
         whileInView={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.5 }}
@@ -479,6 +495,7 @@ const BodySection = () => {
 
       {/* Professional Experience Timeline */}
       <motion.div
+        id="experience"
         initial="hidden"
         whileInView="visible"
         variants={timelineVariants}
@@ -586,7 +603,7 @@ const BodySection = () => {
         whileInView={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.8, ease: "easeOut" }}
         className="text-center max-w-3xl mx-auto py-16"
-        id="contact-section"
+        id="contact"
       >
         <h2 className="text-3xl md:text-5xl font-bold text-gray-900 dark:text-white mb-8">
           <span className="border-b-4 border-gray-900 dark:border-gray-100 pb-2">
@@ -697,6 +714,18 @@ const BodySection = () => {
           </div>
         </div>
       </motion.div>
+
+      {/* Command Palette */}
+      <CommandPalette
+        isOpen={isCommandPaletteOpen}
+        onClose={() => setIsCommandPaletteOpen(false)}
+      />
+
+      {/* Architecture Modal */}
+      <ArchitectureModal
+        isOpen={isArchitectureModalOpen}
+        onClose={() => setIsArchitectureModalOpen(false)}
+      />
     </section>
   );
 };
