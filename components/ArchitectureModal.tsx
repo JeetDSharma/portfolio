@@ -56,18 +56,19 @@ const ArchitectureModal: React.FC<ArchitectureModalProps> = ({
             animate={{ opacity: 1, scale: 1, y: 0 }}
             exit={{ opacity: 0, scale: 0.95, y: 20 }}
             transition={{ duration: 0.3, ease: "easeOut" }}
-            className="fixed inset-4 md:inset-8 lg:inset-16 z-50 flex items-center justify-center"
+            className="fixed inset-4 md:inset-6 lg:inset-8 z-50 flex items-center justify-center"
           >
             <div className="relative w-full h-full bg-white dark:bg-gray-950 border border-gray-200 dark:border-gray-800 shadow-2xl overflow-hidden flex flex-col">
               {/* Header */}
-              <div className="p-6 border-b border-gray-200 dark:border-gray-800 bg-gray-50 dark:bg-gray-900">
+              <div className="px-6 py-4 border-b border-gray-200 dark:border-gray-800 bg-gray-50 dark:bg-gray-900">
                 <div className="flex items-start justify-between">
                   <div>
-                    <h2 className="text-2xl font-bold text-gray-900 dark:text-white tracking-tight">
+                    <h2 className="text-xl font-bold text-gray-900 dark:text-white tracking-tight">
                       myFrt System Architecture
                     </h2>
-                    <p className="text-sm text-gray-600 dark:text-gray-400 mt-1">
-                      Enterprise digital forensics platform
+                    <p className="text-xs text-gray-600 dark:text-gray-400 mt-1">
+                      Enterprise digital forensics platform • Hover components
+                      for details
                     </p>
                   </div>
                   <button
@@ -78,22 +79,15 @@ const ArchitectureModal: React.FC<ArchitectureModalProps> = ({
                     <X className="w-6 h-6 text-gray-600 dark:text-gray-400" />
                   </button>
                 </div>
-                {/* Instructions - Always Visible */}
-                <div className="mt-4 flex items-center gap-2 text-xs text-gray-600 dark:text-gray-400">
-                  <span className="font-mono">💡</span>
-                  <span className="font-medium">
-                    Hover any component to view technical details and stack
-                  </span>
-                </div>
               </div>
 
-              {/* Content */}
-              <div className="flex-1 overflow-y-auto p-6 md:p-8">
+              {/* Content - No scroll, fills available space */}
+              <div className="flex-1 overflow-hidden p-4">
                 <SystemArchitecture />
               </div>
 
               {/* Footer hint */}
-              <div className="p-4 border-t border-gray-200 dark:border-gray-800 bg-gray-50 dark:bg-gray-900 text-center">
+              <div className="px-6 py-2 border-t border-gray-200 dark:border-gray-800 bg-gray-50 dark:bg-gray-900 text-center">
                 <p className="text-xs font-mono text-gray-500 dark:text-gray-400">
                   Press ESC or click outside to close
                 </p>
