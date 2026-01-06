@@ -8,6 +8,7 @@ import { LucideArrowRight } from "lucide-react";
 import EmailWithCopy from "./EmailClipboard";
 import { Download, Mail, Github, Linkedin } from "lucide-react";
 import GitHubActivity from "./GitHubActivity";
+import ArchitectureModal from "./ArchitectureModal";
 
 const timelineVariants = {
   hidden: { opacity: 0, y: 50 },
@@ -218,6 +219,9 @@ const emailLink = `mailto:jeetsharma2112@gmail.com
 &body=Hi%20Jeet,%0D%0A%0D%0AI%20came%20across%20your%20portfolio%20and%20would%20love%20to%20discuss%20potential%20opportunities.%0D%0A%0D%0ALooking%20forward%20to%20your%20response.%0D%0A%0D%0AThanks!`;
 
 const BodySection = () => {
+  const [isArchitectureModalOpen, setIsArchitectureModalOpen] =
+    React.useState(false);
+
   return (
     <section
       className="max-w-5xl mx-auto px-6 py-20 space-y-16 overflow-hidden"
@@ -356,9 +360,9 @@ const BodySection = () => {
                     href={project.links.github}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="text-gray-900 dark:text-gray-100 hover:text-blue-600 dark:hover:text-blue-400 transition-colors"
+                    className="text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-gray-100 transition-colors"
                   >
-                    View Code →
+                    GitHub →
                   </a>
                 )}
                 {project.links.demo && (
@@ -366,7 +370,7 @@ const BodySection = () => {
                     href={project.links.demo}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="text-gray-900 dark:text-gray-100 hover:text-blue-600 dark:hover:text-blue-400 transition-colors"
+                    className="text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-gray-100 transition-colors"
                   >
                     Live Demo →
                   </a>
@@ -376,7 +380,7 @@ const BodySection = () => {
                     href={project.links.paperLink}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="text-gray-900 dark:text-gray-100 hover:text-blue-600 dark:hover:text-blue-400 transition-colors"
+                    className="text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-gray-100 transition-colors"
                   >
                     Read Paper →
                   </a>
@@ -386,16 +390,31 @@ const BodySection = () => {
                     href={project.links.patentLink}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="text-gray-900 dark:text-gray-100 hover:text-blue-600 dark:hover:text-blue-400 transition-colors"
+                    className="text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-gray-100 transition-colors"
                   >
                     View Patent →
                   </a>
+                )}
+                {/* Show Architecture button for myFRT project */}
+                {project.isEnterprise && (
+                  <button
+                    onClick={() => setIsArchitectureModalOpen(true)}
+                    className="text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-gray-100 transition-colors"
+                  >
+                    View Architecture →
+                  </button>
                 )}
               </div>
             </motion.div>
           ))}
         </div>
       </motion.div>
+
+      {/* Architecture Modal */}
+      <ArchitectureModal
+        isOpen={isArchitectureModalOpen}
+        onClose={() => setIsArchitectureModalOpen(false)}
+      />
 
       {/* Education Timeline */}
       <motion.div
