@@ -645,6 +645,36 @@ const BodySection = () => {
           </div>
         </div>
       </motion.div>
+
+      {/* Footer */}
+      <motion.div
+        initial={{ opacity: 0 }}
+        whileInView={{ opacity: 1 }}
+        transition={{ duration: 0.5 }}
+        viewport={{ once: true }}
+        className="mt-16 pt-8 border-t border-gray-200 dark:border-gray-800"
+      >
+        <div className="flex flex-col md:flex-row items-center justify-between gap-4 text-xs font-mono">
+          <div className="flex items-center gap-6 text-gray-500 dark:text-gray-400">
+            <span>© 2026 Jeet Sharma</span>
+            <span className="hidden md:inline">Built with Next.js 14</span>
+          </div>
+          <div className="flex items-center gap-6">
+            <div className="flex items-center gap-2 text-gray-600 dark:text-gray-400">
+              <span className="w-2 h-2 bg-green-500 rounded-full animate-pulse"></span>
+              <span>Performance: 98/100</span>
+            </div>
+            <a
+              href="https://github.com/JeetDSharma/portfolio"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-gray-100 transition-colors"
+            >
+              View Source Code →
+            </a>
+          </div>
+        </div>
+      </motion.div>
     </section>
   );
 };

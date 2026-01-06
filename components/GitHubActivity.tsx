@@ -3,6 +3,7 @@
 import React from "react";
 import { GitHubCalendar } from "react-github-calendar";
 import { useTheme } from "next-themes";
+import GitHubStats from "./GitHubStats";
 
 const GitHubActivity = () => {
   const { theme } = useTheme();
@@ -51,6 +52,8 @@ const GitHubActivity = () => {
         </div>
         <span>More</span>
       </div>
+
+      <GitHubStats />
     </div>
   );
 };
