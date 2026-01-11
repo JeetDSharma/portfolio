@@ -1,0 +1,17 @@
+# robots.txt for jeetsharma.dev
+
+User-agent: *
+Allow: /
+
+# Sitemap location
+Sitemap: https://jeetsharma.com/sitemap.xml
+
+# Crawl-delay for well-behaved bots
+Crawl-delay: 1
+
+# Block common spam/scraper bots
+User-agent: AhrefsBot
+Crawl-delay: 10
+
+User-agent: SemrushBot
+Crawl-delay: 10

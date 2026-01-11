@@ -219,6 +219,23 @@ const BodySection = () => {
   const [isArchitectureModalOpen, setIsArchitectureModalOpen] =
     React.useState(false);
   const [isCommandPaletteOpen, setIsCommandPaletteOpen] = React.useState(false);
+  const [emailCopied, setEmailCopied] = React.useState(false);
+  const [phoneCopied, setPhoneCopied] = React.useState(false);
+
+  const copyToClipboard = async (text: string, type: "email" | "phone") => {
+    try {
+      await navigator.clipboard.writeText(text);
+      if (type === "email") {
+        setEmailCopied(true);
+        setTimeout(() => setEmailCopied(false), 2000);
+      } else {
+        setPhoneCopied(true);
+        setTimeout(() => setPhoneCopied(false), 2000);
+      }
+    } catch (err) {
+      console.error("Failed to copy:", err);
+    }
+  };
 
   // Command Palette keyboard shortcut (⌘K / Ctrl+K)
   useEffect(() => {
@@ -615,20 +632,37 @@ const BodySection = () => {
                 <p className="text-xs font-mono uppercase tracking-wider text-gray-500 dark:text-gray-400">
                   Email
                 </p>
-                <a
-                  href="mailto:jeetsharma2112@gmail.com"
-                  className="text-sm font-mono text-gray-900 dark:text-gray-100 hover:text-blue-600 dark:hover:text-blue-400 transition-colors"
+                <button
+                  onClick={() =>
+                    copyToClipboard("jeetsharma2112@gmail.com", "email")
+                  }
+                  className="text-sm font-mono text-gray-900 dark:text-gray-100 hover:text-blue-600 dark:hover:text-blue-400 transition-all duration-200 hover:scale-105 cursor-pointer group relative"
+                  title="Click to copy"
                 >
-                  jeetsharma2112@gmail.com
-                </a>
+                  <span className="block">jeetsharma2112@gmail.com</span>
+                  {emailCopied && (
+                    <span className="absolute -top-8 left-0 text-xs bg-green-500 text-white px-2 py-1 rounded animate-fade-in">
+                      Copied!
+                    </span>
+                  )}
+                </button>
               </div>
               <div className="space-y-3">
                 <p className="text-xs font-mono uppercase tracking-wider text-gray-500 dark:text-gray-400">
                   Phone
                 </p>
-                <p className="text-sm font-mono text-gray-900 dark:text-gray-100">
-                  +1 (413) 466 5844
-                </p>
+                <button
+                  onClick={() => copyToClipboard("+1 (413) 466 5844", "phone")}
+                  className="text-sm font-mono text-gray-900 dark:text-gray-100 hover:text-blue-600 dark:hover:text-blue-400 transition-all duration-200 hover:scale-105 cursor-pointer group relative"
+                  title="Click to copy"
+                >
+                  <span className="block">+1 (413) 466 5844</span>
+                  {phoneCopied && (
+                    <span className="absolute -top-8 left-0 text-xs bg-green-500 text-white px-2 py-1 rounded animate-fade-in">
+                      Copied!
+                    </span>
+                  )}
+                </button>
               </div>
               <div className="space-y-3">
                 <p className="text-xs font-mono uppercase tracking-wider text-gray-500 dark:text-gray-400">
@@ -638,7 +672,7 @@ const BodySection = () => {
                   href="https://github.com/JeetDSharma"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="text-sm font-mono text-gray-900 dark:text-gray-100 hover:text-blue-600 dark:hover:text-blue-400 transition-colors"
+                  className="text-sm font-mono text-gray-900 dark:text-gray-100 hover:text-blue-600 dark:hover:text-blue-400 transition-all duration-200 hover:scale-105 inline-block"
                 >
                   github.com/JeetDSharma
                 </a>
@@ -651,7 +685,7 @@ const BodySection = () => {
                   href="https://www.linkedin.com/in/jeet-sharma"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="text-sm font-mono text-gray-900 dark:text-gray-100 hover:text-blue-600 dark:hover:text-blue-400 transition-colors"
+                  className="text-sm font-mono text-gray-900 dark:text-gray-100 hover:text-blue-600 dark:hover:text-blue-400 transition-all duration-200 hover:scale-105 inline-block"
                 >
                   linkedin.com/in/jeet-sharma
                 </a>
@@ -665,12 +699,12 @@ const BodySection = () => {
                 rel="noopener noreferrer"
                 className="flex-1"
               >
-                <button className="w-full px-6 py-3 bg-gray-900 dark:bg-gray-100 text-white dark:text-black text-sm font-mono uppercase tracking-wider hover:bg-gray-800 dark:hover:bg-gray-200 transition-colors">
+                <button className="w-full px-6 py-3 bg-gray-900 dark:bg-gray-100 text-white dark:text-black text-sm font-mono uppercase tracking-wider hover:bg-gray-800 dark:hover:bg-gray-200 hover:scale-105 transition-all duration-200">
                   View Resume
                 </button>
               </a>
               <a href={emailLink} className="flex-1">
-                <button className="w-full px-6 py-3 border border-gray-900 dark:border-gray-100 text-gray-900 dark:text-gray-100 text-sm font-mono uppercase tracking-wider hover:bg-gray-900 hover:text-white dark:hover:bg-gray-100 dark:hover:text-black transition-colors">
+                <button className="w-full px-6 py-3 border border-gray-900 dark:border-gray-100 text-gray-900 dark:text-gray-100 text-sm font-mono uppercase tracking-wider hover:bg-gray-900 hover:text-white dark:hover:bg-gray-100 dark:hover:text-black hover:scale-105 transition-all duration-200">
                   Get in Touch
                 </button>
               </a>
