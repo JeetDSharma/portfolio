@@ -18,24 +18,25 @@ const timelineVariants = {
 
 const experiences = [
   {
-    title: "Full Stack Development Intern @ Karpuragaurai Technologies",
+    title: "Software Developer Summer Intern @ Karpuragaurai Technologies",
     duration: "May 2025 – Aug 2025",
     year: "2025",
     achievement:
-      "Architected multi-tenant RAG backend for business customer support across chat, WhatsApp, and voice transcripts with semantic retrieval and event-driven orchestration",
+      "Built multi-tenant RAG backend for business customer support across chat and messaging platforms with semantic retrieval using PostgreSQL pgvector for grounded LLM responses",
     impact: [
       { metric: "5+", label: "Active Tenants" },
-      { metric: "1K+", label: "Queries/Day" },
+      { metric: "30%", label: "Latency ↓" },
       { metric: "<2s", label: "Response Time" },
     ],
     techStack: [
-      "Node.js",
-      "TypeScript",
-      "Next.js",
+      "Python",
+      "Redis",
+      "REST APIs",
+      "AWS",
+      "Docker",
+      "Celery",
       "PostgreSQL",
       "pgvector",
-      "AWS EC2",
-      "Docker",
     ],
   },
   {
@@ -110,13 +111,7 @@ const Skills = [
   },
   {
     title: "Architecture Patterns",
-    skills: [
-      "Distributed Systems",
-      "Event-Driven Architecture",
-      "Microservices",
-      "Data Pipelines",
-      "System Design",
-    ],
+    skills: ["Distributed Systems", "Data Pipelines", "System Design"],
   },
 ];
 
