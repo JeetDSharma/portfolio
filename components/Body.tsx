@@ -7,7 +7,7 @@ import { Button } from "@/components/ui/button";
 import { LucideArrowRight } from "lucide-react";
 import EmailWithCopy from "./EmailClipboard";
 import { Download, Mail, Github, Linkedin } from "lucide-react";
-import GitHubActivity from "./GitHubActivity";
+import LazyGitHubActivity from "./LazyGitHubActivity";
 import ArchitectureModal from "./ArchitectureModal";
 import CommandPalette from "./CommandPalette";
 
@@ -259,7 +259,7 @@ const BodySection = () => {
         id="about"
         initial={{ opacity: 0, y: 40 }}
         whileInView={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.8, ease: "easeOut" }}
+        transition={{ duration: 0.6, ease: "easeOut" }}
         className="text-center"
       >
         <h2 className="text-3xl md:text-5xl font-bold text-gray-900 dark:text-white mb-8">
@@ -341,7 +341,7 @@ const BodySection = () => {
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5, delay: index * 0.1 }}
-              viewport={{ once: true }}
+              viewport={{ once: true, margin: "50px" }}
               className="bg-white dark:bg-gray-950 border border-gray-200 dark:border-gray-800 hover:border-gray-900 dark:hover:border-gray-100 transition-colors duration-300 p-8"
             >
               {/* Badges */}
@@ -599,22 +599,14 @@ const BodySection = () => {
         </div>
       </motion.div>
 
-      {/* GitHub Activity */}
-      <motion.div
-        initial={{ opacity: 0, y: 20 }}
-        whileInView={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.5 }}
-        viewport={{ once: true }}
-        className="max-w-4xl mx-auto"
-      >
-        <GitHubActivity />
-      </motion.div>
+      {/* GitHub Activity - Lazy Loaded */}
+      <LazyGitHubActivity />
 
-      {/* /* Contact & Portfolio */}
+      {/* Contact & Portfolio */}
       <motion.div
         initial={{ opacity: 0, y: 40 }}
         whileInView={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.8, ease: "easeOut" }}
+        transition={{ duration: 0.6, ease: "easeOut" }}
         className="text-center max-w-3xl mx-auto py-16"
         id="contact"
       >
