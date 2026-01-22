@@ -46,7 +46,7 @@ const experiences = [
     achievement:
       "Architected AI-driven forensics platform from zero to production serving enterprise clients",
     impact: [
-      { metric: "50+", label: "Cases" },
+      { metric: "50+", label: "Cases Solved" },
       { metric: "20+", label: "APIs Designed" },
       { metric: "0→1", label: "Founding Engineer" },
     ],
