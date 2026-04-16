@@ -173,12 +173,6 @@ export const showcaseConfig: ShowcaseConfig = {
   intervalSec: 5,
 };
 
-export const aboutFounder = {
-  headline: "About",
-  body:
-    "I'm Jeet — a founding engineer who ships products end-to-end: from first customer conversation to reliable software in production. I care about clarity, speed, and systems that still make sense six months later.",
-};
-
 export const experiencesFounder = [
   {
     role: "Software Developer Intern",

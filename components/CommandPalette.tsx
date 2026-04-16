@@ -5,7 +5,6 @@ import { Command } from "cmdk";
 import { motion, AnimatePresence } from "framer-motion";
 import {
   Search,
-  Hash,
   Briefcase,
   Code,
   Mail,
@@ -106,13 +105,6 @@ const CommandPalette: React.FC<CommandPaletteProps> = ({ isOpen, onClose }) => {
                     className="text-xs font-mono uppercase tracking-widest text-gray-500 dark:text-gray-400 px-2 pt-2 pb-1"
                   >
                     <Command.Item
-                      onSelect={() => scrollToSection("about")}
-                      className="flex items-center gap-3 px-3 py-2 text-sm text-gray-900 dark:text-white rounded cursor-pointer hover:bg-gray-100 dark:hover:bg-gray-900 data-[selected=true]:bg-gray-100 dark:data-[selected=true]:bg-gray-900 transition-colors"
-                    >
-                      <Hash className="w-4 h-4 text-gray-400" />
-                      <span>About Me</span>
-                    </Command.Item>
-                    <Command.Item
                       onSelect={() => scrollToSection("projects")}
                       className="flex items-center gap-3 px-3 py-2 text-sm text-gray-900 dark:text-white rounded cursor-pointer hover:bg-gray-100 dark:hover:bg-gray-900 data-[selected=true]:bg-gray-100 dark:data-[selected=true]:bg-gray-900 transition-colors"
                     >
@@ -205,7 +197,7 @@ const CommandPalette: React.FC<CommandPaletteProps> = ({ isOpen, onClose }) => {
                         "nextjs",
                         "frontend",
                       ]}
-                      onSelect={() => scrollToSection("about")}
+                      onSelect={() => scrollToSection("projects")}
                       className="flex items-center gap-3 px-3 py-2 text-sm text-gray-900 dark:text-white rounded cursor-pointer hover:bg-gray-100 dark:hover:bg-gray-900 data-[selected=true]:bg-gray-100 dark:data-[selected=true]:bg-gray-900 transition-colors"
                     >
                       <Code className="w-4 h-4 text-gray-400" />
@@ -213,7 +205,7 @@ const CommandPalette: React.FC<CommandPaletteProps> = ({ isOpen, onClose }) => {
                     </Command.Item>
                     <Command.Item
                       keywords={["python", "nodejs", "backend", "api"]}
-                      onSelect={() => scrollToSection("about")}
+                      onSelect={() => scrollToSection("projects")}
                       className="flex items-center gap-3 px-3 py-2 text-sm text-gray-900 dark:text-white rounded cursor-pointer hover:bg-gray-100 dark:hover:bg-gray-900 data-[selected=true]:bg-gray-100 dark:data-[selected=true]:bg-gray-900 transition-colors"
                     >
                       <Code className="w-4 h-4 text-gray-400" />
@@ -221,7 +213,7 @@ const CommandPalette: React.FC<CommandPaletteProps> = ({ isOpen, onClose }) => {
                     </Command.Item>
                     <Command.Item
                       keywords={["cpp", "c++", "systems", "low-level"]}
-                      onSelect={() => scrollToSection("about")}
+                      onSelect={() => scrollToSection("projects")}
                       className="flex items-center gap-3 px-3 py-2 text-sm text-gray-900 dark:text-white rounded cursor-pointer hover:bg-gray-100 dark:hover:bg-gray-900 data-[selected=true]:bg-gray-100 dark:data-[selected=true]:bg-gray-900 transition-colors"
                     >
                       <Code className="w-4 h-4 text-gray-400" />

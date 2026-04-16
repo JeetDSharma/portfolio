@@ -4,17 +4,12 @@ import React from "react";
 import Image from "next/image";
 import { motion } from "framer-motion";
 import ProjectCover from "@/components/ProjectCover";
+import LazyGitHubActivity from "@/components/LazyGitHubActivity";
 import {
   founderProjects,
-  aboutFounder,
   experiencesFounder,
   education,
 } from "@/lib/founderContent";
-
-const timelineVariants = {
-  hidden: { opacity: 0, y: 50 },
-  visible: { opacity: 1, y: 0 },
-};
 
 const emailLink = `mailto:jeetsharma2112@gmail.com
 ?subject=Interested%20in%20Connecting%20with%20You!
@@ -44,22 +39,6 @@ const BodySection = () => {
       className="mx-auto max-w-5xl space-y-20 overflow-hidden px-6 py-16 md:py-24"
       id="body-section"
     >
-      <motion.div
-        id="about"
-        initial={{ opacity: 0, y: 40 }}
-        whileInView={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.6, ease: "easeOut" }}
-        viewport={{ once: true }}
-        className="text-center"
-      >
-        <h2 className="font-display text-3xl font-bold tracking-tight text-foreground md:text-5xl">
-          {aboutFounder.headline}
-        </h2>
-        <p className="mx-auto mt-6 max-w-2xl text-base leading-relaxed text-muted-foreground md:text-lg">
-          {aboutFounder.body}
-        </p>
-      </motion.div>
-
       <motion.div
         id="projects"
         initial={{ opacity: 0, y: 20 }}
@@ -280,6 +259,10 @@ const BodySection = () => {
           ))}
         </div>
       </motion.div>
+
+      <div id="github">
+        <LazyGitHubActivity />
+      </div>
 
       <motion.div
         initial={{ opacity: 0, y: 40 }}

@@ -15,8 +15,8 @@ const scrollTop = () => {
 
 const links = [
   { label: "Work", id: "projects" },
-  { label: "About", id: "about" },
   { label: "Experience", id: "experience" },
+  { label: "GitHub", id: "github" },
   { label: "Contact", id: "contact" },
 ];
 
