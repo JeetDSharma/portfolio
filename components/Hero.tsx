@@ -1,6 +1,7 @@
 "use client";
 
 import React from "react";
+import Image from "next/image";
 import { motion } from "framer-motion";
 import FounderShowcase from "@/components/FounderShowcase";
 
@@ -21,9 +22,21 @@ const Hero = () => {
           transition={{ duration: 0.7, ease: "easeOut" }}
           className="order-2 flex flex-col justify-center md:order-1"
         >
-          <p className="mb-3 text-xs font-semibold uppercase tracking-[0.25em] text-brand">
-            Founding engineer
-          </p>
+          <div className="mb-4 flex items-center gap-3">
+            <div className="relative h-12 w-12 shrink-0 overflow-hidden rounded-full border-2 border-border shadow-sm">
+              <Image
+                src="/linkedIn-Profile.jpeg"
+                alt="Jeet Sharma"
+                fill
+                className="object-cover"
+                sizes="48px"
+                priority
+              />
+            </div>
+            <p className="text-xs font-semibold uppercase tracking-[0.25em] text-brand">
+              Founding engineer
+            </p>
+          </div>
           <h1 className="font-display text-4xl font-bold leading-[1.05] tracking-tight text-foreground md:text-5xl lg:text-6xl">
             Jeet Sharma
           </h1>

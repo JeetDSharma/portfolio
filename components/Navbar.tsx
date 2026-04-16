@@ -1,6 +1,7 @@
 "use client";
 
 import React, { useState } from "react";
+import Image from "next/image";
 import { AiOutlineMenu, AiOutlineClose } from "react-icons/ai";
 
 const scrollToId = (id: string) => {
@@ -81,10 +82,17 @@ export default function Navbar() {
         <button
           type="button"
           onClick={scrollTop}
-          className="mx-auto flex h-10 w-10 items-center justify-center rounded-lg border border-border text-sm font-bold text-foreground transition-colors hover:border-brand hover:text-brand"
+          className="mx-auto flex h-10 w-10 items-center justify-center overflow-hidden rounded-full border-2 border-border transition-colors hover:border-brand"
           aria-label="Home"
         >
-          JS
+          <Image
+            src="/linkedIn-Profile.jpeg"
+            alt="Jeet Sharma"
+            width={40}
+            height={40}
+            className="h-full w-full object-cover"
+            priority
+          />
         </button>
 
         <nav
