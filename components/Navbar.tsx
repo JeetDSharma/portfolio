@@ -77,7 +77,7 @@ export default function Navbar() {
       )}
 
       {/* Desktop vertical rail */}
-      <aside className="fixed bottom-0 left-0 top-0 z-50 hidden w-[4.5rem] flex-col border-r border-border bg-background/95 py-6 backdrop-blur md:flex">
+      <aside className="fixed bottom-0 left-0 top-0 z-50 hidden w-[8.5rem] shrink-0 flex-col border-r border-border bg-background/95 px-2 py-6 backdrop-blur md:flex">
         <button
           type="button"
           onClick={scrollTop}
@@ -88,7 +88,7 @@ export default function Navbar() {
         </button>
 
         <nav
-          className="mt-6 flex flex-col items-center gap-5 px-2"
+          className="mt-6 flex w-full flex-col items-stretch gap-5 px-1"
           aria-label="Primary"
         >
           {links.map((l) => (
@@ -96,7 +96,7 @@ export default function Navbar() {
               key={l.id}
               type="button"
               onClick={() => go(l.id)}
-              className="text-[11px] font-medium uppercase tracking-[0.2em] text-muted-foreground transition-colors hover:text-brand"
+              className="whitespace-nowrap text-center text-[11px] font-medium uppercase tracking-[0.12em] text-muted-foreground transition-colors hover:text-brand"
             >
               {l.label}
             </button>

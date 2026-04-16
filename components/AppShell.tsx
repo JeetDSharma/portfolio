@@ -10,7 +10,7 @@ export default function AppShell({
     <div className="min-h-screen bg-background">
       <Navbar />
       {/* Desktop sidebar width matches Navbar fixed rail */}
-      <div className="md:pl-[4.5rem]">{children}</div>
+      <div className="md:pl-[8.5rem]">{children}</div>
     </div>
   );
 }
