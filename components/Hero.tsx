@@ -3,7 +3,7 @@
 import React from "react";
 import Image from "next/image";
 import { motion } from "framer-motion";
-import FounderShowcase from "@/components/FounderShowcase";
+import { heroStats } from "@/lib/founderContent";
 
 const Hero = () => {
   const scrollToProjects = () => {
@@ -15,21 +15,21 @@ const Hero = () => {
       id="top"
       className="min-h-screen pt-20 md:pt-0 md:min-h-[100svh]"
     >
-      <div className="mx-auto grid max-w-6xl items-center gap-10 px-6 py-12 md:grid-cols-2 md:gap-12 md:py-20 lg:py-24">
+      <div className="mx-auto flex max-w-3xl flex-col justify-center gap-10 px-6 py-12 md:gap-12 md:py-20 lg:py-24">
         <motion.div
           initial={{ opacity: 0, y: 24 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.7, ease: "easeOut" }}
-          className="order-2 flex flex-col justify-center md:order-1"
+          className="flex flex-col"
         >
           <div className="mb-4 flex items-center gap-3">
-            <div className="relative h-12 w-12 shrink-0 overflow-hidden rounded-full border-2 border-border shadow-sm">
+            <div className="relative h-14 w-14 shrink-0 overflow-hidden rounded-full border-2 border-border shadow-sm">
               <Image
                 src="/linkedIn-Profile.jpeg"
                 alt="Jeet Sharma"
                 fill
                 className="object-cover"
-                sizes="48px"
+                sizes="56px"
                 priority
               />
             </div>
@@ -68,10 +68,22 @@ const Hero = () => {
         <motion.div
           initial={{ opacity: 0, y: 24 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.7, delay: 0.1, ease: "easeOut" }}
-          className="order-1 md:order-2"
+          transition={{ duration: 0.7, delay: 0.15, ease: "easeOut" }}
+          className="grid grid-cols-2 gap-3 md:grid-cols-4"
         >
-          <FounderShowcase />
+          {heroStats.map((stat) => (
+            <div
+              key={stat.label}
+              className="rounded-lg border border-border/60 bg-muted/30 px-3 py-4 text-center"
+            >
+              <div className="text-2xl font-bold tracking-tight text-foreground md:text-3xl">
+                {stat.value}
+              </div>
+              <div className="mt-1 text-[10px] font-medium uppercase tracking-wide text-muted-foreground">
+                {stat.label}
+              </div>
+            </div>
+          ))}
         </motion.div>
       </div>
     </section>

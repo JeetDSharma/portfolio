@@ -173,6 +173,15 @@ export const showcaseConfig: ShowcaseConfig = {
   intervalSec: 5,
 };
 
+export type HeroStat = { value: string; label: string; context?: string };
+
+export const heroStats: HeroStat[] = [
+  { value: "1,000+", label: "cases solved / month", context: "myFRT" },
+  { value: "$20M+", label: "traced on-chain", context: "Coinspector" },
+  { value: "2B+", label: "records handled", context: "Lab Systems" },
+  { value: "~70%", label: "lower inference cost", context: "LLM Router" },
+];
+
 export const experiencesFounder = [
   {
     role: "Software Developer Intern",
