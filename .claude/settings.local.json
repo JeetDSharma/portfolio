@@ -1,0 +1,19 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(npm run:*)",
+      "Bash(curl -s -o /dev/null -w \"%{http_code}\" http://localhost:3000)",
+      "Bash(mkdir -p /Users/jeetsharma/Documents/projects/portfolio/public/projects/myfrt)",
+      "Bash(cp /Users/jeetsharma/Documents/projects/portfolio/images/myfrt/*.jpeg /Users/jeetsharma/Documents/projects/portfolio/public/projects/myfrt/)",
+      "Bash(mkdir -p /Users/jeetsharma/Documents/projects/portfolio/public/projects/coinspector)",
+      "Bash(cp \"/Users/jeetsharma/Documents/projects/portfolio/images/coinspector/takeout-20260317T174740Z-3-001.mp4\" /Users/jeetsharma/Documents/projects/portfolio/public/projects/coinspector/coinspector.mp4)",
+      "Bash(ffmpeg -version)",
+      "Bash(ffprobe -v quiet -print_format json -show_streams \"/Users/jeetsharma/Documents/projects/portfolio/public/projects/coinspector/coinspector.mp4\")",
+      "Bash(python3 -c \"import json,sys; d=json.load\\(sys.stdin\\); v=[s for s in d['streams'] if s['codec_type']=='video'][0]; print\\(v['width'], v['height'], v.get\\('r_frame_rate'\\), v.get\\('codec_name'\\)\\)\")",
+      "Bash(ffprobe *)",
+      "Bash(ffmpeg -y -loop 1 -t 5 -i /Users/jeetsharma/Documents/projects/portfolio/images/myfrt/dashboard.jpeg -loop 1 -t 5 -i /Users/jeetsharma/Documents/projects/portfolio/images/myfrt/case_manager.jpeg -loop 1 -t 5 -i /Users/jeetsharma/Documents/projects/portfolio/images/myfrt/evidence_manager.jpeg -loop 1 -t 5 -i /Users/jeetsharma/Documents/projects/portfolio/images/myfrt/process_manager.jpeg -loop 1 -t 5 -i /Users/jeetsharma/Documents/projects/portfolio/images/myfrt/processing_log.jpeg -loop 1 -t 5 -i /Users/jeetsharma/Documents/projects/portfolio/images/myfrt/keyword_list.jpeg -filter_complex ' *)",
+      "Bash(bash *)",
+      "Bash(ffmpeg -y -i /tmp/myfrt_clip_0.mp4 -i /tmp/myfrt_clip_1.mp4 -i /tmp/myfrt_clip_2.mp4 -i /tmp/myfrt_clip_3.mp4 -i /tmp/myfrt_clip_4.mp4 -i /tmp/myfrt_clip_5.mp4 -filter_complex ' *)"
+    ]
+  }
+}

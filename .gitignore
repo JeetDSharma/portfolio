@@ -36,3 +36,5 @@ yarn-error.log*
 next-env.d.ts
 public/resume_old2.pdf
 public/old_resume
+images/
+

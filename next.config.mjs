@@ -9,6 +9,7 @@ const nextConfig = {
     images: {
         formats: ['image/avif', 'image/webp'],
     },
+    transpilePackages: ['three'],
     experimental: {
         optimizePackageImports: ['framer-motion', 'lucide-react'],
     },

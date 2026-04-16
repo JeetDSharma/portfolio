@@ -1,9 +1,11 @@
 import type { Metadata } from "next";
 import localFont from "next/font/local";
+import { Syne } from "next/font/google";
 import "./globals.css";
 import { ThemeProvider } from "@/components/theme-provider";
 import { Analytics } from "@vercel/analytics/react";
 import { SpeedInsights } from "@vercel/speed-insights/next";
+
 const geistSans = localFont({
   src: "./fonts/GeistVF.woff",
   variable: "--font-geist-sans",
@@ -15,30 +17,29 @@ const geistMono = localFont({
   weight: "100 900",
 });
 
+const syne = Syne({
+  subsets: ["latin"],
+  variable: "--font-display",
+  weight: ["500", "600", "700", "800"],
+});
+
 export const metadata: Metadata = {
   metadataBase: new URL("https://jeetsharma.dev"),
   title: {
-    default: "Jeet Sharma | Backend Engineer & Distributed Systems",
+    default: "Jeet Sharma | Founding Engineer & Product Builder",
     template: "%s | Jeet Sharma",
   },
   description:
-    "Backend Engineer building production-grade distributed systems and AI platforms. Founding engineer with experience scaling from zero to enterprise. MS in Computer Science @ UMass Amherst.",
+    "Founding engineer shipping products end-to-end—from idea to production. AI platforms, enterprise software, and 0→1 builds. MS CS @ UMass Amherst.",
   keywords: [
     "Jeet Sharma",
-    "Backend Engineer",
-    "Distributed Systems",
-    "Software Engineer",
-    "Full Stack Developer",
-    "AI Engineer",
-    "Python Developer",
-    "Node.js Developer",
+    "Founding Engineer",
+    "Product Engineer",
+    "Full Stack",
+    "Startup Engineer",
+    "AI",
     "UMass Amherst",
-    "System Architecture",
-    "Production AI",
-    "Digital Forensics",
-    "RAG Systems",
-    "PostgreSQL",
-    "AWS",
+    "Software Engineer",
   ],
   authors: [{ name: "Jeet Sharma", url: "https://jeetsharma.com" }],
   creator: "Jeet Sharma",
@@ -52,24 +53,24 @@ export const metadata: Metadata = {
     type: "website",
     locale: "en_US",
     url: "https://jeetsharma.com",
-    title: "Jeet Sharma | Backend Engineer & Distributed Systems",
+    title: "Jeet Sharma | Founding Engineer & Product Builder",
     description:
-      "Backend Engineer building production-grade distributed systems and AI platforms. Founding engineer with experience scaling from zero to enterprise.",
+      "Founding engineer shipping products end-to-end. AI platforms, enterprise software, and reliable 0→1 builds.",
     siteName: "Jeet Sharma Portfolio",
     images: [
       {
         url: "/og-image.png",
         width: 1200,
         height: 630,
-        alt: "Jeet Sharma - Backend Engineer & Distributed Systems",
+        alt: "Jeet Sharma — Founding Engineer",
       },
     ],
   },
   twitter: {
     card: "summary_large_image",
-    title: "Jeet Sharma | Backend Engineer & Distributed Systems",
+    title: "Jeet Sharma | Founding Engineer & Product Builder",
     description:
-      "Backend Engineer building production-grade distributed systems and AI platforms. MS in Computer Science @ UMass Amherst.",
+      "Founding engineer shipping products end-to-end. MS CS @ UMass Amherst.",
     creator: "@jeetsharma",
     images: ["/og-image.png"],
   },
@@ -115,12 +116,12 @@ export default function RootLayout({
         />
         <meta
           name="theme-color"
-          content="#000000"
+          content="#0f0f0f"
           media="(prefers-color-scheme: dark)"
         />
         <meta
           name="theme-color"
-          content="#ffffff"
+          content="#fcfcfc"
           media="(prefers-color-scheme: light)"
         />
         <link rel="canonical" href="https://jeetsharma.dev" />
@@ -133,7 +134,7 @@ export default function RootLayout({
               name: "Jeet Sharma",
               url: "https://jeetsharma.dev",
               image: "https://jeetsharma.dev/og-image.png",
-              jobTitle: "Backend Engineer",
+              jobTitle: "Founding Engineer",
               worksFor: {
                 "@type": "EducationalOrganization",
                 name: "University of Massachusetts Amherst",
@@ -153,25 +154,22 @@ export default function RootLayout({
                 "https://www.linkedin.com/in/jeet-sharma",
               ],
               knowsAbout: [
-                "Distributed Systems",
-                "Backend Engineering",
-                "System Architecture",
+                "Product Development",
+                "Software Engineering",
                 "Artificial Intelligence",
-                "Python",
-                "Node.js",
-                "PostgreSQL",
-                "AWS",
+                "Full Stack Development",
+                "Startups",
               ],
             }),
           }}
         />
       </head>
       <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
+        className={`${geistSans.variable} ${geistMono.variable} ${syne.variable} font-sans antialiased`}
       >
         <ThemeProvider
           attribute="class"
-          defaultTheme="dark"
+          defaultTheme="light"
           enableSystem
           disableTransitionOnChange
         >

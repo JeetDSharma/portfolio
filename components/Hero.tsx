@@ -1,112 +1,67 @@
 "use client";
+
 import React from "react";
 import { motion } from "framer-motion";
-import { AuroraBackground } from "./ui/aurora-backgrounds";
-import { Highlight } from "./ui/hero-highlight";
+import FounderShowcase from "@/components/FounderShowcase";
 
 const Hero = () => {
-  const scrollToBody = () => {
-    const bodySection = document.getElementById("body-section");
-    if (bodySection) {
-      bodySection.scrollIntoView({ behavior: "smooth" });
-    }
+  const scrollToProjects = () => {
+    document.getElementById("projects")?.scrollIntoView({ behavior: "smooth" });
   };
 
   return (
-    <AuroraBackground className="min-h-screen pt-16 md:pt-20">
-      {/* Using `pt-16` (~4rem or 64px) for mobile, `pt-20` (~5rem or 80px) for larger screens */}
-      <motion.div
-        initial={{ opacity: 0.0, y: 40 }}
-        whileInView={{ opacity: 1, y: 0 }}
-        transition={{
-          delay: 0.3,
-          duration: 0.8,
-          ease: "easeInOut",
-        }}
-        className="relative flex flex-col gap-4 items-center justify-center px-4"
-      >
-        <div className="text-4xl md:text-7xl font-bold dark:text-white text-center tracking-tight">
-          <span className="block mb-2">Jeet Sharma</span>
-        </div>
-
-        <div className="text-base md:text-2xl font-mono text-gray-700 dark:text-gray-300 py-4 tracking-wide">
-          Backend Engineer • Distributed Systems • Production AI
-        </div>
-
-        <p className="text-sm md:text-base text-gray-600 dark:text-gray-400 max-w-2xl text-center mt-2 mb-8 leading-relaxed">
-          Building scalable infrastructure and data-intensive platforms from
-          zero to production. Currently @ UMass Amherst pursuing MS in Computer
-          Science.
-        </p>
-
-        {/* Primary CTAs */}
-        <div className="flex flex-col sm:flex-row gap-4 items-center">
-          <button
-            className="bg-gray-900 dark:bg-gray-100 text-white dark:text-black px-8 py-3 text-sm font-mono uppercase tracking-wider hover:bg-gray-800 dark:hover:bg-gray-200 hover:scale-105 transition-all duration-200"
-            onClick={scrollToBody}
-          >
-            View My Work ↓
-          </button>
-          <a
-            href="mailto:jeetsharma2112@gmail.com"
-            className="border-2 border-gray-900 dark:border-gray-100 text-gray-900 dark:text-gray-100 px-8 py-3 text-sm font-mono uppercase tracking-wider hover:bg-gray-900 hover:text-white dark:hover:bg-gray-100 dark:hover:text-black hover:scale-105 transition-all duration-200"
-          >
-            Get in Touch
-          </a>
-        </div>
-
-        {/* Quick Links */}
-        <div className="flex flex-wrap gap-6 items-center justify-center mt-8 text-xs font-mono uppercase tracking-widest">
-          <a
-            href="https://github.com/JeetDSharma"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-gray-100 transition-colors flex items-center gap-2"
-          >
-            <svg className="w-4 h-4" fill="currentColor" viewBox="0 0 24 24">
-              <path
-                fillRule="evenodd"
-                d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z"
-                clipRule="evenodd"
-              />
-            </svg>
-            GitHub
-          </a>
-          <a
-            href="https://www.linkedin.com/in/jeet-sharma"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-gray-100 transition-colors flex items-center gap-2"
-          >
-            <svg className="w-4 h-4" fill="currentColor" viewBox="0 0 24 24">
-              <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z" />
-            </svg>
-            LinkedIn
-          </a>
-          <a
-            href="/resume.pdf"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-gray-100 transition-colors flex items-center gap-2"
-          >
-            <svg
-              className="w-4 h-4"
-              fill="none"
-              stroke="currentColor"
-              viewBox="0 0 24 24"
+    <section
+      id="top"
+      className="min-h-screen pt-20 md:pt-0 md:min-h-[100svh]"
+    >
+      <div className="mx-auto grid max-w-6xl items-center gap-10 px-6 py-12 md:grid-cols-2 md:gap-12 md:py-20 lg:py-24">
+        <motion.div
+          initial={{ opacity: 0, y: 24 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.7, ease: "easeOut" }}
+          className="order-2 flex flex-col justify-center md:order-1"
+        >
+          <p className="mb-3 text-xs font-semibold uppercase tracking-[0.25em] text-brand">
+            Founding engineer
+          </p>
+          <h1 className="font-display text-4xl font-bold leading-[1.05] tracking-tight text-foreground md:text-5xl lg:text-6xl">
+            Jeet Sharma
+          </h1>
+          <p className="mt-2 font-display text-2xl font-semibold text-brand md:text-3xl lg:text-4xl">
+            I ship products end-to-end.
+          </p>
+          <p className="mt-6 max-w-lg text-base leading-relaxed text-muted-foreground md:text-lg">
+            From first customer conversation to software in production—clear
+            UX, reliable backends, and systems that keep working after launch.
+            MS CS @ UMass Amherst.
+          </p>
+          <div className="mt-8 flex flex-col gap-3 sm:flex-row sm:items-center">
+            <button
+              type="button"
+              onClick={scrollToProjects}
+              className="rounded-xl bg-brand px-8 py-3.5 text-sm font-semibold text-brand-foreground shadow-lg transition hover:opacity-95"
             >
-              <path
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                strokeWidth={2}
-                d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"
-              />
-            </svg>
-            Resume
-          </a>
-        </div>
-      </motion.div>
-    </AuroraBackground>
+              Selected work
+            </button>
+            <a
+              href="mailto:jeetsharma2112@gmail.com"
+              className="rounded-xl border border-border px-8 py-3.5 text-center text-sm font-semibold text-foreground transition hover:border-brand hover:text-brand"
+            >
+              Email me
+            </a>
+          </div>
+        </motion.div>
+
+        <motion.div
+          initial={{ opacity: 0, y: 24 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.7, delay: 0.1, ease: "easeOut" }}
+          className="order-1 md:order-2"
+        >
+          <FounderShowcase />
+        </motion.div>
+      </div>
+    </section>
   );
 };
 
