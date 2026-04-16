@@ -100,7 +100,12 @@ export const founderProjects: FounderProject[] = [
     story: "Classification layer routes each request to the right model — quality stays high, budget doesn't blow up.",
     media: {
       kind: "images",
-      items: [] as { src: string; alt: string }[],
+      items: [
+        {
+          src: "/projects/llm-router/difficulty-router.png",
+          alt: "RouteLLM difficulty router UI — local classifier and routing hints",
+        },
+      ],
     },
     techStack: ["Python", "PyTorch", "HuggingFace", "FastAPI", "Docker"],
     links: {
@@ -108,6 +113,7 @@ export const founderProjects: FounderProject[] = [
       demo: null,
     },
   },
+  /*
   {
     title: "AI recipe app",
     category: "Consumer · AI",
@@ -146,6 +152,7 @@ export const founderProjects: FounderProject[] = [
       paperLink: "https://www.ijrar.org/papers/IJRAR22B1808.pdf",
     },
   },
+  */
 ];
 
 export type ShowcaseConfig = {
