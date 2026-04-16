@@ -152,69 +152,66 @@ const BodySection = () => {
           Experience
         </h2>
 
-        <div className="flex flex-col gap-6">
+        <div className="divide-y divide-border/60 text-left">
           {experiencesFounder.map((exp, index) => (
-            <motion.article
+            <motion.div
               key={exp.role + exp.company}
-              initial={{ opacity: 0, y: 20 }}
+              initial={{ opacity: 0, y: 16 }}
               whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.5, delay: index * 0.05 }}
+              transition={{ duration: 0.4, delay: index * 0.05 }}
               viewport={{ once: true }}
-              className="overflow-hidden rounded-2xl border border-border/80 bg-card shadow-sm"
+              className="py-6 first:pt-0 last:pb-0"
             >
-              <div className="flex flex-wrap items-start justify-between gap-3 border-b border-border/60 px-6 py-4">
-                <div>
-                  <span className="rounded-full bg-brand/15 px-3 py-1 text-[11px] font-semibold uppercase tracking-wider text-brand">
+              {/* Metric tiles */}
+              <div className="grid grid-cols-3 gap-3">
+                {exp.impact.map((item) => (
+                  <div
+                    key={item.label}
+                    className="rounded-lg border border-border/60 bg-muted/30 px-3 py-3 text-center"
+                  >
+                    <div className="text-2xl font-bold tracking-tight text-foreground">
+                      {item.metric}
+                    </div>
+                    <div className="mt-0.5 text-[10px] font-medium uppercase tracking-wide text-muted-foreground">
+                      {item.label}
+                    </div>
+                  </div>
+                ))}
+              </div>
+
+              {/* Role · Company — Duration */}
+              <div className="mt-3 flex flex-wrap items-baseline justify-between gap-x-4 gap-y-1">
+                <div className="flex flex-wrap items-baseline gap-x-2">
+                  <span className="rounded-full bg-brand/15 px-2.5 py-0.5 text-[10px] font-semibold uppercase tracking-wider text-brand">
                     {exp.year}
                   </span>
-                  <h3 className="mt-2 text-lg font-bold tracking-tight text-foreground">
+                  <h3 className="text-sm font-bold tracking-tight text-foreground">
                     {exp.role}
                   </h3>
-                  <p className="text-sm text-muted-foreground">{exp.company}</p>
+                  <span className="text-sm text-muted-foreground">· {exp.company}</span>
                 </div>
-                <p className="pt-1 text-xs uppercase tracking-widest text-muted-foreground">
+                <span className="text-xs uppercase tracking-widest text-muted-foreground">
                   {exp.duration}
-                </p>
+                </span>
               </div>
 
-              <div className="px-6 py-5">
-                <p className="text-sm leading-relaxed text-muted-foreground md:text-base">
-                  {exp.achievement}
-                </p>
+              {/* Achievement */}
+              <p className="mt-1.5 text-sm leading-relaxed text-muted-foreground">
+                {exp.achievement}
+              </p>
 
-                <div className="mt-5 grid grid-cols-3 gap-3">
-                  {exp.impact.map((item) => (
-                    <div
-                      key={item.label}
-                      className="rounded-xl border border-border/60 bg-muted/30 p-4 text-center"
-                    >
-                      <div className="text-2xl font-bold text-foreground md:text-3xl">
-                        {item.metric}
-                      </div>
-                      <div className="mt-1 text-[10px] font-medium uppercase tracking-wide text-muted-foreground">
-                        {item.label}
-                      </div>
-                    </div>
-                  ))}
-                </div>
-
-                <details className="mt-5 border-t border-border/60 pt-4">
-                  <summary className="cursor-pointer text-xs font-medium text-muted-foreground transition hover:text-foreground">
-                    Tools & environment
-                  </summary>
-                  <div className="mt-3 flex flex-wrap gap-2">
-                    {exp.techStack.map((tech) => (
-                      <span
-                        key={tech}
-                        className="rounded-md border border-border/80 bg-muted/40 px-2 py-1 text-[11px] text-muted-foreground"
-                      >
-                        {tech}
-                      </span>
-                    ))}
-                  </div>
-                </details>
+              {/* Tech pills */}
+              <div className="mt-2.5 flex flex-wrap gap-1.5">
+                {exp.techStack.map((tech) => (
+                  <span
+                    key={tech}
+                    className="rounded-md border border-border/70 bg-muted/30 px-2 py-0.5 text-[11px] text-muted-foreground"
+                  >
+                    {tech}
+                  </span>
+                ))}
               </div>
-            </motion.article>
+            </motion.div>
           ))}
         </div>
       </motion.div>
