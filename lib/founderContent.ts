@@ -187,7 +187,7 @@ export const heroStats: HeroStat[] = [
 
 export const experiencesFounder = [
   {
-    role: "Software Developer Intern",
+    role: "Software Engineer (contract)",
     company: "Karpuragaurai Technologies",
     duration: "May 2025 – Aug 2025",
     year: "2025",
