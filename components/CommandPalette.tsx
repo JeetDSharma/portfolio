@@ -11,6 +11,7 @@ import {
   Github,
   FileText,
 } from "lucide-react";
+import { founderProjects } from "@/lib/founderContent";
 
 interface CommandPaletteProps {
   isOpen: boolean;
@@ -119,6 +120,13 @@ const CommandPalette: React.FC<CommandPaletteProps> = ({ isOpen, onClose }) => {
                       <span>Experience</span>
                     </Command.Item>
                     <Command.Item
+                      onSelect={() => scrollToSection("github")}
+                      className="flex items-center gap-3 px-3 py-2 text-sm text-gray-900 dark:text-white rounded cursor-pointer hover:bg-gray-100 dark:hover:bg-gray-900 data-[selected=true]:bg-gray-100 dark:data-[selected=true]:bg-gray-900 transition-colors"
+                    >
+                      <Github className="w-4 h-4 text-gray-400" />
+                      <span>GitHub activity</span>
+                    </Command.Item>
+                    <Command.Item
                       onSelect={() => scrollToSection("contact")}
                       className="flex items-center gap-3 px-3 py-2 text-sm text-gray-900 dark:text-white rounded cursor-pointer hover:bg-gray-100 dark:hover:bg-gray-900 data-[selected=true]:bg-gray-100 dark:data-[selected=true]:bg-gray-900 transition-colors"
                     >
@@ -131,94 +139,37 @@ const CommandPalette: React.FC<CommandPaletteProps> = ({ isOpen, onClose }) => {
                     heading="Projects"
                     className="text-xs font-mono uppercase tracking-widest text-gray-500 dark:text-gray-400 px-2 pt-3 pb-1"
                   >
-                    <Command.Item
-                      keywords={[
-                        "myfrt",
-                        "forensics",
-                        "nextjs",
-                        "python",
-                        "enterprise",
-                        "patent",
-                      ]}
-                      onSelect={() => scrollToSection("projects")}
-                      className="flex items-center gap-3 px-3 py-2 text-sm text-gray-900 dark:text-white rounded cursor-pointer hover:bg-gray-100 dark:hover:bg-gray-900 data-[selected=true]:bg-gray-100 dark:data-[selected=true]:bg-gray-900 transition-colors"
-                    >
-                      <Code className="w-4 h-4 text-gray-400" />
-                      <div className="flex-1">
-                        <div className="font-medium">
-                          myFrt: Digital Forensics Platform
+                    {founderProjects.map((project) => (
+                      <Command.Item
+                        key={project.title}
+                        keywords={[
+                          project.title,
+                          project.category,
+                          ...(project.techStack ?? []),
+                          ...(project.badges ?? []),
+                        ]}
+                        onSelect={() => {
+                          if (project.links.demo) {
+                            navigateToExternal(project.links.demo);
+                          } else {
+                            scrollToSection("projects");
+                          }
+                        }}
+                        className="flex items-center gap-3 px-3 py-2 text-sm text-gray-900 dark:text-white rounded cursor-pointer hover:bg-gray-100 dark:hover:bg-gray-900 data-[selected=true]:bg-gray-100 dark:data-[selected=true]:bg-gray-900 transition-colors"
+                      >
+                        <Code className="w-4 h-4 text-gray-400" />
+                        <div className="flex-1">
+                          <div className="font-medium">
+                            {project.title} — {project.category}
+                          </div>
+                          {project.techStack && project.techStack.length > 0 && (
+                            <div className="text-xs text-gray-500 dark:text-gray-400">
+                              {project.techStack.slice(0, 5).join(", ")}
+                            </div>
+                          )}
                         </div>
-                        <div className="text-xs text-gray-500 dark:text-gray-400">
-                          Next.js, Python, C++, MongoDB
-                        </div>
-                      </div>
-                    </Command.Item>
-                    <Command.Item
-                      keywords={["rag", "ai", "llm", "nodejs", "typescript"]}
-                      onSelect={() => scrollToSection("projects")}
-                      className="flex items-center gap-3 px-3 py-2 text-sm text-gray-900 dark:text-white rounded cursor-pointer hover:bg-gray-100 dark:hover:bg-gray-900 data-[selected=true]:bg-gray-100 dark:data-[selected=true]:bg-gray-900 transition-colors"
-                    >
-                      <Code className="w-4 h-4 text-gray-400" />
-                      <div className="flex-1">
-                        <div className="font-medium">
-                          Event-Driven RAG System
-                        </div>
-                        <div className="text-xs text-gray-500 dark:text-gray-400">
-                          Node.js, TypeScript, pgvector, WebSockets
-                        </div>
-                      </div>
-                    </Command.Item>
-                    <Command.Item
-                      keywords={["chat", "websocket", "realtime", "react"]}
-                      onSelect={() => scrollToSection("projects")}
-                      className="flex items-center gap-3 px-3 py-2 text-sm text-gray-900 dark:text-white rounded cursor-pointer hover:bg-gray-100 dark:hover:bg-gray-900 data-[selected=true]:bg-gray-100 dark:data-[selected=true]:bg-gray-900 transition-colors"
-                    >
-                      <Code className="w-4 h-4 text-gray-400" />
-                      <div className="flex-1">
-                        <div className="font-medium">
-                          Real-Time Chat Application
-                        </div>
-                        <div className="text-xs text-gray-500 dark:text-gray-400">
-                          React, WebSocket, Redis
-                        </div>
-                      </div>
-                    </Command.Item>
-                  </Command.Group>
-
-                  <Command.Group
-                    heading="Skills"
-                    className="text-xs font-mono uppercase tracking-widest text-gray-500 dark:text-gray-400 px-2 pt-3 pb-1"
-                  >
-                    <Command.Item
-                      keywords={[
-                        "typescript",
-                        "javascript",
-                        "react",
-                        "nextjs",
-                        "frontend",
-                      ]}
-                      onSelect={() => scrollToSection("projects")}
-                      className="flex items-center gap-3 px-3 py-2 text-sm text-gray-900 dark:text-white rounded cursor-pointer hover:bg-gray-100 dark:hover:bg-gray-900 data-[selected=true]:bg-gray-100 dark:data-[selected=true]:bg-gray-900 transition-colors"
-                    >
-                      <Code className="w-4 h-4 text-gray-400" />
-                      <span>Frontend: React, Next.js, TypeScript</span>
-                    </Command.Item>
-                    <Command.Item
-                      keywords={["python", "nodejs", "backend", "api"]}
-                      onSelect={() => scrollToSection("projects")}
-                      className="flex items-center gap-3 px-3 py-2 text-sm text-gray-900 dark:text-white rounded cursor-pointer hover:bg-gray-100 dark:hover:bg-gray-900 data-[selected=true]:bg-gray-100 dark:data-[selected=true]:bg-gray-900 transition-colors"
-                    >
-                      <Code className="w-4 h-4 text-gray-400" />
-                      <span>Backend: Python, Node.js, Flask</span>
-                    </Command.Item>
-                    <Command.Item
-                      keywords={["cpp", "c++", "systems", "low-level"]}
-                      onSelect={() => scrollToSection("projects")}
-                      className="flex items-center gap-3 px-3 py-2 text-sm text-gray-900 dark:text-white rounded cursor-pointer hover:bg-gray-100 dark:hover:bg-gray-900 data-[selected=true]:bg-gray-100 dark:data-[selected=true]:bg-gray-900 transition-colors"
-                    >
-                      <Code className="w-4 h-4 text-gray-400" />
-                      <span>Systems: C++, Data Structures</span>
-                    </Command.Item>
+                      </Command.Item>
+                    ))}
                   </Command.Group>
 
                   <Command.Group
