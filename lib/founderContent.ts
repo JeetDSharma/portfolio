@@ -28,6 +28,7 @@ export type FounderProject = {
   clientLogos?: { src: string; alt: string }[];
   techStack?: string[];
   badges?: ("enterprise" | "patent")[];
+  hasArchitecture?: boolean;
   links: ProjectLinks;
 };
 
@@ -51,6 +52,7 @@ export const founderProjects: FounderProject[] = [
     ],
     techStack: ["Next.js", "Python", "C++", "MongoDB", "Elasticsearch", "Docker", "AWS"],
     badges: ["enterprise"],
+    hasArchitecture: true,
     links: {
       github: null,
       demo: "https://myfrt.com/",

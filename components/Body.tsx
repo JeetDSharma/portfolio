@@ -5,6 +5,7 @@ import Image from "next/image";
 import { motion } from "framer-motion";
 import ProjectCover from "@/components/ProjectCover";
 import LazyGitHubActivity from "@/components/LazyGitHubActivity";
+import ArchitectureModal from "@/components/ArchitectureModal";
 import {
   founderProjects,
   experiencesFounder,
@@ -18,6 +19,7 @@ const emailLink = `mailto:jeetsharma2112@gmail.com
 const BodySection = () => {
   const [emailCopied, setEmailCopied] = React.useState(false);
   const [phoneCopied, setPhoneCopied] = React.useState(false);
+  const [architectureOpen, setArchitectureOpen] = React.useState(false);
 
   const copyToClipboard = async (text: string, type: "email" | "phone") => {
     try {
@@ -117,6 +119,15 @@ const BodySection = () => {
                     <a href={project.links.demo} target="_blank" rel="noopener noreferrer" className="text-brand underline-offset-4 hover:underline">
                       Live site →
                     </a>
+                  )}
+                  {project.hasArchitecture && (
+                    <button
+                      type="button"
+                      onClick={() => setArchitectureOpen(true)}
+                      className="text-muted-foreground underline-offset-4 transition hover:text-foreground hover:underline"
+                    >
+                      View architecture
+                    </button>
                   )}
                   {project.links.github && (
                     <a href={project.links.github} target="_blank" rel="noopener noreferrer" className="text-muted-foreground underline-offset-4 transition hover:text-foreground hover:underline">
@@ -374,6 +385,11 @@ const BodySection = () => {
           </a>
         </div>
       </motion.footer>
+
+      <ArchitectureModal
+        isOpen={architectureOpen}
+        onClose={() => setArchitectureOpen(false)}
+      />
     </section>
   );
 };
