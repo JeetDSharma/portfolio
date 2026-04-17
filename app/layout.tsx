@@ -30,7 +30,7 @@ export const metadata: Metadata = {
     template: "%s | Jeet Sharma",
   },
   description:
-    "Founding engineer shipping products end-to-end, from idea to production. AI platforms, enterprise software, and 0→1 builds. MS CS @ UMass Amherst.",
+    "Founding engineer who builds products from scratch and ships them. AI platforms, enterprise software, and products people actually use.",
   keywords: [
     "Jeet Sharma",
     "Founding Engineer",

@@ -37,7 +37,7 @@ export const founderProjects: FounderProject[] = [
     title: "myFRT",
     category: "Enterprise platform",
     tagline: "Digital forensics platform for real investigations.",
-    story: "End-to-end evidence workspace: ingest, process, and search at scale so investigators focus on cases, not tooling.",
+    story: "Built for real investigations. Processes digital evidence at scale, trusted by law enforcement and government clients to help close over 1,000 cases every month.",
     stat: { value: "1,000+", label: "cases solved / month" },
     meta: { year: "2023–present", client: "Lab Systems" },
     media: {
@@ -62,7 +62,7 @@ export const founderProjects: FounderProject[] = [
     title: "Coinspector",
     category: "Forensics · Blockchain",
     tagline: "Cryptocurrency investigation tool.",
-    story: "Traces wallet activity, clusters addresses, and surfaces suspicious patterns, giving investigators a clear trail through on-chain data.",
+    story: "Follows the money across crypto wallets, flags suspicious activity, and gives investigators a clear trail to follow.",
     stat: { value: "$20M+", label: "traced on-chain" },
     meta: { year: "2023–present", client: "Lab Systems" },
     media: {
@@ -80,7 +80,7 @@ export const founderProjects: FounderProject[] = [
     title: "MediLog",
     category: "Blockchain · Trust",
     tagline: "Pharmaceutical supply chain on-chain.",
-    story: "Tamper-proof medication tracking from factory to patient, evaluated by the Indian Medical Association.",
+    story: "Tracks medication from factory to patient so nothing gets swapped, faked, or lost. Evaluated by the Indian Medical Association.",
     meta: { year: "2020", duration: "Research → pilot" },
     media: {
       kind: "video",
@@ -99,7 +99,7 @@ export const founderProjects: FounderProject[] = [
     title: "LLM Router",
     category: "AI product",
     tagline: "Smarter routing, ~70% lower inference cost.",
-    story: "Classification layer routes each request to the right model. Quality stays high, budget doesn't blow up.",
+    story: "Automatically picks the right AI model for each task. Same quality, fraction of the cost.",
     media: {
       kind: "images",
       items: [
@@ -182,7 +182,7 @@ export const heroStats: HeroStat[] = [
   { value: "1,000+", label: "cases solved / month", context: "myFRT" },
   { value: "$20M+", label: "traced on-chain", context: "Coinspector" },
   { value: "2B+", label: "records handled", context: "Lab Systems" },
-  { value: "~70%", label: "lower inference cost", context: "LLM Router" },
+  { value: "~70%", label: "lower AI costs", context: "LLM Router" },
 ];
 
 export const experiencesFounder = [
