@@ -37,7 +37,7 @@ export const founderProjects: FounderProject[] = [
     title: "myFRT",
     category: "Enterprise platform",
     tagline: "Digital forensics platform for real investigations.",
-    story: "End-to-end evidence workspace — ingest, process, and search at scale so investigators focus on cases, not tooling.",
+    story: "End-to-end evidence workspace: ingest, process, and search at scale so investigators focus on cases, not tooling.",
     stat: { value: "1,000+", label: "cases solved / month" },
     meta: { year: "2023–present", client: "Lab Systems" },
     media: {
@@ -62,7 +62,7 @@ export const founderProjects: FounderProject[] = [
     title: "Coinspector",
     category: "Forensics · Blockchain",
     tagline: "Cryptocurrency investigation tool.",
-    story: "Traces wallet activity, clusters addresses, and surfaces suspicious patterns — giving investigators a clear trail through on-chain data.",
+    story: "Traces wallet activity, clusters addresses, and surfaces suspicious patterns, giving investigators a clear trail through on-chain data.",
     stat: { value: "$20M+", label: "traced on-chain" },
     meta: { year: "2023–present", client: "Lab Systems" },
     media: {
@@ -89,7 +89,7 @@ export const founderProjects: FounderProject[] = [
     techStack: ["Ethereum", "Solidity", "MERN Stack"],
     badges: ["patent"],
     links: {
-      github: null,
+      github: "https://github.com/JeetDSharma/medilog",
       demo: null,
       patentLink:
         "https://register.dpma.de/DPMAregister/pat/register?AKZ=2020231028233&CURSOR=0",
@@ -99,20 +99,21 @@ export const founderProjects: FounderProject[] = [
     title: "LLM Router",
     category: "AI product",
     tagline: "Smarter routing, ~70% lower inference cost.",
-    story: "Classification layer routes each request to the right model — quality stays high, budget doesn't blow up.",
+    story: "Classification layer routes each request to the right model. Quality stays high, budget doesn't blow up.",
     media: {
       kind: "images",
       items: [
         {
           src: "/projects/llm-router/difficulty-router.png",
-          alt: "RouteLLM difficulty router UI — local classifier and routing hints",
+          alt: "RouteLLM difficulty router UI: local classifier and routing hints",
         },
       ],
     },
     techStack: ["Python", "PyTorch", "HuggingFace", "FastAPI", "Docker"],
     links: {
-      github: "https://github.com/JeetDSharma/LLM-Router",
+      github: "https://github.com/JeetDSharma/RouteLLM",
       demo: null,
+      paperLink: "https://drive.google.com/file/d/1sT_glWXGqHPYoWQDw0jpKA6_r_wKf13G/view",
     },
   },
   /*
@@ -214,7 +215,7 @@ export const experiencesFounder = [
     duration: "May 2023 – Aug 2024",
     year: "2023",
     achievement:
-      "Took an AI-driven forensics product from zero to production for enterprise teams—cases solved, not slide decks.",
+      "Took an AI-driven forensics product from zero to production for enterprise teams. Cases solved, not slide decks.",
     impact: [
       { metric: "50+", label: "Cases supported" },
       { metric: "20+", label: "API surfaces" },

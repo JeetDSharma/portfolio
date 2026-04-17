@@ -160,7 +160,7 @@ const CommandPalette: React.FC<CommandPaletteProps> = ({ isOpen, onClose }) => {
                         <Code className="w-4 h-4 text-gray-400" />
                         <div className="flex-1">
                           <div className="font-medium">
-                            {project.title} — {project.category}
+                            {project.title} · {project.category}
                           </div>
                           {project.techStack && project.techStack.length > 0 && (
                             <div className="text-xs text-gray-500 dark:text-gray-400">

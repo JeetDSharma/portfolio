@@ -30,7 +30,7 @@ export const metadata: Metadata = {
     template: "%s | Jeet Sharma",
   },
   description:
-    "Founding engineer shipping products end-to-end—from idea to production. AI platforms, enterprise software, and 0→1 builds. MS CS @ UMass Amherst.",
+    "Founding engineer shipping products end-to-end, from idea to production. AI platforms, enterprise software, and 0→1 builds. MS CS @ UMass Amherst.",
   keywords: [
     "Jeet Sharma",
     "Founding Engineer",
@@ -62,7 +62,7 @@ export const metadata: Metadata = {
         url: "/og-image.png",
         width: 1200,
         height: 630,
-        alt: "Jeet Sharma — Founding Engineer",
+        alt: "Jeet Sharma, Founding Engineer",
       },
     ],
   },

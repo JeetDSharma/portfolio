@@ -44,7 +44,7 @@ const Hero = () => {
             I ship products end-to-end.
           </p>
           <p className="mt-6 max-w-lg text-base leading-relaxed text-muted-foreground md:text-lg">
-            From first customer conversation to software in production—clear
+            From first customer conversation to software in production:
             UX, reliable backends, and systems that keep working after launch.
             MS CS @ UMass Amherst.
           </p>
