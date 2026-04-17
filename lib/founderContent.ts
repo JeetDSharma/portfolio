@@ -73,7 +73,7 @@ export const founderProjects: FounderProject[] = [
     badges: ["enterprise"],
     links: {
       github: null,
-      demo: null,
+      demo: "https://www.karpuragaur.ai/Coinspector/index.html",
     },
   },
   {
