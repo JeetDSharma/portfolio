@@ -255,7 +255,7 @@ export const education = [
     duration: "Sep 2024 – May 2026",
     gpa: "GPA: 3.86 / 4.0",
     year: "2024",
-    context: "Building LLM Router and interning at Karpuragaurai while in school.",
+    context: "Building LLM Router and shipping production AI infrastructure while in school.",
   },
   {
     degree: "Bachelor of Engineering in Computer Engineering",
