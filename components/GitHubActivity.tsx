@@ -35,7 +35,7 @@ const GitHubActivity = () => {
             width: "100%",
           }}
           theme={{
-            light: ["#f0f0f0", "#c4edde", "#7ac7c4", "#2c7da0", "#014f86"],
+            light: ["#e8e2d9", "#c4edde", "#7ac7c4", "#2c7da0", "#014f86"],
             dark: ["#161b22", "#0e4429", "#006d32", "#26a641", "#39d353"],
           }}
         />

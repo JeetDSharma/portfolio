@@ -186,39 +186,46 @@ export const heroStats: HeroStat[] = [
 ];
 
 export const experiencesFounder = [
-  {
-    role: "Software Engineer (contract)",
-    company: "Karpuragaurai Technologies",
-    duration: "May 2025 – Aug 2025",
-    year: "2025",
-    achievement:
-      "Built customer-support AI that pulls the right context across channels so answers stay grounded and fast for multiple business tenants.",
-    impact: [
-      { metric: "5+", label: "Active tenants" },
-      { metric: "30%", label: "Faster responses" },
-      { metric: "<2s", label: "Typical reply" },
-    ],
-    techStack: [
-      "Python",
-      "Redis",
-      "REST",
-      "AWS",
-      "Docker",
-      "Celery",
-      "PostgreSQL",
-      "pgvector",
-    ],
-  },
+  // Contract role hidden per request
+  // {
+  //   role: "Software Engineer (contract)",
+  //   company: "Karpuragaurai Technologies",
+  //   duration: "May 2025 – Aug 2025",
+  //   year: "2025",
+  //   achievement:
+  //     "Built customer-support AI that pulls the right context across channels so answers stay grounded and fast for multiple business tenants.",
+  //   impact: [
+  //     { metric: "5+", label: "Active tenants" },
+  //     { metric: "30%", label: "Faster responses" },
+  //     { metric: "<2s", label: "Typical reply" },
+  //   ],
+  //   techStack: [
+  //     "Python",
+  //     "Redis",
+  //     "REST",
+  //     "AWS",
+  //     "Docker",
+  //     "Celery",
+  //     "PostgreSQL",
+  //     "pgvector",
+  //   ],
+  // },
   {
     role: "Founding Full Stack Engineer",
     company: "Lab Systems",
-    duration: "May 2023 – Aug 2024",
-    year: "2023",
+    duration: "Aug 2022 – Aug 2024",
+    year: "2022",
     achievement:
-      "Took an AI-driven forensics product from zero to production for enterprise teams. Cases solved, not slide decks.",
+      "Took an AI-driven forensics product from zero to production for enterprise teams, building the data pipelines and graph-backed workflows that kept huge evidence sets searchable in near real time. Cases solved, not slide decks.",
+    highlights: [
+      "Built myFRT, the digital forensics platform now trusted by law enforcement and government clients to close 1,000+ cases every month.",
+      "Shipped Coinspector, a crypto-tracing tool that has followed $20M+ across wallets and surfaced suspicious activity for investigators.",
+      "Designed data pipelines handling 2B+ evidence records, cutting query times ~70% with graph-backed, near-real-time search.",
+      "Owned 20+ API surfaces end to end as a founding engineer, from architecture to production on AWS and Cloudflare.",
+    ],
     impact: [
+      { metric: "2B+", label: "Records handled" },
       { metric: "50+", label: "Cases supported" },
-      { metric: "20+", label: "API surfaces" },
       { metric: "0→1", label: "Founding role" },
     ],
     techStack: [
@@ -227,24 +234,12 @@ export const experiencesFounder = [
       "C++",
       "Flask",
       "SQL/NoSQL",
+      "MongoDB",
+      "LevelDB",
       "Docker",
       "AWS",
       "Cloudflare",
     ],
-  },
-  {
-    role: "Full Stack Engineer Intern",
-    company: "Lab Systems",
-    duration: "Aug 2022 – Apr 2023",
-    year: "2022",
-    achievement:
-      "Built data pipelines and graph-backed workflows so huge evidence sets stayed searchable in near real time.",
-    impact: [
-      { metric: "2B+", label: "Records handled" },
-      { metric: "70%", label: "Faster queries" },
-      { metric: "<1s", label: "Stream latency" },
-    ],
-    techStack: ["Python", "Node.js", "MongoDB", "LevelDB", "Docker", "Linux"],
   },
 ];
 
