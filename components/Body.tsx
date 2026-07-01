@@ -38,7 +38,7 @@ const BodySection = () => {
 
   return (
     <section
-      className="mx-auto max-w-5xl space-y-20 overflow-hidden px-6 py-16 md:py-24"
+      className="mx-auto max-w-6xl space-y-12 overflow-hidden px-6 py-12 md:space-y-16 md:py-16"
       id="body-section"
     >
       <motion.div
@@ -47,9 +47,9 @@ const BodySection = () => {
         whileInView={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.5 }}
         viewport={{ once: true }}
-        className="mx-auto max-w-4xl"
+        className="mx-auto max-w-6xl"
       >
-        <h2 className="mb-12 text-center font-display text-3xl font-bold tracking-tight text-foreground md:text-5xl">
+        <h2 className="mb-8 text-center font-display text-3xl font-bold tracking-tight text-foreground md:text-5xl">
           Selected work
         </h2>
 
@@ -159,7 +159,7 @@ const BodySection = () => {
         viewport={{ once: true }}
         className="mx-auto max-w-4xl"
       >
-        <h2 className="mb-12 text-center font-display text-3xl font-bold tracking-tight text-foreground md:text-5xl">
+        <h2 className="mb-8 text-center font-display text-3xl font-bold tracking-tight text-foreground md:text-5xl">
           Experience
         </h2>
 
@@ -266,9 +266,9 @@ const BodySection = () => {
         whileInView={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.5 }}
         viewport={{ once: true }}
-        className="mx-auto max-w-4xl"
+        className="mx-auto max-w-6xl"
       >
-        <h2 className="mb-12 text-center font-display text-3xl font-bold tracking-tight text-foreground md:text-5xl">
+        <h2 className="mb-8 text-center font-display text-3xl font-bold tracking-tight text-foreground md:text-5xl">
           Education
         </h2>
 
@@ -311,7 +311,7 @@ const BodySection = () => {
         whileInView={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.6, ease: "easeOut" }}
         viewport={{ once: true }}
-        className="mx-auto max-w-3xl py-12 text-center"
+        className="mx-auto max-w-3xl py-4 text-center"
         id="contact"
       >
         <h2 className="font-display text-3xl font-bold tracking-tight text-foreground md:text-5xl">
@@ -321,7 +321,7 @@ const BodySection = () => {
           Building something ambitious? I&apos;d love to hear what you&apos;re working on.
         </p>
 
-        <div className="mx-auto mt-10 max-w-2xl rounded-2xl border border-border/80 bg-card p-8 shadow-sm">
+        <div className="mx-auto mt-8 max-w-2xl rounded-2xl border border-border/80 bg-card p-8 shadow-sm">
           <div className="grid grid-cols-1 gap-6 md:grid-cols-2">
             <div className="space-y-2 text-left">
               <p className="text-xs font-medium uppercase tracking-wider text-muted-foreground">
