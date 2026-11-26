@@ -386,11 +386,6 @@ const BodySection = () => {
           </div>
 
           <div className="mt-8 flex flex-col gap-3 border-t border-border/60 pt-8 sm:flex-row">
-            <a href="/resume.pdf" target="_blank" rel="noopener noreferrer" className="flex-1">
-              <span className="block w-full rounded-xl bg-foreground py-3.5 text-center text-sm font-semibold text-background transition hover:opacity-90">
-                View resume
-              </span>
-            </a>
             <a href={emailLink} className="flex-1">
               <span className="block w-full rounded-xl border border-border py-3.5 text-center text-sm font-semibold text-foreground transition hover:border-brand hover:text-brand">
                 Get in touch
